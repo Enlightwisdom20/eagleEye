@@ -123,7 +123,7 @@ const ScrollVideoSection = () => {
       <section
         ref={sectionRef}
         className="relative"
-        style={{ height: "300vh" }} // Tall section for long scroll
+        style={{ height: "260vh" }} // Tall section for long scroll
       >
         {/* Sticky container for video and text */}
         <div className="sticky top-0 h-screen overflow-hidden">
