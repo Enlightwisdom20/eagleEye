@@ -100,7 +100,11 @@ const TestimonialsSlideshow = () => {
   const row1Testimonials = testimonials.slice(0, 5);
   const row2Testimonials = testimonials.slice(5, 10);
 
-  const TestimonialCard = ({ testimonial }) => (
+  const TestimonialCard = ({
+    testimonial,
+  }: {
+    testimonial: (typeof testimonials)[0];
+  }) => (
     <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200 w-80 h-32 mx-2 flex-shrink-0 flex flex-col justify-between">
       <div className="flex items-center mb-2">
         <img
