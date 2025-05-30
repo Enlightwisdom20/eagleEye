@@ -1,12 +1,21 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
+import { PT_Sans, Rouge_Script } from "next/font/google";
+
+const ptSans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
+const rougeScript = Rouge_Script({
+  weight: "400", // <-- required because only weight 400 is available
+  subsets: ["latin"], // add subsets you need
+});
 
 // Using placeholder images since we don't have access to the actual image files
 const photos = [
   // Marketing image
-  "src/images/branding.png",
-  "src/images/strategy.png", // Strategy image // Branding image
-  "src/images/growth.png",
-  "src/images/marketing.png", // Growth image
+  "/images/branding.png",
+  "/images/strategy.png", // Strategy image // Branding image
+  "/images/growth.png",
+  "/images/marketing.png", // Growth image
 ];
 export default function HomeAndAbout() {
   const [isHovering, setIsHovering] = useState(false);

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -60,7 +61,7 @@ const TrainingComponent = () => {
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions,
+      observerOptions
     );
 
     const sections = ["benefits", "inAction", "curriculum", "tools"];
@@ -75,13 +76,13 @@ const TrainingComponent = () => {
   // Carousel controls
   const nextSlide = () => {
     setActiveSlide((prev) =>
-      prev === carouselImages.length - 1 ? 0 : prev + 1,
+      prev === carouselImages.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
     setActiveSlide((prev) =>
-      prev === 0 ? carouselImages.length - 1 : prev - 1,
+      prev === 0 ? carouselImages.length - 1 : prev - 1
     );
   };
 
@@ -175,7 +176,7 @@ const TrainingComponent = () => {
                 key={index}
                 className={cn(
                   "absolute inset-0 transition-opacity duration-500",
-                  activeSlide === index ? "opacity-100" : "opacity-0",
+                  activeSlide === index ? "opacity-100" : "opacity-0"
                 )}
                 initial={false}
               >
@@ -216,7 +217,7 @@ const TrainingComponent = () => {
                   "w-2 h-2 rounded-full transition-all",
                   activeSlide === index
                     ? "bg-white scale-125"
-                    : "bg-white bg-opacity-50",
+                    : "bg-white bg-opacity-50"
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />
