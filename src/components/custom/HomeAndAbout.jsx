@@ -12,7 +12,7 @@ const rougeScript = Rouge_Script({
 // Using placeholder images since we don't have access to the actual image files
 const photos = [
   // Marketing image
-  "/images/branding.png",
+  "/images/branding2.png",
   "/images/strategy.png", // Strategy image // Branding image
   "/images/growth.png",
   "/images/marketing.png", // Growth image
