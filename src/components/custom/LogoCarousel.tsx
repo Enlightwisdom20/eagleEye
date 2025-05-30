@@ -60,7 +60,8 @@ const LogoCarousel = () => {
                 />
               </div>
             ))}
-          </div></div>
+          </div>
+        </div>
       </div>
     </div>
   );

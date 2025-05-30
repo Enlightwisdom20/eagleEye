@@ -96,7 +96,8 @@ const ServicesCarousel = () => {
         "consistent branding.",
       ],
     },
-  ];  const scrollCarousel = (direction: number) => {
+  ];
+  const scrollCarousel = (direction: number) => {
     if (carouselRef.current) {
       const slideWidth = 300; // Scroll by one item width
       carouselRef.current.scrollBy({
@@ -122,29 +123,33 @@ const ServicesCarousel = () => {
         <div
           ref={carouselRef}
           className="flex gap-6 scrollbar-hide scroll-smooth overflow-x-scroll"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >        {services.map((service, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-72 flex flex-col items-center text-center"
-          >
-            <img
-              src={service.image}
-              alt={service.title}
-              className={`max-h-[200px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 ${
-                service.title === "Social Media Marketing"
-                  ? "max-h-[180px]"
-                  : ""
-              }`}
-            />
-            <p className="text-lg font-bold mt-4 uppercase">{service.title}</p>
-            {service.description.map((line, i) => (
-              <p key={i} className={i === 0 ? "text-sm mt-2" : "text-sm"}>
-                {line}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {" "}
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-72 flex flex-col items-center text-center"
+            >
+              <img
+                src={service.image}
+                alt={service.title}
+                className={`max-h-[200px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 ${
+                  service.title === "Social Media Marketing"
+                    ? "max-h-[180px]"
+                    : ""
+                }`}
+              />
+              <p className="text-lg font-bold mt-4 uppercase">
+                {service.title}
               </p>
-            ))}
-          </div>
-        ))}
+              {service.description.map((line, i) => (
+                <p key={i} className={i === 0 ? "text-sm mt-2" : "text-sm"}>
+                  {line}
+                </p>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
 
