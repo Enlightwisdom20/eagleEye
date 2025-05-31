@@ -5,6 +5,8 @@ import TrainingComponent from "@/components/custom/training";
 import LogoCarousel from "@/components/custom/LogoCarousel";
 import ServicesCarousel from "@/components/custom/ServicesCarousel";
 import StatisticsCounter from "@/components/custom/StatisticsCounter";
+import TeamSection from '@/components/custom/TeamSection';
+import ContactSection from '@/components/custom/ContactSection';
 // import TestimonialsSlideshow from "@/components/custom/testimonials";
 
 export default function Home() {
@@ -33,6 +35,8 @@ export default function Home() {
       <Industries />
       <TrainingComponent />
       {/* <TestimonialsSlideshow /> */}
+      <TeamSection />
+      <ContactSection />
     </div>
   );
 }

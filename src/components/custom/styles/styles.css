@@ -1,0 +1,98 @@
+@media (min-width: 375px) and (max-width: 760px) {
+  .custom-zoom {
+    transform: scale(0.9); /* Slightly zoomed out */
+  }
+}
+@media (min-width: 320px) and (max-width: 320px) {
+  .custom-zoom {
+    transform: scale(1.1); /* Slightly zoomed out */
+  }
+}
+@media (min-width: 768px) and (max-width: 768px) {
+  .custom-zoom {
+    transform: scale(0.95); /* Slightly zoomed out */
+  }
+}
+@media (min-width: 1024px) and (max-width: 1024px) {
+  .custom-zoom {
+    transform: scale(1.12); /* Slightly zoomed in */
+  }
+}
+@media (min-width: 1440px) and (max-width: 2560px) {
+.custom-zoom {
+    transform: scale(0.9); /* Slightly zoomed out */
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .custom-elisha {
+    transform: scale(1.25);
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .custom-tiffany {
+    transform: scale(1.2); /* Moves it down by 1.2rem */
+  }
+}
+
+
+
+@media (min-width: 320px) and (max-width: 320px) {
+  .custom-anita {
+    transform: scale(1.2); /* Moves it down by 1.2rem */
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 768px) {
+  .custom-anita {
+        transform: scale(1.15); /* Moves it down by 1.2rem */
+        transform: translateY(1.6rem);
+
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1024px) {
+  .custom-anita {
+        transform: scale(1.3); /* Moves it down by 1.2rem */
+
+
+  }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1024px) {
+  .custom-saheli {
+        transform: scale(1.3); /* Moves it down by 1.2rem */
+
+
+  }
+
+}
+
+@keyframes fadeInSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-smooth {
+  animation: fadeInSmooth 0.8s ease forwards;
+}
+
+/* Initial hidden state */
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-10 {
+  transform: translateY(10px);
+}
