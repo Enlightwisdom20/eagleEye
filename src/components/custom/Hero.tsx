@@ -11,7 +11,7 @@ const rougeScript = Rouge_Script({
 
 // Using placeholder images since we don't have access to the actual image files
 const photos = [
-  "/images/branding.png",
+  "/images/branding2.png",
   "/images/strategy.png",
   "/images/growth.png",
   "/images/marketing.png",
@@ -187,10 +187,10 @@ export default function Hero() {
                       transform: isActive
                         ? "translateY(0%)"
                         : isPrevious
-                        ? "translateY(-100%)"
-                        : isNext
-                        ? "translateY(100%)"
-                        : "translateY(100%)",
+                          ? "translateY(-100%)"
+                          : isNext
+                            ? "translateY(100%)"
+                            : "translateY(100%)",
                     }}
                   >
                     <img
