@@ -98,10 +98,11 @@ export default function Industries() {
         {/* Header */}
         <div className="text-center mb-16">
           <div
-            className={`transition-all duration-1000 ease-out ${isVisible
+            className={`transition-all duration-1000 ease-out ${
+              isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
-              }`}
+            }`}
           >
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
               Industries We{" "}
@@ -119,16 +120,18 @@ export default function Industries() {
         </div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {/* <div className="flex flex-wrap gap-6"> */}
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             return (
               <div
                 key={industry.title}
-                className={`group relative bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-gray-100/50 hover:-translate-y-2 ${isVisible
+                className={`group relative bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-gray-100/50 hover:-translate-y-2 ${
+                  isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-12"
-                  }`}
+                }`}
                 style={{
                   transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
                 }}
@@ -167,8 +170,9 @@ export default function Industries() {
 
         {/* Bottom CTA */}
         <div
-          className={`text-center mt-16 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          className={`text-center mt-16 transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
           style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
         >
           <p className="text-gray-600 mb-6">
