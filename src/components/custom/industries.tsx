@@ -79,7 +79,7 @@ export default function Industries() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -111,11 +111,11 @@ export default function Industries() {
               </span>
             </h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               We specialize in delivering tailored digital marketing solutions
               across diverse industries, understanding the unique challenges and
               opportunities each sector presents.
-            </p>
+            </p> */}
           </div>
         </div>
 

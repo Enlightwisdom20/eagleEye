@@ -23,10 +23,10 @@ const LogoCarousel = () => {
   ];
   return (
     <div className="w-full max-w-7xl mx-auto overflow-hidden">
-      <h2 className="text-3xl font-bold mb-8 text-center px-4">
+      {/* <h2 className="text-3xl font-bold mb-8 text-center px-4">
         Brands we nurtured into{" "}
         <em className="italic font-serif">inspiring narratives</em>
-      </h2>
+      </h2> */}
 
       <div className="relative overflow-hidden">
         <div className="flex w-max gap-x-16 scrolling-wrapper">
