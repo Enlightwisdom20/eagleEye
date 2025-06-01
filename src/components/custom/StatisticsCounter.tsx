@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface CounterProps {
@@ -43,31 +43,40 @@ const AnimatedCounter = ({ target }: CounterProps) => {
 };
 
 const StatisticsCounter = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   const clients = [
-    { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120" },
-    { name: "Ashbunk", logo: "/logos/ashbunk.png?height=60&width=120" },
+    { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1 },
+    {
+      name: "Ashbunk",
+      logo: "/logos/ashbunk.png?height=60&width=120",
+      scale: 1,
+    },
     {
       name: "Beat Naturally",
       logo: "/logos/beatnaturally.webp?height=60&width=120",
+      scale: 1,
     },
     {
       name: "Bricks and Spaces",
       logo: "/logos/bricks and spaces.avif?height=60&width=120",
+      scale: 1.5,
     },
-    { name: "Enlight Wisdom", logo: "/logos/enlight.png?height=60&width=120" },
-    { name: "Grove", logo: "/logos/grove.png?height=60&width=120" },
+    {
+      name: "Enlight Wisdom",
+      logo: "/logos/enlight.png?height=60&width=120",
+      scale: 2.5,
+    },
+    { name: "Grove", logo: "/logos/grove.png?height=60&width=120", scale: 0.8 },
     {
       name: "Professional",
       logo: "/logos/professional_logo.png?height=60&width=120",
+      scale: 1.0,
     },
-    { name: "Rel", logo: "/logos/rel.png?height=60&width=120" },
-    { name: "Reylon", logo: "/logos/Relyon-Logo.png?height=60&width=120" },
+    { name: "Rel", logo: "/logos/rel.png?height=60&width=120", scale: 1.2 },
+    {
+      name: "Reylon",
+      logo: "/logos/Relyon-Logo.png?height=60&width=120",
+      scale: 1,
+    },
   ];
 
   return (
@@ -176,33 +185,45 @@ const StatisticsCounter = () => {
             </h3>
           </div>
 
-          <div className="relative">
-            <div className="honeycomb-grid">
-              {clients.map((client, index) => (
-                <div
-                  key={client.name}
-                  className={`honeycomb-item ${
-                    isVisible ? "animate-fade-in" : "opacity-0"
-                  }`}
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                  }}
-                >
-                  <div className="hexagon">
-                    <div className="hexagon-inner">
-                      <div className="hexagon-content">
-                        <Image
-                          src={client.logo || "/placeholder.svg"}
-                          alt={`${client.name} logo`}
-                          width={120}
-                          height={60}
-                          className="logo-image"
-                        />
-                      </div>
-                    </div>
+          <div className="relative overflow-hidden">
+            <div className="flex w-max gap-x-16 scrolling-wrapper">
+              {/* Group 1: Original Logos */}
+              <div className="flex gap-x-16">
+                {clients.map((client, index) => (
+                  <div
+                    key={`logo1-${index}`}
+                    className="flex items-center justify-center w-32 h-16 flex-shrink-0"
+                    style={{ transform: `scale(${client.scale})` }}
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={120}
+                      height={60}
+                      className="h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Group 2: Duplicated Logos for Seamless Loop */}
+              <div className="flex gap-x-16">
+                {clients.map((client, index) => (
+                  <div
+                    key={`logo2-${index}`}
+                    className="flex items-center justify-center w-32 h-16 flex-shrink-0"
+                    style={{ transform: `scale(${client.scale})` }}
+                  >
+                    <Image
+                      src={client.logo}
+                      alt={client.name}
+                      width={120}
+                      height={60}
+                      className="h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -219,125 +240,21 @@ const StatisticsCounter = () => {
       </motion.div>
 
       <style jsx>{`
-        .honeycomb-grid {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          max-width: 1000px;
-          margin: 0 auto;
-          gap: 10px;
+        .scrolling-wrapper {
+          animation: scroll 40s linear infinite;
         }
 
-        .honeycomb-item {
-          width: 160px;
-          height: 140px;
-          margin: 5px;
-        }
-
-        .honeycomb-item:nth-child(n + 6) {
-          margin-top: -60px;
-        }
-
-        .hexagon {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          transform: rotate(30deg);
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hexagon-inner {
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-          border: 2px solid #e2e8f0;
-          border-radius: 20px;
-          position: relative;
-          overflow: hidden;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .hexagon-content {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) rotate(-30deg);
-          width: 80%;
-          height: 80%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .logo-image {
-          max-width: 100%;
-          max-height: 100%;
-          object-fit: contain;
-          filter: grayscale(100%) opacity(0.7);
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .honeycomb-item:hover .hexagon {
-          transform: rotate(30deg) scale(1.1);
-        }
-
-        .honeycomb-item:hover .hexagon-inner {
-          background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-          border-color: #a0aec0;
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .honeycomb-item:hover .logo-image {
-          filter: grayscale(0%) opacity(1);
-          transform: scale(1.05);
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(30px) scale(0.9);
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
           }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
+          100% {
+            transform: translateX(-50%);
           }
         }
 
-        .animate-fade-in {
-          animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @media (max-width: 768px) {
-          .honeycomb-item {
-            width: 120px;
-            height: 105px;
-          }
-
-          .honeycomb-item:nth-child(n + 6) {
-            margin-top: 0;
-          }
-          .honeycomb-item:nth-child(n + 8) {
-            margin-top: -45px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .honeycomb-grid {
-            gap: 5px;
-          }
-
-          .honeycomb-item {
-            width: 100px;
-            height: 87px;
-            margin: 2px;
-          }
-
-          .honeycomb-item:nth-child(n + 6),
-          .honeycomb-item:nth-child(n + 8) {
-            margin-top: 0;
-          }
+        .scrolling-wrapper:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </section>
