@@ -40,59 +40,59 @@ export default function Hero() {
   return (
     <div className="min-h-screen bg-stone-50 font-sans flex flex-col">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-stone-50 flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 shadow-sm">
-        <div className="flex items-center space-x-2 sm:space-x-3">
-          <div
-            className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-black transform rotate-45 cursor-pointer"
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-          ></div>
-          <div
-            className="text-black font-bold text-sm sm:text-base md:text-lg lg:text-xl leading-none cursor-pointer"
-            style={{ fontFamily: "Georgia, serif" }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
-          >
-            THE EAGLE EYE
-          </div>
-        </div>
-
-        <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
-          {[
-            "Home",
-            "About",
-            "Services",
-            "Brands",
-            "Testimonials",
-            "Team",
-            "Contact",
-          ].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-black font-medium text-sm lg:text-base relative transition-all duration-300 hover:after:scale-x-100 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left scroll-smooth"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-              onClick={(e) => {
-                e.preventDefault();
-                const target = document.getElementById(item.toLowerCase());
-                if (target) {
-                  target.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              {item}
-            </a>
-          ))}
-        </nav>
-
-        {/* Mobile menu button */}
-        <button className="md:hidden flex flex-col space-y-1 p-2">
-          <span className="w-6 h-0.5 bg-black"></span>
-          <span className="w-6 h-0.5 bg-black"></span>
-          <span className="w-6 h-0.5 bg-black"></span>
-        </button>
-      </header>
+      {/* <header className="fixed top-0 left-0 right-0 z-50 bg-stone-50 flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 shadow-sm"> */}
+      {/*   <div className="flex items-center space-x-2 sm:space-x-3"> */}
+      {/*     <div */}
+      {/*       className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-black transform rotate-45 cursor-pointer" */}
+      {/*       onMouseEnter={() => setIsHovering(true)} */}
+      {/*       onMouseLeave={() => setIsHovering(false)} */}
+      {/*     ></div> */}
+      {/*     <div */}
+      {/*       className="text-black font-bold text-sm sm:text-base md:text-lg lg:text-xl leading-none cursor-pointer" */}
+      {/*       style={{ fontFamily: "Georgia, serif" }} */}
+      {/*       onMouseEnter={() => setIsHovering(true)} */}
+      {/*       onMouseLeave={() => setIsHovering(false)} */}
+      {/*     > */}
+      {/*       THE EAGLE EYE */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/**/}
+      {/*   <nav className="hidden md:flex items-center space-x-4 lg:space-x-8"> */}
+      {/*     {[ */}
+      {/*       "Home", */}
+      {/*       "About", */}
+      {/*       "Services", */}
+      {/*       "Brands", */}
+      {/*       "Testimonials", */}
+      {/*       "Team", */}
+      {/*       "Contact", */}
+      {/*     ].map((item) => ( */}
+      {/*       <a */}
+      {/*         key={item} */}
+      {/*         href={`#${item.toLowerCase()}`} */}
+      {/*         className="text-black font-medium text-sm lg:text-base relative transition-all duration-300 hover:after:scale-x-100 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left scroll-smooth" */}
+      {/*         onMouseEnter={() => setIsHovering(true)} */}
+      {/*         onMouseLeave={() => setIsHovering(false)} */}
+      {/*         onClick={(e) => { */}
+      {/*           e.preventDefault(); */}
+      {/*           const target = document.getElementById(item.toLowerCase()); */}
+      {/*           if (target) { */}
+      {/*             target.scrollIntoView({ behavior: "smooth" }); */}
+      {/*           } */}
+      {/*         }} */}
+      {/*       > */}
+      {/*         {item} */}
+      {/*       </a> */}
+      {/*     ))} */}
+      {/*   </nav> */}
+      {/**/}
+      {/*   {/* Mobile menu button */}
+      {/*   <button className="md:hidden flex flex-col space-y-1 p-2"> */}
+      {/*     <span className="w-6 h-0.5 bg-black"></span> */}
+      {/*     <span className="w-6 h-0.5 bg-black"></span> */}
+      {/*     <span className="w-6 h-0.5 bg-black"></span> */}
+      {/*   </button> */}
+      {/* </header> */}
 
       {/* Main Content */}
       <main
@@ -187,10 +187,10 @@ export default function Hero() {
                       transform: isActive
                         ? "translateY(0%)"
                         : isPrevious
-                          ? "translateY(-100%)"
-                          : isNext
-                            ? "translateY(100%)"
-                            : "translateY(100%)",
+                        ? "translateY(-100%)"
+                        : isNext
+                        ? "translateY(100%)"
+                        : "translateY(100%)",
                     }}
                   >
                     <img

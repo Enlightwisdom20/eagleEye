@@ -42,7 +42,7 @@ const AnimatedCounter = ({ target }: CounterProps) => {
   );
 };
 
-const StatisticsCounter = () => {
+const Clients = () => {
   const clients = [
     { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1 },
     {
@@ -261,4 +261,4 @@ const StatisticsCounter = () => {
   );
 };
 
-export default StatisticsCounter;
+export default Clients;

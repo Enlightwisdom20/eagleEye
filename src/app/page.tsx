@@ -3,11 +3,12 @@ import Hero from "@/components/custom/Hero";
 import About from "@/components/custom/About";
 import TagLine from "@/components/custom/tagline";
 import TrainingComponent from "@/components/custom/training";
-import LogoCarousel from "@/components/custom/LogoCarousel";
+// import LogoCarousel from "@/components/custom/LogoCarousel";
 import ServicesCarousel from "@/components/custom/ServicesCarousel";
-import StatisticsCounter from "@/components/custom/StatisticsCounter";
+import Clients from "@/components/custom/clients";
 import TeamSection from "@/components/custom/TeamSection";
 import ContactSection from "@/components/custom/ContactSection";
+// import ClientLogosSection from "@/components/custom/clientLogos";
 // import TestimonialsSlideshow from "@/components/custom/testimonials";
 
 export default function Home() {
@@ -15,16 +16,9 @@ export default function Home() {
     <div className="w-full">
       <Hero />
       <TagLine />
-      <About />
 
-      {/* Statistics Counter Section */}
-      <StatisticsCounter />
-
-      {/* Brands Carousel Section */}
-      <section className="py-10 w-full overflow-x-hidden">
-        <LogoCarousel />
-      </section>
-
+      {/* Clients Section */}
+      <Clients />
       {/* Services Carousel Section */}
       <section className="py-10 w-full overflow-x-hidden">
         <div className="text-center p-8">
@@ -34,9 +28,14 @@ export default function Home() {
         </div>
         <ServicesCarousel />
       </section>
+
+      {/* Industries Section */}
       <Industries />
+
+      {/* Training Section */}
       <TrainingComponent />
       {/* <TestimonialsSlideshow /> */}
+      <About />
       <TeamSection />
       <ContactSection />
     </div>
