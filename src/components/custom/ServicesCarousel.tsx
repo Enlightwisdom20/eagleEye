@@ -1,8 +1,9 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const ServicesCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Service data
   const services = [
@@ -99,19 +100,51 @@ const ServicesCarousel = () => {
   ];
   const scrollCarousel = (direction: number) => {
     if (carouselRef.current) {
-      const slideWidth = 300; // Scroll by one item width
+      // Calculate the exact width of one card including its gap
+      const cardWidth = 288; // w-72 = 18rem = 288px
+      const gap = 24; // gap-6 = 1.5rem = 24px
+      const scrollAmount = cardWidth + gap;
+
       carouselRef.current.scrollBy({
-        left: direction * slideWidth,
+        left: direction * scrollAmount,
         behavior: "smooth",
       });
     }
   };
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isPaused && carouselRef.current) {
+        const container = carouselRef.current;
+        const isAtEnd =
+          Math.ceil(container.scrollLeft + container.offsetWidth) >=
+          container.scrollWidth;
+
+        if (isAtEnd) {
+          // Reset to start when reaching the end
+          container.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollCarousel(1);
+        }
+      }
+    }, 3000); // Scroll every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4">
+    <div
+      className="relative w-full max-w-7xl mx-auto px-4"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Left Arrow */}
       <button
-        onClick={() => scrollCarousel(-1)}
+        onClick={() => {
+          scrollCarousel(-1);
+          setIsPaused(true);
+        }}
         className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white border rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200"
         aria-label="Previous services"
       >
@@ -155,7 +188,10 @@ const ServicesCarousel = () => {
 
       {/* Right Arrow */}
       <button
-        onClick={() => scrollCarousel(1)}
+        onClick={() => {
+          scrollCarousel(1);
+          setIsPaused(true);
+        }}
         className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white border rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200"
         aria-label="Next services"
       >
