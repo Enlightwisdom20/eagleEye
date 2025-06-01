@@ -61,7 +61,7 @@ const TrainingComponent = () => {
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
 
     const sections = ["benefits", "inAction", "curriculum", "tools"];
@@ -76,13 +76,13 @@ const TrainingComponent = () => {
   // Carousel controls
   const nextSlide = () => {
     setActiveSlide((prev) =>
-      prev === carouselImages.length - 1 ? 0 : prev + 1
+      prev === carouselImages.length - 1 ? 0 : prev + 1,
     );
   };
 
   const prevSlide = () => {
     setActiveSlide((prev) =>
-      prev === 0 ? carouselImages.length - 1 : prev - 1
+      prev === 0 ? carouselImages.length - 1 : prev - 1,
     );
   };
 
@@ -118,7 +118,7 @@ const TrainingComponent = () => {
         <h2 className="text-2xl font-light text-center mb-12">
           Why Learn With Us?
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {[
             {
               title: "5+ Years of Experience",
@@ -138,11 +138,11 @@ const TrainingComponent = () => {
               description:
                 "Full Curriculum + Resources + Practice Material Provided",
             },
-            {
-              title: "For Everyone",
-              description:
-                "Ideal for Beginners, Career Switchers, and Marketing Enthusiasts",
-            },
+            //            {
+            //              title: "For Everyone",
+            //              description:
+            //                "Ideal for Beginners, Career Switchers, and Marketing Enthusiasts",
+            //            },
           ].map((item, index) => (
             <motion.div
               key={index}
@@ -154,7 +154,7 @@ const TrainingComponent = () => {
               transition={{ duration: 0.2 }}
             >
               <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              {/* <p className="text-gray-600">{item.description}</p> */}
             </motion.div>
           ))}
         </div>
@@ -176,7 +176,7 @@ const TrainingComponent = () => {
                 key={index}
                 className={cn(
                   "absolute inset-0 transition-opacity duration-500",
-                  activeSlide === index ? "opacity-100" : "opacity-0"
+                  activeSlide === index ? "opacity-100" : "opacity-0",
                 )}
                 initial={false}
               >
@@ -217,7 +217,7 @@ const TrainingComponent = () => {
                   "w-2 h-2 rounded-full transition-all",
                   activeSlide === index
                     ? "bg-white scale-125"
-                    : "bg-white bg-opacity-50"
+                    : "bg-white bg-opacity-50",
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />

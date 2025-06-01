@@ -1,7 +1,7 @@
 import Industries from "@/components/custom/industries";
 import Hero from "@/components/custom/Hero";
 import About from "@/components/custom/About";
-// import TagLine from "@/components/custom/tagline";
+import TagLine from "@/components/custom/tagline";
 import TrainingComponent from "@/components/custom/training";
 import LogoCarousel from "@/components/custom/LogoCarousel";
 import ServicesCarousel from "@/components/custom/ServicesCarousel";
@@ -12,8 +12,9 @@ import ContactSection from "@/components/custom/ContactSection";
 
 export default function Home() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full">
       <Hero />
+      <TagLine />
       <About />
 
       {/* Statistics Counter Section */}
@@ -33,7 +34,6 @@ export default function Home() {
         </div>
         <ServicesCarousel />
       </section>
-      {/* <TagLine /> */}
       <Industries />
       <TrainingComponent />
       {/* <TestimonialsSlideshow /> */}

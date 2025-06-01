@@ -98,11 +98,10 @@ export default function Industries() {
         {/* Header */}
         <div className="text-center mb-16">
           <div
-            className={`transition-all duration-1000 ease-out ${
-              isVisible
+            className={`transition-all duration-1000 ease-out ${isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
-            }`}
+              }`}
           >
             <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
               Industries We{" "}
@@ -126,11 +125,10 @@ export default function Industries() {
             return (
               <div
                 key={industry.title}
-                className={`group relative bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-gray-100/50 hover:-translate-y-2 ${
-                  isVisible
+                className={`group relative bg-white rounded-2xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-gray-100/50 hover:-translate-y-2 ${isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-12"
-                }`}
+                  }`}
                 style={{
                   transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
                 }}
@@ -155,9 +153,9 @@ export default function Industries() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
-                    {industry.description}
-                  </p>
+                  {/* <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300"> */}
+                  {/*   {industry.description} */}
+                  {/* </p> */}
 
                   {/* Subtle bottom accent */}
                   <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-gray-200/0 group-hover:via-gray-300/50 to-transparent transition-all duration-500 ease-out"></div>
@@ -169,9 +167,8 @@ export default function Industries() {
 
         {/* Bottom CTA */}
         <div
-          className={`text-center mt-16 transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mt-16 transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
         >
           <p className="text-gray-600 mb-6">

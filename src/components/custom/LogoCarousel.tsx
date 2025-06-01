@@ -1,3 +1,5 @@
+import "./style.logocarousel.css";
+
 const LogoCarousel = () => {
   // Logo paths - replace with actual paths
   const logos = [
