@@ -3,33 +3,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
-
 const TrainingComponent = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
   const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({
     benefits: false,
     inAction: false,
     curriculum: false,
     tools: false,
   });
-
-  // Mock data for carousel (replace with actual images)
-  const carouselImages = [
-    {
-      src: "/placeholder.svg?height=400&width=600",
-      caption: "Workshop at Delhi University",
-    },
-    {
-      src: "/placeholder.svg?height=400&width=600",
-      caption: "Hands-on SEO Training",
-    },
-    {
-      src: "/placeholder.svg?height=400&width=600",
-      caption: "Group Marketing Strategy Session",
-    },
-  ];
 
   // Tools logos
   const tools = [
@@ -72,19 +52,6 @@ const TrainingComponent = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  // Carousel controls
-  const nextSlide = () => {
-    setActiveSlide((prev) =>
-      prev === carouselImages.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setActiveSlide((prev) =>
-      prev === 0 ? carouselImages.length - 1 : prev - 1
-    );
-  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 text-gray-800">
@@ -157,74 +124,6 @@ const TrainingComponent = () => {
               {/* <p className="text-gray-600">{item.description}</p> */}
             </motion.div>
           ))}
-        </div>
-      </motion.section>
-
-      {/* In Action Section */}
-      <motion.section
-        id="inAction"
-        className="mb-24"
-        initial={{ opacity: 0 }}
-        animate={isVisible.inAction ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 className="text-xl sm:text-2xl font-light text-center mb-12">
-          In Action
-        </h2>
-        <div className="relative overflow-hidden rounded-lg bg-gray-50">
-          <div className="relative h-[400px]">
-            {carouselImages.map((image, index) => (
-              <motion.div
-                key={index}
-                className={cn(
-                  "absolute inset-0 transition-opacity duration-500",
-                  activeSlide === index ? "opacity-100" : "opacity-0"
-                )}
-                initial={false}
-              >
-                <img
-                  src={image.src || "/placeholder.svg"}
-                  alt={image.caption}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-30 text-white p-4">
-                  <p className="text-center">{image.caption}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full text-gray-800 hover:bg-opacity-100 transition-all"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-80 p-2 rounded-full text-gray-800 hover:bg-opacity-100 transition-all"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-2">
-            {carouselImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveSlide(index)}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all",
-                  activeSlide === index
-                    ? "bg-white scale-125"
-                    : "bg-white bg-opacity-50"
-                )}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </motion.section>
 
