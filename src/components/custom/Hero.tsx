@@ -174,7 +174,7 @@ export default function Hero() {
           >
             <div className="flex flex-col lg:flex-row lg:relative w-full h-full">
               {/* Left side text */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-16 px-4 sm:px-6 md:px-8 relative z-30 mb-8 lg:mb-0 lg:h-screen">
+              <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-16 px-4 sm:px-6 md:px-8 relative z-30 mb-8 lg:mb-0 lg:h-screen text-center lg:text-left">
                 <h1
                   className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-extralight text-white leading-none tracking-widest hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 capitalize mt-16 sm:mt-20 md:mt-24 lg:mt-32 drop-shadow-lg"
                   style={{
@@ -218,7 +218,7 @@ export default function Hero() {
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-4 lg:mt-2">
+                <div className="mt-4 lg:mt-2 flex justify-center lg:justify-start">
                   <button className="bg-white text-black px-6 py-3 font-medium text-sm hover:bg-gray-100 transition-all duration-300 tracking-wide uppercase transform hover:scale-105 hover:shadow-lg">
                     Soar Like an Eagle
                   </button>
@@ -244,7 +244,7 @@ export default function Hero() {
                 {/* Desktop layout: Single line with text and video inline */}
                 <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 flex-wrap">
                   {/* "See what others" */}
-                  <h1 className="text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
+                  <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
                     See what others
                   </h1>
 
@@ -271,21 +271,21 @@ export default function Hero() {
                   )}
 
                   {/* "miss." */}
-                  <h1 className="text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
+                  <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
                     miss.
                   </h1>
                 </div>
 
                 {/* Mobile layout: Stacked text, no video */}
                 <div className="flex md:hidden flex-col items-center justify-center space-y-1">
-                  <h1 className="text-3xl font-black text-gray-900 leading-none text-center">
+                  <h1 className="text-2xl sm:text-3xl font-black text-gray-900 leading-none text-center">
                     See what others miss.
                   </h1>
                 </div>
 
                 {/* Second line - "Market smarter." for both layouts */}
                 <div className="flex justify-center">
-                  <h1 className="text-3xl md:text-4xl xl:text-6xl font-black text-gray-900 leading-none text-center">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none text-center">
                     Market smarter.
                   </h1>
                 </div>
@@ -295,7 +295,7 @@ export default function Hero() {
 
           {/* Brand services footer */}
           <motion.div
-            className="absolute bottom-8 left-0 right-0 text-center z-20"
+            className="absolute bottom-8 left-0 right-0 text-center z-20 px-4"
             animate={{
               opacity: textOpacity,
             }}
@@ -304,7 +304,7 @@ export default function Hero() {
               visibility: textOpacity > 0 ? "visible" : "hidden",
             }}
           >
-            <p className="text-sm font-medium text-gray-600 tracking-wider uppercase">
+            <p className="text-xs sm:text-sm font-medium text-gray-600 tracking-wider uppercase leading-relaxed">
               Brand Strategy • Brand Culture • Brand Innovation • Brand Design •
               Brand Transformation
             </p>

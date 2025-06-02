@@ -88,8 +88,9 @@ const Clients = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
+        {" "}
         <motion.h2
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-2xl sm:text-3xl font-bold mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -98,7 +99,7 @@ const Clients = () => {
           Our <em className="italic font-serif">Impact</em> in Numbers
         </motion.h2>
         <motion.div
-          className="flex flex-wrap justify-center gap-16 text-xl font-semibold mb-20"
+          className="flex flex-wrap justify-center gap-8 sm:gap-16 text-xl font-semibold mb-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -171,8 +172,7 @@ const Clients = () => {
               Students and Graduates Trained
             </div>
           </motion.div>
-        </motion.div>
-
+        </motion.div>{" "}
         {/* Client Logos Section */}
         <div className="container mx-auto px-4 max-w-7xl mt-16">
           <div className="text-center mb-16">
@@ -180,11 +180,10 @@ const Clients = () => {
               <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
               Trusted Partners
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               Brands That Trust <span className="text-gray-500">Eagle Eye</span>
             </h3>
           </div>
-
           <div className="relative overflow-hidden">
             <div className="flex w-max gap-x-16 scrolling-wrapper">
               {/* Group 1: Original Logos */}
@@ -225,11 +224,10 @@ const Clients = () => {
                 ))}
               </div>
             </div>
-          </div>
-
+          </div>{" "}
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 text-base sm:text-lg">
               Ready to join our success stories?
             </p>
             <button className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300">

@@ -98,24 +98,19 @@ export default function Industries() {
         {/* Header */}
         <div className="text-center mb-16">
           <div
-            className={`transition-all duration-1000 ease-out ${
+            className={`transition-all duration-1000 ease-out px-4 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-gray-900 mb-4 tracking-tight">
               Industries We{" "}
               <span className="font-medium bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
                 Cater
               </span>
             </h2>
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mb-6"></div>
-            {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We specialize in delivering tailored digital marketing solutions
-              across diverse industries, understanding the unique challenges and
-              opportunities each sector presents.
-            </p> */}
           </div>
         </div>
 
@@ -170,12 +165,12 @@ export default function Industries() {
 
         {/* Bottom CTA */}
         <div
-          className={`text-center mt-16 transition-all duration-1000 ease-out ${
+          className={`text-center mt-16 px-4 transition-all duration-1000 ease-out ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             {
               "Don't see your industry listed? We adapt our expertise to serve businesses across all sectors."
             }

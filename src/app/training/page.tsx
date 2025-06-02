@@ -93,15 +93,15 @@ const TrainingComponent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-24"
+        className="text-center mb-24 px-4"
       >
         <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-3">
           Training
         </h2>
-        <h1 className="text-4xl md:text-5xl font-light mb-6">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-6 leading-tight">
           Training That Transforms Careers
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Empowering the next generation of digital marketers through
           expert-led, practice-based learning.
         </p>
@@ -115,7 +115,7 @@ const TrainingComponent = () => {
         animate={isVisible.benefits ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-light text-center mb-12">
+        <h2 className="text-xl sm:text-2xl font-light text-center mb-12">
           Why Learn With Us?
         </h2>
         <div className="grid grid-cols-2 gap-8">
@@ -168,7 +168,9 @@ const TrainingComponent = () => {
         animate={isVisible.inAction ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-light text-center mb-12">In Action</h2>
+        <h2 className="text-xl sm:text-2xl font-light text-center mb-12">
+          In Action
+        </h2>
         <div className="relative overflow-hidden rounded-lg bg-gray-50">
           <div className="relative h-[400px]">
             {carouselImages.map((image, index) => (
@@ -234,7 +236,7 @@ const TrainingComponent = () => {
         animate={isVisible.curriculum ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-light text-center mb-12">
+        <h2 className="text-xl sm:text-2xl font-light text-center mb-12">
           What You{"'"}ll Learn
         </h2>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
@@ -265,7 +267,7 @@ const TrainingComponent = () => {
         animate={isVisible.tools ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-light text-center mb-12">
+        <h2 className="text-xl sm:text-2xl font-light text-center mb-12">
           Tools We Cover
         </h2>
         <div className="grid grid-cols-3 md:grid-cols-5 gap-8">

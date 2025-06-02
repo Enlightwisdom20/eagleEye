@@ -51,11 +51,11 @@ export default function About() {
 
             {/* Main Story Content */}
             <div
-              className="max-w-4xl mx-auto text-center mb-16 sm:mb-6 opacity-0 animate-fade-in-up"
+              className="max-w-4xl mx-auto text-center mb-16 sm:mb-6 opacity-0 animate-fade-in-up px-4"
               style={{ animationDelay: "1s", animationFillMode: "forwards" }}
             >
               <p
-                className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-gray-800 leading-relaxed mb-6 tracking-wide"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gray-800 leading-relaxed mb-6 tracking-wide"
                 style={{
                   fontFamily: "'PT Sans', sans-serif",
                   letterSpacing: "0.02em",

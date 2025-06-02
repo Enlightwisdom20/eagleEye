@@ -162,7 +162,7 @@ const ServicesCarousel = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-72 flex flex-col items-center text-center"
+              className="flex-shrink-0 w-72 flex flex-col items-center text-center px-4"
             >
               <img
                 src={service.image}
@@ -173,11 +173,18 @@ const ServicesCarousel = () => {
                     : ""
                 }`}
               />
-              <p className="text-lg font-bold mt-4 uppercase">
+              <p className="text-base sm:text-lg font-bold mt-4 uppercase leading-tight">
                 {service.title}
               </p>
               {service.description.map((line, i) => (
-                <p key={i} className={i === 0 ? "text-sm mt-2" : "text-sm"}>
+                <p
+                  key={i}
+                  className={
+                    i === 0
+                      ? "text-sm mt-2 leading-relaxed"
+                      : "text-sm leading-relaxed"
+                  }
+                >
                   {line}
                 </p>
               ))}

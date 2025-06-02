@@ -81,16 +81,16 @@ const TrainingComponent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-12"
+        className="text-center mb-12 px-4"
       >
         <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
           <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
           Training
         </div>
-        <h1 className="text-4xl md:text-5xl font-light mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 text-gray-900 leading-tight">
           Training That Transforms Careers
         </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Empowering the next generation of digital marketers through
           expert-led, practice-based learning.
         </p>
