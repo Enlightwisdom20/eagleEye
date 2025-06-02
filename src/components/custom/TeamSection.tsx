@@ -10,8 +10,8 @@ const team = [
   {
     name: "Besly",
     role: "Chief Technical Officer",
-    image: "/team/p1.jpg",
-    imageScale: "",
+    image: "/team/BesLee.png",
+    imageScale: "scale-[1.1] custom-beslee",
   },
   {
     name: "Surya",
