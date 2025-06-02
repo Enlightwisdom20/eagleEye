@@ -89,17 +89,23 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
   .custom-beslee {
-    transform: scale(1.2);
-    /* Moves it down by 1.2rem */
+    transform: scale(1.1);
 
 
   }
 
 }
+@media (min-width: 375px) and (max-width: 767px) {
+  .custom-beslee {
+    transform: scale(1.05);
 
+
+  }
+
+}
 @media (min-width: 768px) and (max-width: 768px) {
   .custom-beslee {
-    transform: scale(1.3);
+    transform: scale(1.2);
     /* Moves it down by 1.2rem */
 
 
@@ -109,14 +115,14 @@
 
 @media (min-width: 1024px) and (max-width: 1024px) {
   .custom-beslee {
-    transform: scale(1.3) translateY(1.2rem);
+    transform: scale(1.2) translateY(1.2rem);
     /* transform: translateY(1.2rem); */
   }
 
 }
 @media (min-width: 1440px) and (max-width: 1440px) {
   .custom-beslee {
-    transform: scale(1.2) translateY(1.2rem);
+    transform: scale(1.1) translateY(1.2rem);
     /* transform: translateY(1.2rem); */
   }
 
@@ -124,7 +130,7 @@
 
 @media (min-width: 2560px) and (max-width: 2560px) {
   .custom-beslee {
-    transform: scale(1.2) translateY(1.2rem);
+    transform: scale(1.12) translateY(1.2rem);
     /* transform: translateY(1.2rem); */
   }
 
