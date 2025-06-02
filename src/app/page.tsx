@@ -1,7 +1,6 @@
 import Industries from "@/components/custom/industries";
 import Hero from "@/components/custom/Hero";
 import About from "@/components/custom/About";
-import TagLine from "@/components/custom/tagline";
 import TrainingComponent from "@/components/custom/training";
 // import LogoCarousel from "@/components/custom/LogoCarousel";
 import ServicesCarousel from "@/components/custom/ServicesCarousel";
@@ -15,7 +14,6 @@ export default function Home() {
   return (
     <div className="w-full">
       <Hero />
-      <TagLine />
 
       {/* Clients Section */}
       <Clients />

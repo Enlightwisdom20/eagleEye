@@ -1,25 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { PT_Sans, Rouge_Script } from "next/font/google";
-
-const ptSans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-const rougeScript = Rouge_Script({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-// Using placeholder images since we don't have access to the actual image files
-const photos = [
-  "/images/branding2.png",
-  "/images/strategy.png",
-  "/images/growth.png",
-  "/images/marketing.png",
-];
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Hero() {
-  const [isHovering, setIsHovering] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [videoScale, setVideoScale] = useState(1);
+  const [textOpacity, setTextOpacity] = useState(0);
+  const [heroTextOpacity, setHeroTextOpacity] = useState(1);
+  const [showFinalLayout, setShowFinalLayout] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const alternateWords = ["MARKETING", "STRATEGY", "BRANDING", "GROWTH"];
   const [index, setIndex] = useState(0);
@@ -35,176 +24,245 @@ export default function Hero() {
     }, 3000);
 
     return () => clearInterval(interval);
+  }, [alternateWords.length]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const section = sectionRef.current;
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top;
+      const sectionHeight = section.offsetHeight;
+      const viewportHeight = window.innerHeight;
+
+      // Only calculate when section is in view
+      if (sectionTop > viewportHeight || sectionTop + sectionHeight < 0) return;
+
+      // Calculate how much we've scrolled through this section
+      const scrollIntoSection = Math.max(0, -sectionTop);
+      const maxScroll = sectionHeight - viewportHeight;
+      const scrollProgress = Math.min(1, scrollIntoSection / maxScroll);
+
+      // Continuous linear scaling from 1.0 to 0.5 across the entire scroll
+      const targetScale = Math.max(0.5, 1 - scrollProgress * 0.5); // Linear scale from 1.0 to 0.5
+      setVideoScale(targetScale);
+
+      // Hero text fades out in first 40% of scroll
+      if (scrollProgress <= 0.4) {
+        setHeroTextOpacity(Math.max(0, 1 - scrollProgress * 2.5));
+        setTextOpacity(0);
+        setShowFinalLayout(false);
+      }
+      // Transition zone where hero text is gone but tagline hasn't appeared (40% to 75%)
+      else if (scrollProgress <= 0.75) {
+        setHeroTextOpacity(0);
+        setTextOpacity(0);
+        setShowFinalLayout(false);
+      }
+      // Tagline starts appearing (75% to 90% of scroll)
+      else if (scrollProgress <= 0.9) {
+        const taglineProgress = (scrollProgress - 0.75) / 0.15;
+        setHeroTextOpacity(0);
+        setTextOpacity(taglineProgress * 0.5);
+        setShowFinalLayout(taglineProgress > 0.3);
+      }
+      // Final state with full tagline opacity (90% to 100%)
+      else {
+        const finalProgress = (scrollProgress - 0.9) / 0.1;
+        setHeroTextOpacity(0);
+        setTextOpacity(0.5 + 0.5 * finalProgress);
+        setShowFinalLayout(true);
+      }
+    };
+
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledScroll, { passive: true });
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener("scroll", throttledScroll);
   }, []);
 
   return (
-    <div className="min-h-screen bg-stone-50 font-sans flex flex-col">
-      {/* Header */}
-      {/* <header className="fixed top-0 left-0 right-0 z-50 bg-stone-50 flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 shadow-sm"> */}
-      {/*   <div className="flex items-center space-x-2 sm:space-x-3"> */}
-      {/*     <div */}
-      {/*       className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-black transform rotate-45 cursor-pointer" */}
-      {/*       onMouseEnter={() => setIsHovering(true)} */}
-      {/*       onMouseLeave={() => setIsHovering(false)} */}
-      {/*     ></div> */}
-      {/*     <div */}
-      {/*       className="text-black font-bold text-sm sm:text-base md:text-lg lg:text-xl leading-none cursor-pointer" */}
-      {/*       style={{ fontFamily: "Georgia, serif" }} */}
-      {/*       onMouseEnter={() => setIsHovering(true)} */}
-      {/*       onMouseLeave={() => setIsHovering(false)} */}
-      {/*     > */}
-      {/*       THE EAGLE EYE */}
-      {/*     </div> */}
-      {/*   </div> */}
-      {/**/}
-      {/*   <nav className="hidden md:flex items-center space-x-4 lg:space-x-8"> */}
-      {/*     {[ */}
-      {/*       "Home", */}
-      {/*       "About", */}
-      {/*       "Services", */}
-      {/*       "Brands", */}
-      {/*       "Testimonials", */}
-      {/*       "Team", */}
-      {/*       "Contact", */}
-      {/*     ].map((item) => ( */}
-      {/*       <a */}
-      {/*         key={item} */}
-      {/*         href={`#${item.toLowerCase()}`} */}
-      {/*         className="text-black font-medium text-sm lg:text-base relative transition-all duration-300 hover:after:scale-x-100 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-black after:scale-x-0 after:transition-transform after:duration-300 after:origin-left scroll-smooth" */}
-      {/*         onMouseEnter={() => setIsHovering(true)} */}
-      {/*         onMouseLeave={() => setIsHovering(false)} */}
-      {/*         onClick={(e) => { */}
-      {/*           e.preventDefault(); */}
-      {/*           const target = document.getElementById(item.toLowerCase()); */}
-      {/*           if (target) { */}
-      {/*             target.scrollIntoView({ behavior: "smooth" }); */}
-      {/*           } */}
-      {/*         }} */}
-      {/*       > */}
-      {/*         {item} */}
-      {/*       </a> */}
-      {/*     ))} */}
-      {/*   </nav> */}
-      {/**/}
-      {/*   {/* Mobile menu button */}
-      {/*   <button className="md:hidden flex flex-col space-y-1 p-2"> */}
-      {/*     <span className="w-6 h-0.5 bg-black"></span> */}
-      {/*     <span className="w-6 h-0.5 bg-black"></span> */}
-      {/*     <span className="w-6 h-0.5 bg-black"></span> */}
-      {/*   </button> */}
-      {/* </header> */}
-
-      {/* Main Content */}
-      <main
-        id="home"
-        className="flex-grow flex flex-col pt-20 sm:pt-24 md:pt-32 lg:pt-0 px-4 sm:px-6 md:px-8 lg:px-0 pb-8 sm:pb-12 lg:pb-0 max-w-full relative"
+    <div className="w-full">
+      {/* Combined Hero and Scroll Video Section */}
+      <section
+        ref={sectionRef}
+        className="relative"
+        style={{ height: "280vh" }} // Balanced height for smooth transitions
       >
-        {/* Hero Section */}
-        <div className="flex flex-col lg:flex-row lg:relative lg:h-screen">
-          {/* Left side text */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-16 px-4 sm:px-6 md:px-8 relative z-30 mb-8 lg:mb-0 lg:h-screen">
-            <h1
-              className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-extralight text-black leading-none tracking-widest hover:text-gray-800 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 capitalize mt-16 sm:mt-20 md:mt-24 lg:mt-32"
+        {/* Sticky container for hero text and video */}
+        <div className="sticky top-0 h-screen overflow-hidden bg-stone-50">
+          {/* Single video element that transforms smoothly */}
+          <div
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            style={{
+              transition: "none", // No CSS transitions - only scroll-driven
+            }}
+          >
+            <div
+              className="relative bg-black overflow-hidden shadow-2xl"
               style={{
-                fontFamily: "'PT Sans', sans-serif",
-                letterSpacing: "0.08em",
-                fontStretch: "condensed",
+                width: showFinalLayout ? "160px" : `${100 * videoScale}vw`,
+                height: showFinalLayout ? "90px" : `${100 * videoScale}vh`,
+                borderRadius:
+                  videoScale < 0.8 || showFinalLayout ? "8px" : "0px",
+                transform: showFinalLayout ? "translate(0, 0)" : "none",
+                transition: "none",
               }}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
             >
-              We
-            </h1>
-
-            <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic text-black leading-none tracking-wider hover:text-gray-700 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 capitalize"
-              style={{
-                fontFamily: "'Rouge Script', cursive",
-                letterSpacing: "0.04em",
-                fontStyle: "italic",
-              }}
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              Create
-            </h2>
-
-            <div className="relative h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 w-full overflow-visible mb-4 lg:mb-8">
-              <h3
-                className="text-3xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[7rem] font-extralight text-black leading-none tracking-widest cursor-pointer absolute top-0 left-0 capitalize"
-                style={{
-                  fontFamily: "'PT Sans', sans-serif",
-                  letterSpacing: "0.08em",
-                  fontStretch: "condensed",
-                }}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
               >
-                <span
-                  className={`inline-block transition-all duration-600 ease-in-out ${
-                    isAnimating ? "animate-slide-out-up" : "animate-slide-in-up"
-                  }`}
-                  style={{ display: "inline-block" }}
-                  key={index}
-                >
-                  {alternateWords[index]}
-                </span>
-              </h3>
-            </div>
-
-            {/* CTA Section */}
-            <div className="mt-4 lg:mt-2">
-              <button
-                className="bg-black text-white px-6 py-3 font-medium text-sm hover:bg-gray-900 transition-all duration-300 tracking-wide uppercase transform hover:scale-105 hover:shadow-lg ml-50"
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-              >
-                Soar Like an Eagle
-              </button>
+                <source src="/output.webm" type="video/webm" />
+              </video>
             </div>
           </div>
 
-          {/* Right side photos - VERTICAL SLIDER */}
+          {/* Hero text overlay */}
           <div
-            className="w-full lg:w-1/2 lg:relative lg:h-screen transform transition-all duration-700 ease-out pt-4 sm:pt-6 lg:pt-20"
-            id="hero-images"
-            style={{ willChange: "transform" }}
+            className="absolute inset-0 flex items-center justify-center z-10"
+            style={{
+              opacity: heroTextOpacity,
+              pointerEvents: heroTextOpacity > 0.1 ? "auto" : "none",
+              transition: "opacity 0.1s ease-out",
+              visibility: heroTextOpacity > 0 ? "visible" : "hidden",
+            }}
           >
-            <div className="relative overflow-hidden lg:rounded-none rounded-lg shadow-lg w-full h-64 sm:h-80 md:h-96 lg:h-full">
-              {photos.map((photo, i) => {
-                const isActive = i === index;
-                const isPrevious =
-                  i === (index - 1 + photos.length) % photos.length;
-                const isNext = i === (index + 1) % photos.length;
+            <div className="flex flex-col lg:flex-row lg:relative w-full h-full">
+              {/* Left side text */}
+              <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-16 px-4 sm:px-6 md:px-8 relative z-30 mb-8 lg:mb-0 lg:h-screen">
+                <h1
+                  className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-extralight text-white leading-none tracking-widest hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 capitalize mt-16 sm:mt-20 md:mt-24 lg:mt-32 drop-shadow-lg"
+                  style={{
+                    fontFamily: "'PT Sans', sans-serif",
+                    letterSpacing: "0.08em",
+                    fontStretch: "condensed",
+                  }}
+                >
+                  We
+                </h1>
 
-                return (
-                  <div
-                    key={i}
-                    className={`absolute inset-0 transition-all duration-600 ease-in-out ${
-                      isActive ? "z-20" : "z-10"
-                    }`}
+                <h2
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 capitalize drop-shadow-lg"
+                  style={{
+                    fontFamily: "'Rouge Script', cursive",
+                    letterSpacing: "0.04em",
+                    fontStyle: "italic",
+                  }}
+                >
+                  Create
+                </h2>
+
+                <div className="relative h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 w-full overflow-visible mb-4 lg:mb-8">
+                  <h3
+                    className="text-3xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[7rem] font-extralight text-white leading-none tracking-widest cursor-pointer absolute top-0 left-0 capitalize drop-shadow-lg"
                     style={{
-                      transform: isActive
-                        ? "translateY(0%)"
-                        : isPrevious
-                        ? "translateY(-100%)"
-                        : isNext
-                        ? "translateY(100%)"
-                        : "translateY(100%)",
+                      fontFamily: "'PT Sans', sans-serif",
+                      letterSpacing: "0.08em",
+                      fontStretch: "condensed",
                     }}
                   >
-                    <img
-                      src={photo}
-                      alt={alternateWords[i]}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                );
-              })}
+                    <span
+                      className={`inline-block transition-all duration-600 ease-in-out ${
+                        isAnimating
+                          ? "animate-slide-out-up"
+                          : "animate-slide-in-up"
+                      }`}
+                      style={{ display: "inline-block" }}
+                      key={index}
+                    >
+                      {alternateWords[index]}
+                    </span>
+                  </h3>
+                </div>
+
+                {/* CTA Section */}
+                <div className="mt-4 lg:mt-2">
+                  <button className="bg-white text-black px-6 py-3 font-medium text-sm hover:bg-gray-100 transition-all duration-300 tracking-wide uppercase transform hover:scale-105 hover:shadow-lg">
+                    Soar Like an Eagle
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* Tagline text layout that appears as video settles */}
+          <div
+            className="absolute inset-0 flex items-center justify-center px-8 z-20"
+            style={{
+              opacity: textOpacity,
+              pointerEvents: showFinalLayout ? "auto" : "none",
+              transition: "opacity 0.2s ease-out",
+              visibility: textOpacity > 0 ? "visible" : "hidden",
+            }}
+          >
+            <div className="w-full max-w-7xl mx-auto">
+              <div className="flex flex-col items-center justify-center space-y-4">
+                {/* First line with text and video */}
+                <div className="flex items-center justify-center gap-8">
+                  {/* "See what others" */}
+                  <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-none">
+                    See what others
+                  </h1>
+
+                  {/* Video placeholder - actual video is positioned absolutely */}
+                  <div
+                    className="relative"
+                    style={{
+                      width: "160px", // Match the final video scale
+                      height: "90px", // Match the final video scale
+                    }}
+                  />
+
+                  {/* "miss." */}
+                  <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-none">
+                    miss.
+                  </h1>
+                </div>
+
+                {/* Second line - "Market smarter." */}
+                <div className="flex justify-center">
+                  <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-none">
+                    Market smarter.
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Brand services footer */}
+          <div
+            className="absolute bottom-8 left-0 right-0 text-center z-20"
+            style={{
+              opacity: textOpacity,
+              transition: "opacity 0.2s ease-out",
+              visibility: textOpacity > 0 ? "visible" : "hidden",
+            }}
+          >
+            <p className="text-sm font-medium text-gray-600 tracking-wider uppercase">
+              Brand Strategy • Brand Culture • Brand Innovation • Brand Design •
+              Brand Transformation
+            </p>
+          </div>
         </div>
-      </main>
+      </section>
 
       {/* Animations */}
       <style jsx>{`
@@ -236,12 +294,6 @@ export default function Hero() {
 
         .animate-slide-out-up {
           animation: slideOutUp 0.6s forwards;
-        }
-
-        @media (max-width: 1023px) {
-          .main-content {
-            flex-direction: column;
-          }
         }
       `}</style>
     </div>
