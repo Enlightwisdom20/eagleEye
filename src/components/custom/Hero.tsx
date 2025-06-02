@@ -1,26 +1,33 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
-  const [isAnimating, setIsAnimating] = useState(false);
   const [videoScale, setVideoScale] = useState(1);
   const [textOpacity, setTextOpacity] = useState(0);
   const [heroTextOpacity, setHeroTextOpacity] = useState(1);
   const [showFinalLayout, setShowFinalLayout] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const alternateWords = ["MARKETING", "STRATEGY", "BRANDING", "GROWTH"];
   const [index, setIndex] = useState(0);
 
+  // Track window size for responsive behavior
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsAnimating(true);
-
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % alternateWords.length);
-        setIsAnimating(false);
-      }, 600); // animation duration
+      setIndex((prev) => (prev + 1) % alternateWords.length);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -44,8 +51,18 @@ export default function Hero() {
       const maxScroll = sectionHeight - viewportHeight;
       const scrollProgress = Math.min(1, scrollIntoSection / maxScroll);
 
-      // Continuous linear scaling from 1.0 to 0.5 across the entire scroll
-      const targetScale = Math.max(0.5, 1 - scrollProgress * 0.5); // Linear scale from 1.0 to 0.5
+      // Check if we're on mobile (768px is md breakpoint in Tailwind)
+      const isMobileCheck = window.innerWidth < 768;
+
+      // Different scaling behavior for mobile vs desktop
+      let targetScale;
+      if (isMobileCheck) {
+        // On mobile, scale down to 0 (disappear completely)
+        targetScale = Math.max(0, 1 - scrollProgress);
+      } else {
+        // On desktop, scale from 1.0 to 0.5
+        targetScale = Math.max(0.5, 1 - scrollProgress * 0.5);
+      }
       setVideoScale(targetScale);
 
       // Hero text fades out in first 40% of scroll
@@ -104,23 +121,31 @@ export default function Hero() {
       >
         {/* Sticky container for hero text and video */}
         <div className="sticky top-0 h-screen overflow-hidden bg-stone-50">
-          {/* Single video element that transforms smoothly */}
-          <div
-            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          {/* Single video element that transforms smoothly - hidden when final layout is active on desktop */}
+          <motion.div
+            className={`absolute inset-0 flex items-center justify-center pointer-events-none`}
             style={{
               transition: "none", // No CSS transitions - only scroll-driven
+              // Hide the scaling video when final layout is active on desktop
+              opacity: showFinalLayout && !isMobile ? 0 : 1,
             }}
           >
-            <div
+            <motion.div
               className="relative bg-black overflow-hidden shadow-2xl"
               style={{
-                width: showFinalLayout ? "160px" : `${100 * videoScale}vw`,
-                height: showFinalLayout ? "90px" : `${100 * videoScale}vh`,
-                borderRadius:
-                  videoScale < 0.8 || showFinalLayout ? "8px" : "0px",
-                transform: showFinalLayout ? "translate(0, 0)" : "none",
+                width: `${100 * videoScale}vw`,
+                height: `${100 * videoScale}vh`,
+                borderRadius: videoScale < 0.8 ? "8px" : "0px",
                 transition: "none",
+                // Hide video on mobile when scaled to 0
+                opacity: videoScale === 0 ? 0 : 1,
+                // Ensure video doesn't interfere when hidden
+                pointerEvents: videoScale === 0 ? "none" : "auto",
               }}
+              animate={{
+                scale: videoScale,
+              }}
+              transition={{ duration: 0, ease: "linear" }}
             >
               <video
                 className="w-full h-full object-cover"
@@ -132,16 +157,18 @@ export default function Hero() {
               >
                 <source src="/output.webm" type="video/webm" />
               </video>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Hero text overlay */}
-          <div
+          <motion.div
             className="absolute inset-0 flex items-center justify-center z-10"
-            style={{
+            animate={{
               opacity: heroTextOpacity,
+            }}
+            transition={{ duration: 0.1, ease: "easeOut" }}
+            style={{
               pointerEvents: heroTextOpacity > 0.1 ? "auto" : "none",
-              transition: "opacity 0.1s ease-out",
               visibility: heroTextOpacity > 0 ? "visible" : "hidden",
             }}
           >
@@ -171,26 +198,23 @@ export default function Hero() {
                 </h2>
 
                 <div className="relative h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 w-full overflow-visible mb-4 lg:mb-8">
-                  <h3
-                    className="text-3xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[7rem] font-extralight text-white leading-none tracking-widest cursor-pointer absolute top-0 left-0 capitalize drop-shadow-lg"
-                    style={{
-                      fontFamily: "'PT Sans', sans-serif",
-                      letterSpacing: "0.08em",
-                      fontStretch: "condensed",
-                    }}
-                  >
-                    <span
-                      className={`inline-block transition-all duration-600 ease-in-out ${
-                        isAnimating
-                          ? "animate-slide-out-up"
-                          : "animate-slide-in-up"
-                      }`}
-                      style={{ display: "inline-block" }}
+                  <AnimatePresence mode="wait">
+                    <motion.h3
                       key={index}
+                      className="text-3xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[7rem] font-extralight text-white leading-none tracking-widest cursor-pointer absolute top-0 left-0 capitalize drop-shadow-lg"
+                      style={{
+                        fontFamily: "'PT Sans', sans-serif",
+                        letterSpacing: "0.08em",
+                        fontStretch: "condensed",
+                      }}
+                      initial={{ y: "100%", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                       {alternateWords[index]}
-                    </span>
-                  </h3>
+                    </motion.h3>
+                  </AnimatePresence>
                 </div>
 
                 {/* CTA Section */}
@@ -201,58 +225,82 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Tagline text layout that appears as video settles */}
-          <div
-            className="absolute inset-0 flex items-center justify-center px-8 z-20"
-            style={{
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20"
+            animate={{
               opacity: textOpacity,
+            }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            style={{
               pointerEvents: showFinalLayout ? "auto" : "none",
-              transition: "opacity 0.2s ease-out",
               visibility: textOpacity > 0 ? "visible" : "hidden",
             }}
           >
             <div className="w-full max-w-7xl mx-auto">
-              <div className="flex flex-col items-center justify-center space-y-4">
-                {/* First line with text and video */}
-                <div className="flex items-center justify-center gap-8">
+              <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4">
+                {/* Desktop layout: Single line with text and video inline */}
+                <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 flex-wrap">
                   {/* "See what others" */}
-                  <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-none">
+                  <h1 className="text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
                     See what others
                   </h1>
 
-                  {/* Video placeholder - actual video is positioned absolutely */}
-                  <div
-                    className="relative"
-                    style={{
-                      width: "160px", // Match the final video scale
-                      height: "90px", // Match the final video scale
-                    }}
-                  />
+                  {/* Inline video for desktop - only visible when showFinalLayout and not mobile */}
+                  {showFinalLayout && !isMobile && (
+                    <div
+                      className="relative flex-shrink-0 bg-black overflow-hidden shadow-2xl rounded-lg"
+                      style={{
+                        width: "160px",
+                        height: "90px",
+                      }}
+                    >
+                      <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                      >
+                        <source src="/output.webm" type="video/webm" />
+                      </video>
+                    </div>
+                  )}
 
                   {/* "miss." */}
-                  <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-none">
+                  <h1 className="text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
                     miss.
                   </h1>
                 </div>
 
-                {/* Second line - "Market smarter." */}
+                {/* Mobile layout: Stacked text, no video */}
+                <div className="flex md:hidden flex-col items-center justify-center space-y-1">
+                  <h1 className="text-3xl font-black text-gray-900 leading-none text-center">
+                    See what others miss.
+                  </h1>
+                </div>
+
+                {/* Second line - "Market smarter." for both layouts */}
                 <div className="flex justify-center">
-                  <h1 className="text-3xl lg:text-5xl font-black text-gray-900 leading-none">
+                  <h1 className="text-3xl md:text-4xl xl:text-6xl font-black text-gray-900 leading-none text-center">
                     Market smarter.
                   </h1>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Brand services footer */}
-          <div
+          <motion.div
             className="absolute bottom-8 left-0 right-0 text-center z-20"
-            style={{
+            animate={{
               opacity: textOpacity,
-              transition: "opacity 0.2s ease-out",
+            }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            style={{
               visibility: textOpacity > 0 ? "visible" : "hidden",
             }}
           >
@@ -260,42 +308,9 @@ export default function Hero() {
               Brand Strategy • Brand Culture • Brand Innovation • Brand Design •
               Brand Transformation
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
-
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes slideInUp {
-          0% {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideOutUp {
-          0% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-        }
-
-        .animate-slide-in-up {
-          animation: slideInUp 0.6s forwards;
-        }
-
-        .animate-slide-out-up {
-          animation: slideOutUp 0.6s forwards;
-        }
-      `}</style>
     </div>
   );
 }
