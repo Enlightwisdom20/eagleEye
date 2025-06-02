@@ -181,7 +181,7 @@ const Clients = () => {
               Trusted Partners
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Brands That Trust <span className="text-gray-800">Eagle Eye</span>
+              Brands That Trust <span className="text-gray-500">Eagle Eye</span>
             </h3>
           </div>
 
@@ -200,7 +200,7 @@ const Clients = () => {
                       alt={client.name}
                       width={120}
                       height={60}
-                      className="h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-12 object-contain hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -219,7 +219,7 @@ const Clients = () => {
                       alt={client.name}
                       width={120}
                       height={60}
-                      className="h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-12 object-contain hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 ))}

@@ -167,7 +167,7 @@ const ServicesCarousel = () => {
               <img
                 src={service.image}
                 alt={service.title}
-                className={`max-h-[200px] w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 ${
+                className={`max-h-[200px] w-auto object-contain hover:grayscale-0 transition-all duration-300 ${
                   service.title === "Social Media Marketing"
                     ? "max-h-[180px]"
                     : ""
