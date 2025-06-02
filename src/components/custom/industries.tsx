@@ -92,7 +92,7 @@ export default function Industries() {
   return (
     <section
       ref={sectionRef}
-      className="py-24 bg-gradient-to-b w-full from-gray-50/50 to-white"
+      className="py-24 bg-gradient-to-b w-full from-white via-gray-50/50 to-white"
     >
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}

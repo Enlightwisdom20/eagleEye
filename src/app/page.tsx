@@ -18,7 +18,7 @@ export default function Home() {
       {/* Clients Section */}
       <Clients />
       {/* Services Carousel Section */}
-      <section className="py-10 w-full overflow-x-hidden">
+      <section className="py-10 w-full overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
         <div className="text-center p-8">
           <h1 className="text-3xl font-semibold">
             Crafting Digital Experiences That Drive Growth!

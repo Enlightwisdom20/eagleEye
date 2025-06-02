@@ -135,7 +135,7 @@ const ServicesCarousel = () => {
 
   return (
     <div
-      className="relative w-full max-w-7xl mx-auto px-4"
+      className="relative w-full max-w-7xl mx-auto px-4 bg-gradient-to-b from-gray-100 to-white"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

@@ -80,7 +80,7 @@ const Clients = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
+    <section className="bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden">
       <motion.div
         className="text-center py-16"
         initial={{ opacity: 0, y: 50 }}

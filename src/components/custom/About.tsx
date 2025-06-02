@@ -10,14 +10,12 @@ const rougeScript = Rouge_Script({
 });
 
 export default function About() {
-  const [isHovering, setIsHovering] = useState(false);
-
   return (
-    <div className="min-h-screen bg-stone-50 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-white to-stone-50 font-sans">
       {/* About Section */}
       <section
         id="about"
-        className="w-full bg-stone-50 overflow-hidden"
+        className="overflow-hidden"
         style={{ paddingTop: "50px" }}
       >
         <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-16 sm:py-20 md:py-24">
@@ -33,8 +31,6 @@ export default function About() {
                   animationDelay: "0.2s",
                   animationFillMode: "forwards",
                 }}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
               >
                 About
                 <span

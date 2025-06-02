@@ -1,5 +1,4 @@
-import TeamMember from './TeamMember';
-
+import TeamMember from "./TeamMember";
 
 const team = [
   {
@@ -24,7 +23,8 @@ const team = [
     name: "Shallon Sherly",
     role: "Creative Head",
     image: "/team/Sherly.png",
-imageScale: "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scale-[1.15] -translate-x-10 custom-zoom"
+    imageScale:
+      "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scale-[1.15] -translate-x-10 custom-zoom",
   },
   {
     name: "Tiffany Tracina",
@@ -36,7 +36,7 @@ imageScale: "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scal
     name: "Elisha Olive",
     role: "Influencer Marketing Coordinator",
     image: "/team/Elisha.png",
-    imageScale: "scale-[1.5] translate-y-8 custom-elisha"
+    imageScale: "scale-[1.5] translate-y-8 custom-elisha",
   },
   {
     name: "Jervin",
@@ -64,10 +64,12 @@ imageScale: "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scal
   },
 ];
 
-
 export default function TeamSection() {
   return (
-    <section className="py-16 px-6 bg-white relative bg-cover bg-center" style={{ backgroundImage: "url('/images/your-bg.png')" }}>
+    <section
+      className="py-16 px-6 bg-gray-200 relative bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/your-bg.png')" }}
+    >
       {/* Blur overlay */}
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-0"></div>
 
@@ -75,8 +77,12 @@ export default function TeamSection() {
       <div className="relative z-10 px-4 md:px-20">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-10">
-          <h1 className="text-4xl font-bold text-gray-900">Meet Our Creators</h1>
-          <p className="text-gray-500 mt-2 text-lg">Designers. Developers. Dreamers.</p>
+          <h1 className="text-4xl font-bold text-gray-900">
+            Meet Our Creators
+          </h1>
+          <p className="text-gray-500 mt-2 text-lg">
+            Designers. Developers. Dreamers.
+          </p>
           <button className="mt-6 bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">
             Join our team
           </button>
