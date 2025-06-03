@@ -81,21 +81,11 @@ export default function About() {
         <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:px-12 xl:px-16 py-8">
           {/* Header Section */}
           <div className="mb-8">
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extralight text-black mb-4 tracking-wide group cursor-pointer"
-              style={{
-                fontFamily: "'PT Sans', sans-serif",
-                letterSpacing: "0.08em",
-                fontStretch: "condensed",
-              }}
-            >
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-black group cursor-pointer">
               About
-              <span
-                className="italic font-light text-black ml-2 inline-block transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110"
-                style={{ fontFamily: "'Rouge Script', cursive" }}
-              >
+              <em className="italic font-serif ml-2 inline-block transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
                 Us
-              </span>
+              </em>
             </h2>
             <div className="w-12 h-px bg-black"></div>
           </div>
@@ -106,7 +96,7 @@ export default function About() {
             <div className="group">
               <div className="flex items-start gap-4 mb-1">
                 <div>
-                  <p className="text-base text-gray-700 leading-relaxed">
+                  <p className="text-gray-600 font-medium text-base leading-relaxed">
                     At The Eagle Eye, we believe great marketing comes from
                     seeing what others don’t. With over 6 years of experience
                     working with 100+ clients across 40+ industries, we help

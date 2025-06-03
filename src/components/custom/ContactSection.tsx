@@ -6,10 +6,10 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
         {/* Left: Text Content */}
         <div className="text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight">
-            Get in Touch
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">
+            Get in <em className="italic font-serif">Touch</em>
           </h2>
-          <p className="text-gray-300 mb-8 text-base sm:text-lg leading-relaxed">
+          <p className="text-gray-300 font-medium mb-8 text-base sm:text-lg leading-relaxed">
             Have questions or want to work with us? We would love to hear from
             you. Fill out the form and we will get back to you soon.
           </p>

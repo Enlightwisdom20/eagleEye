@@ -77,10 +77,10 @@ export default function TeamSection() {
       <div className="relative z-10 px-4 md:px-20">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-            Meet our team members
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            Meet our <em className="italic font-serif">team</em> members
           </h1>
-          <p className="text-gray-500 mt-2 text-base sm:text-lg leading-relaxed">
+          <p className="text-gray-600 font-medium mt-2 text-base sm:text-lg leading-relaxed">
             Every Eye Counts
           </p>
           <button className="mt-6 bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">

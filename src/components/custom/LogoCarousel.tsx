@@ -75,9 +75,8 @@ const LogoCarousel = () => {
             <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
               Clients
-            </div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              Brands That <span className="text-gray-700">Believe</span>
+            </div>            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+              Brands That <em className="italic font-serif">Believe</em>
             </h3>
           </div>
           <div className="relative overflow-hidden">

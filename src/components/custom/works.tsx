@@ -62,10 +62,10 @@ export default function OurWorksSection() {
             <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
             Trusted Partners
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-            Our Works
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 leading-tight">
+            Our <em className="italic font-serif">Works</em>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-600 font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             What Vision Looks like in Action
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function OurWorksSection() {
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    <span className="text-sm font-medium text-gray-600 uppercase tracking-wider">
                       {work.category}
                     </span>
                     <span className="text-sm text-gray-400">{work.year}</span>
@@ -109,7 +109,7 @@ export default function OurWorksSection() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors">
                     {work.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 font-medium leading-relaxed">
                     {work.description}
                   </p>
                 </div>

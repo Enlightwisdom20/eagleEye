@@ -87,10 +87,10 @@ const TrainingComponent = () => {
           <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
           Training
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light mb-4 text-gray-900 leading-tight">
-          Training That Transforms Careers
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 leading-tight">
+          Training That <em className="italic font-serif">Transforms</em> Careers
         </h1>
-        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-gray-600 font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
           Empowering the next generation of digital marketers through
           expert-led, practice-based learning.
         </p>
@@ -104,7 +104,9 @@ const TrainingComponent = () => {
         animate={isVisible.inAction ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl font-light text-center mb-12">In Action</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+          In <em className="italic font-serif">Action</em>
+        </h2>
         <div className="relative overflow-hidden rounded-lg bg-gray-50">
           <div className="relative h-[400px]">
             {carouselImages.map((image, index) => (
@@ -171,7 +173,7 @@ const TrainingComponent = () => {
         }
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
+        <p className="text-gray-600 font-medium mb-4 max-w-2xl mx-auto">
           Ready to advance your digital marketing career?
         </p>
         <Link href="/training">
