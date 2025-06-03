@@ -155,7 +155,7 @@ export default function Hero() {
                 playsInline
                 preload="auto"
               >
-                <source src="/output.webm" type="video/webm" />
+                <source src="/E1.mp4" type="video/mp4" />
               </video>
             </motion.div>
           </motion.div>
@@ -229,7 +229,7 @@ export default function Hero() {
 
           {/* Tagline text layout that appears as video settles */}
           <motion.div
-            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20"
+            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[url('/image.webp')] bg-cover bg-center bg-no-repeat"
             animate={{
               opacity: textOpacity,
             }}
@@ -265,7 +265,7 @@ export default function Hero() {
                         playsInline
                         preload="auto"
                       >
-                        <source src="/output.webm" type="video/webm" />
+                        <source src="/E1.mp4" type="video/mp4" />
                       </video>
                     </div>
                   )}
@@ -304,9 +304,9 @@ export default function Hero() {
               visibility: textOpacity > 0 ? "visible" : "hidden",
             }}
           >
-            <p className="text-xs sm:text-sm font-medium text-gray-600 tracking-wider uppercase leading-relaxed">
-              Brand Strategy • Brand Culture • Brand Innovation • Brand Design •
-              Brand Transformation
+            <p className="text-xs sm:text-sm font-medium text-gray-50 tracking-wider uppercase leading-relaxed">
+              The problem isn{"’"}t lack of content, it{"’"}s lack of
+              connection. We are here to draw the connection
             </p>
           </motion.div>
         </div>

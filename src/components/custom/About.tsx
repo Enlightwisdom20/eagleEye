@@ -40,7 +40,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="min-h-screen bg-gradient-to-b from-stone-50 to-white relative overflow-hidden"
+      className="min-h-screen bg-white relative overflow-hidden"
     >
       {/* Split Layout Container */}
       <div className="flex flex-col lg:flex-row min-h-screen">
@@ -136,7 +136,7 @@ export default function About() {
 
             {/* CTA Section */}
             <div className="pt-6 lg:pt-8">
-              <button className="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase">
+              <button className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase">
                 Partner With Us
               </button>
             </div>

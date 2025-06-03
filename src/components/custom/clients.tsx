@@ -1,7 +1,6 @@
 "use client";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 
 interface CounterProps {
   target: number;
@@ -43,46 +42,10 @@ const AnimatedCounter = ({ target }: CounterProps) => {
 };
 
 const Clients = () => {
-  const clients = [
-    { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1 },
-    {
-      name: "Ashbunk",
-      logo: "/logos/ashbunk.png?height=60&width=120",
-      scale: 1,
-    },
-    {
-      name: "Beat Naturally",
-      logo: "/logos/beatnaturally.webp?height=60&width=120",
-      scale: 1,
-    },
-    {
-      name: "Bricks and Spaces",
-      logo: "/logos/bricks and spaces.avif?height=60&width=120",
-      scale: 1.5,
-    },
-    {
-      name: "Enlight Wisdom",
-      logo: "/logos/enlight.png?height=60&width=120",
-      scale: 2.5,
-    },
-    { name: "Grove", logo: "/logos/grove.png?height=60&width=120", scale: 0.8 },
-    {
-      name: "Professional",
-      logo: "/logos/professional_logo.png?height=60&width=120",
-      scale: 1.0,
-    },
-    { name: "Rel", logo: "/logos/rel.png?height=60&width=120", scale: 1.2 },
-    {
-      name: "Reylon",
-      logo: "/logos/Relyon-Logo.png?height=60&width=120",
-      scale: 1,
-    },
-  ];
-
   return (
-    <section className="bg-gradient-to-b from-gray-50 via-white to-gray-100 overflow-hidden">
+    <section className="bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
       <motion.div
-        className="text-center py-16"
+        className="text-center pt-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -96,10 +59,10 @@ const Clients = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Our <em className="italic font-serif">Impact</em> in Numbers
+          Our <em className="italic font-serif">Impact</em>, At a Glance
         </motion.h2>
         <motion.div
-          className="flex flex-wrap justify-center gap-8 sm:gap-16 text-xl font-semibold mb-20"
+          className="flex flex-wrap justify-center gap-8 sm:gap-16 text-xl font-semibold mb-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -173,68 +136,6 @@ const Clients = () => {
             </div>
           </motion.div>
         </motion.div>{" "}
-        {/* Client Logos Section */}
-        <div className="container mx-auto px-4 max-w-7xl mt-16">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-              Trusted Partners
-            </div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              Brands That Trust <span className="text-gray-500">Eagle Eye</span>
-            </h3>
-          </div>
-          <div className="relative overflow-hidden">
-            <div className="flex w-max gap-x-16 scrolling-wrapper">
-              {/* Group 1: Original Logos */}
-              <div className="flex gap-x-16">
-                {clients.map((client, index) => (
-                  <div
-                    key={`logo1-${index}`}
-                    className="flex items-center justify-center w-32 h-16 flex-shrink-0"
-                    style={{ transform: `scale(${client.scale})` }}
-                  >
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={120}
-                      height={60}
-                      className="h-12 object-contain hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-
-              {/* Group 2: Duplicated Logos for Seamless Loop */}
-              <div className="flex gap-x-16">
-                {clients.map((client, index) => (
-                  <div
-                    key={`logo2-${index}`}
-                    className="flex items-center justify-center w-32 h-16 flex-shrink-0"
-                    style={{ transform: `scale(${client.scale})` }}
-                  >
-                    <Image
-                      src={client.logo}
-                      alt={client.name}
-                      width={120}
-                      height={60}
-                      className="h-12 object-contain hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>{" "}
-          {/* Bottom CTA */}
-          <div className="text-center mt-16">
-            <p className="text-gray-600 mb-6 text-base sm:text-lg">
-              Ready to join our success stories?
-            </p>
-            <button className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300">
-              Start Your Journey
-            </button>
-          </div>
-        </div>
       </motion.div>
 
       <style jsx>{`

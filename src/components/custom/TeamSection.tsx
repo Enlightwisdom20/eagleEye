@@ -17,7 +17,7 @@ const team = [
     name: "Surya",
     role: "AI & Development Manager",
     image: "/team/surya.png",
-    imageScale: "scale-[1.14] custom-surya",  
+    imageScale: "scale-[1.14] custom-surya",
   },
   {
     name: "Shallon Sherly",
@@ -78,10 +78,10 @@ export default function TeamSection() {
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-            Meet Our Creators
+            Meet our team members
           </h1>
           <p className="text-gray-500 mt-2 text-base sm:text-lg leading-relaxed">
-            Designers. Developers. Dreamers.
+            Every Eye Counts
           </p>
           <button className="mt-6 bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">
             Join our team

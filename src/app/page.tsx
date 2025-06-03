@@ -1,4 +1,3 @@
-import Industries from "@/components/custom/industries";
 import Hero from "@/components/custom/Hero";
 import About from "@/components/custom/About";
 import TrainingComponent from "@/components/custom/training";
@@ -7,6 +6,8 @@ import ServicesCarousel from "@/components/custom/ServicesCarousel";
 import Clients from "@/components/custom/clients";
 import TeamSection from "@/components/custom/TeamSection";
 import ContactSection from "@/components/custom/ContactSection";
+import LogoCarousel from "@/components/custom/LogoCarousel";
+import OurWorksSection from "@/components/custom/works";
 // import ClientLogosSection from "@/components/custom/clientLogos";
 // import TestimonialsSlideshow from "@/components/custom/testimonials";
 
@@ -17,10 +18,11 @@ export default function Home() {
 
       {/* Clients Section */}
       <Clients />
+      <OurWorksSection />
       {/* Services Carousel Section */}
-      <section className="py-10 w-full overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
+      <section className="py-4 w-full overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
         <div className="text-center p-8 max-w-4xl mx-auto">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 leading-loose">
             Crafting Digital Experiences That Drive Growth!
           </h1>
         </div>
@@ -28,13 +30,14 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <Industries />
+      {/* <Industries /> */}
+      <About />
+      <TeamSection />
+      <LogoCarousel />
 
       {/* Training Section */}
       <TrainingComponent />
       {/* <TestimonialsSlideshow /> */}
-      <About />
-      <TeamSection />
       <ContactSection />
     </div>
   );
