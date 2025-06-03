@@ -147,6 +147,13 @@
   }
 
 }
+@media screen and (min-width: 2560px) {
+  .custom-beslee {
+    transform: scale(1.2) translateY(2rem);
+    transform-origin: center;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1024px) {
   .custom-rashmi {
     transform: scale(1.0) translateY(1.1rem) translateX(0.6rem);
