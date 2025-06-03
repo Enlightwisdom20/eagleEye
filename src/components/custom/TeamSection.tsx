@@ -77,6 +77,10 @@ export default function TeamSection() {
       <div className="relative z-10 px-4 md:px-20">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
+            Team
+          </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
             Meet our <em className="italic font-serif">team</em> members
           </h1>

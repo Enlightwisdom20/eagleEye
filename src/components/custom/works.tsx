@@ -60,7 +60,7 @@ export default function OurWorksSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-            Trusted Partners
+            Works
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 leading-tight">
             Our <em className="italic font-serif">Works</em>

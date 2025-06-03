@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const [videoScale, setVideoScale] = useState(1);
@@ -10,9 +10,6 @@ export default function Hero() {
   const [showFinalLayout, setShowFinalLayout] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
-
-  const alternateWords = ["MARKETING", "STRATEGY", "BRANDING", "GROWTH"];
-  const [index, setIndex] = useState(0);
 
   // Track window size for responsive behavior
   useEffect(() => {
@@ -24,14 +21,6 @@ export default function Hero() {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % alternateWords.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [alternateWords.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -172,55 +161,77 @@ export default function Hero() {
               visibility: heroTextOpacity > 0 ? "visible" : "hidden",
             }}
           >
-            <div className="flex flex-col lg:flex-row lg:relative w-full h-full">
-              {/* Left side text */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pl-12 lg:pr-8 xl:pl-16 xl:pr-16 px-4 sm:px-6 md:px-8 relative z-30 mb-8 lg:mb-0 lg:h-screen text-center lg:text-left">
+            <div className="flex flex-col w-full h-full">
+              {/* Full width text container */}
+              <div className="w-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 relative z-30 mb-8 lg:mb-0 lg:h-screen text-left">
                 <h1
-                  className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-extralight text-white leading-none tracking-widest hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 capitalize mt-16 sm:mt-20 md:mt-24 lg:mt-32 drop-shadow-lg"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 mt-8 drop-shadow-lg"
                   style={{
-                    fontFamily: "'PT Sans', sans-serif",
-                    letterSpacing: "0.08em",
-                    fontStretch: "condensed",
+                    fontFamily: "var(--font-inter)",
+                    letterSpacing: "0.05em",
+                    fontWeight: "400",
                   }}
                 >
-                  We
+                  Not Just
                 </h1>
 
                 <h2
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light italic text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 capitalize drop-shadow-lg"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium italic text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 drop-shadow-lg"
                   style={{
-                    fontFamily: "'Rouge Script', cursive",
-                    letterSpacing: "0.04em",
+                    fontFamily: "var(--font-playfair)",
+                    letterSpacing: "0.02em",
                     fontStyle: "italic",
+                    fontWeight: "500",
                   }}
                 >
-                  Create
+                  Branding
                 </h2>
 
-                <div className="relative h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 w-full overflow-visible mb-4 lg:mb-8">
-                  <AnimatePresence mode="wait">
-                    <motion.h3
-                      key={index}
-                      className="text-3xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[7rem] font-extralight text-white leading-none tracking-widest cursor-pointer absolute top-0 left-0 capitalize drop-shadow-lg"
+                <h3
+                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-white leading-tight tracking-tight drop-shadow-lg mb-2 lg:mb-3"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    letterSpacing: "0.01em",
+                    fontWeight: "300",
+                  }}
+                >
+                  Surveillance Level Strategy
+                </h3>
+
+                {/* Subtitle text */}
+                <div className="mb-6 lg:mb-8">
+                  <h4
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal text-white leading-relaxed tracking-normal drop-shadow-lg"
+                    style={{
+                      fontFamily: "var(--font-playfair)",
+                      letterSpacing: "0.01em",
+                      fontWeight: "400",
+                    }}
+                  >
+                    Your Brand,{" "}
+                    <em
+                      className="italic font-medium"
                       style={{
-                        fontFamily: "'PT Sans', sans-serif",
-                        letterSpacing: "0.08em",
-                        fontStretch: "condensed",
+                        fontStyle: "italic",
+                        fontWeight: "500",
                       }}
-                      initial={{ y: "100%", opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: "-100%", opacity: 0 }}
-                      transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                      {alternateWords[index]}
-                    </motion.h3>
-                  </AnimatePresence>
+                      Seen from the Skies
+                    </em>
+                    .
+                  </h4>
                 </div>
 
                 {/* CTA Section */}
-                <div className="mt-4 lg:mt-2 flex justify-center lg:justify-start">
-                  <button className="bg-white text-black px-6 py-3 font-medium text-sm hover:bg-gray-100 transition-all duration-300 tracking-wide uppercase transform hover:scale-105 hover:shadow-lg">
-                    Soar Like an Eagle
+                <div className="mt-4 lg:mt-2 flex justify-start mb-8">
+                  <button
+                    className="bg-white text-black px-8 py-4 font-medium text-base hover:bg-gray-100 transition-all duration-300 tracking-wider uppercase transform hover:scale-105 hover:shadow-lg rounded-sm"
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      letterSpacing: "0.1em",
+                    }}
+                  >
+                    Elevate Your Vision
                   </button>
                 </div>
               </div>
