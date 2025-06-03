@@ -10,8 +10,8 @@ const team = [
   {
     name: "Besly",
     role: "Chief Technical Officer",
-    image: "/team/p1.jpg",
-    imageScale: "",
+    image: "/team/BesLee.png",
+    imageScale: "scale-[1.1] custom-beslee",
   },
   {
     name: "Surya",
@@ -59,8 +59,8 @@ const team = [
   {
     name: "Rashmi",
     role: "Social Media Executive",
-    image: "/team/p1.jpg",
-    imageScale: "",
+    image: "/team/Rashmi.png",
+    imageScale: "scale-[1.2] custom-rashmi",
   },
 ];
 

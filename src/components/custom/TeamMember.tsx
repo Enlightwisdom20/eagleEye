@@ -53,12 +53,12 @@ export default function TeamMember({
         ${isVisible ? "fade-in-smooth" : "opacity-0 translate-y-10"}`}
     >
       {/* Image Container */}
-      <div className="relative w-full h-[400px] overflow-hidden bg-gray-150 group ">
+      <div className="relative w-full h-[400px] overflow-hidden bg-gray-150">
         <Image
           src={image}
           alt={name}
           fill
-          className={`object-contain filter grayscale transition duration-500 group-hover:filter-none ${imageScale}`}
+          className={`object-contain transition duration-500 ${imageScale}`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-black/20 mix-blend-multiply"></div>
