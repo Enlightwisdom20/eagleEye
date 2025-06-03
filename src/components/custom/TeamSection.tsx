@@ -16,8 +16,8 @@ const team = [
   {
     name: "Surya",
     role: "AI & Development Manager",
-    image: "/team/p1.jpg",
-    imageScale: "",
+    image: "/team/surya.png",
+    imageScale: "scale-[1.14] custom-surya",  
   },
   {
     name: "Shallon Sherly",
