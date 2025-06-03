@@ -23,7 +23,8 @@ export default function Home() {
       <section className="py-4 w-full overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
         <div className="text-center p-8 max-w-4xl mx-auto">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-            Crafting <em className="italic font-serif">Digital</em> Experiences That Drive Growth!
+            Crafting <em className="italic font-serif">Digital</em> Experiences
+            That Drive Growth!
           </h1>
         </div>
         <ServicesCarousel />

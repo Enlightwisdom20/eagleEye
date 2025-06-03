@@ -88,7 +88,8 @@ const TrainingComponent = () => {
           Training
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-          Training That <em className="italic font-serif">Transforms</em> Careers
+          Training That <em className="italic font-serif">Transforms</em>{" "}
+          Careers
         </h1>
         <p className="text-gray-600 font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
           Empowering the next generation of digital marketers through
