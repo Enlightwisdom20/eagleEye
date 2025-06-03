@@ -1,213 +1,148 @@
 "use client";
 
-import React, { useState } from "react";
-import { PT_Sans, Rouge_Script } from "next/font/google";
-
-const ptSans = PT_Sans({ subsets: ["latin"], weight: ["400", "700"] });
-const rougeScript = Rouge_Script({
-  weight: "400",
-  subsets: ["latin"],
-});
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function About() {
+  const [scrollY, setScrollY] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const windowHeight = window.innerHeight;
+
+      // Only apply parallax when section is in view
+      if (sectionTop < windowHeight && sectionTop + sectionHeight > 0) {
+        // Calculate how much of the section is visible (0 to 1)
+        const visibleRatio = Math.max(
+          0,
+          Math.min(
+            1,
+            (windowHeight - sectionTop) / (windowHeight + sectionHeight)
+          )
+        );
+        // Apply a subtle parallax effect only within a small range
+        setScrollY(visibleRatio * 50); // Max 50px movement
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial call
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-stone-50 font-sans">
-      {/* About Section */}
-      <section
-        id="about"
-        className="overflow-hidden"
-        style={{ paddingTop: "50px" }}
-      >
-        <div className="relative z-10 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-16 sm:py-20 md:py-24">
-          <div className="max-w-full mx-auto w-full">
-            {/* Header with Animation */}
-            <div className="text-center mb-12 sm:mb-16 md:mb-6 group">
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extralight text-black mb-3 tracking-wide transform hover:scale-105 transition-all duration-700 cursor-pointer opacity-0 animate-fade-in-up"
-                style={{
-                  fontFamily: "'PT Sans', sans-serif",
-                  letterSpacing: "0.08em",
-                  fontStretch: "condensed",
-                  animationDelay: "0.2s",
-                  animationFillMode: "forwards",
-                }}
-              >
-                About
-                <span
-                  className="italic font-light text-black ml-2 inline-block transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110"
-                  style={{ fontFamily: "'Rouge Script', cursive" }}
-                >
-                  Us
-                </span>
-              </h2>
-              <div
-                className="w-8 h-px bg-black mx-auto transform scale-x-0 animate-expand-width"
-                style={{
-                  animationDelay: "0.8s",
-                  animationFillMode: "forwards",
-                }}
-              ></div>
-            </div>
+    <section
+      ref={sectionRef}
+      id="about"
+      className="min-h-screen bg-gradient-to-b from-stone-50 to-white relative overflow-hidden"
+    >
+      {/* Split Layout Container */}
+      <div className="flex flex-col lg:flex-row min-h-screen">
+        {/* Left Half - Parallax Image */}
+        <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-screen overflow-hidden bg-gray-200">
+          <div
+            className="absolute inset-0 scale-125"
+            style={{
+              transform: `translateY(${-scrollY}px)`,
+            }}
+          >
+            <Image
+              src="/Eagle - About us.png"
+              alt="About Eagle Eye Agency"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "center top" }}
+              priority
+              unoptimized
+              onError={(e) => {
+                console.error("Image failed to load:", e);
+              }}
+            />
+            {/* Subtle overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/10"></div>
+          </div>
 
-            {/* Main Story Content */}
-            <div
-              className="max-w-4xl mx-auto text-center mb-16 sm:mb-6 opacity-0 animate-fade-in-up px-4"
-              style={{ animationDelay: "1s", animationFillMode: "forwards" }}
-            >
-              <p
-                className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gray-800 leading-relaxed mb-6 tracking-wide"
-                style={{
-                  fontFamily: "'PT Sans', sans-serif",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                At <span className="font-medium text-black">The Eagle Eye</span>
-                , we believe great marketing comes from seeing what others
-                don't.
-              </p>
-            </div>
-
-            {/* Enhanced Content Cards */}
-            <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-10 items-stretch mb-16">
-              {/* Vision Card */}
-              <div
-                className="group bg-white rounded-lg p-6 sm:p-8 shadow-sm hover:shadow-xl opacity-0 animate-fade-in-up transform hover:-translate-y-2 transition-all duration-500 relative overflow-hidden border border-stone-100"
-                style={{
-                  animationDelay: "1.2s",
-                  animationFillMode: "forwards",
-                }}
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black to-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4 transform group-hover:rotate-12 transition-transform duration-500">
-                    <div className="w-6 h-6 border-2 border-white rounded-full"></div>
-                  </div>
-                  <h3
-                    className="text-lg sm:text-xl font-extralight text-black tracking-wide mb-4 relative"
-                    style={{
-                      fontFamily: "'PT Sans', sans-serif",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    Our Vision
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300">
-                    Great marketing comes from seeing what others don't. With
-                    over{" "}
-                    <span className="font-medium text-black">
-                      6 years of experience
-                    </span>{" "}
-                    working with diverse brands, we help companies spot
-                    opportunities and grow with purpose, turning insights into
-                    impactful strategies that drive real results.
-                  </p>
-                </div>
-              </div>
-
-              {/* Approach Card */}
-              <div
-                className="group bg-white rounded-lg p-6 sm:p-8 shadow-sm hover:shadow-xl opacity-0 animate-fade-in-up transform hover:-translate-y-2 transition-all duration-500 relative overflow-hidden border border-stone-100"
-                style={{
-                  animationDelay: "1.4s",
-                  animationFillMode: "forwards",
-                }}
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gray-600 to-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4 transform group-hover:rotate-12 transition-transform duration-500">
-                    <div className="w-4 h-4 bg-white transform rotate-45"></div>
-                  </div>
-                  <h3
-                    className="text-lg sm:text-xl font-extralight text-black tracking-wide mb-4 relative"
-                    style={{
-                      fontFamily: "'PT Sans', sans-serif",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    Our Approach
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300">
-                    We blend creativity with data — like an eagle's sharp vision
-                    paired with powerful instincts. Having served{" "}
-                    <span className="font-medium text-black">100+ clients</span>
-                    , we don't just create campaigns; we craft smart strategies
-                    that focus on results that truly matter to your business.
-                  </p>
-                </div>
-              </div>
-
-              {/* Impact Card */}
-              <div
-                className="group bg-white rounded-lg p-6 sm:p-8 shadow-sm hover:shadow-xl opacity-0 animate-fade-in-up transform hover:-translate-y-2 transition-all duration-500 relative overflow-hidden border border-stone-100"
-                style={{
-                  animationDelay: "1.6s",
-                  animationFillMode: "forwards",
-                }}
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-black to-gray-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center mb-4 transform group-hover:rotate-12 transition-transform duration-500">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <div className="w-2 h-2 bg-white rounded-full ml-1"></div>
-                  </div>
-                  <h3
-                    className="text-lg sm:text-xl font-extralight text-black tracking-wide mb-4 relative"
-                    style={{
-                      fontFamily: "'PT Sans', sans-serif",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    Our Impact
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium group-hover:text-gray-900 transition-colors duration-300">
-                    Across{" "}
-                    <span className="font-medium text-black">
-                      40+ industries
-                    </span>
-                    , we've trained{" "}
-                    <span className="font-medium text-black">
-                      1000+ students and professionals worldwide
-                    </span>
-                    , sharing the skills they need to stand out in today's
-                    digital world — from AI tools to personal branding.
-                  </p>
-                </div>
-              </div>
+          {/* Floating brand badge on image */}
+          <div className="absolute top-8 left-8 z-10">
+            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+              <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
+              About Us
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Animations */}
-      <style jsx>{`
-        @keyframes fadeInUp {
-          0% {
-            transform: translateY(30px);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
+        {/* Right Half - Content */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:px-12 xl:px-16 py-8">
+          {/* Header Section */}
+          <div className="mb-8">
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extralight text-black mb-4 tracking-wide group cursor-pointer"
+              style={{
+                fontFamily: "'PT Sans', sans-serif",
+                letterSpacing: "0.08em",
+                fontStretch: "condensed",
+              }}
+            >
+              About
+              <span
+                className="italic font-light text-black ml-2 inline-block transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110"
+                style={{ fontFamily: "'Rouge Script', cursive" }}
+              >
+                Us
+              </span>
+            </h2>
+            <div className="w-12 h-px bg-black"></div>
+          </div>
 
-        @keyframes expandWidth {
-          0% {
-            transform: scaleX(0);
-          }
-          100% {
-            transform: scaleX(1);
-          }
-        }
+          {/* Main Content */}
+          <div className="">
+            {/* Key Points */}
+            <div className="group">
+              <div className="flex items-start gap-4 mb-1">
+                <div>
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    At The Eagle Eye, we believe great marketing comes from
+                    seeing what others don’t. With over 6 years of experience
+                    working with 100+ clients across 40+ industries, we help
+                    brands spot opportunities, craft smart strategies, and grow
+                    with purpose.
+                    <br />
+                    <br />
+                    Our strength lies in blending creativity with data — like an
+                    eagle’s sharp vision paired with powerful instincts. We
+                    don’t just create campaigns; we focus on results that truly
+                    matter.
+                    <br />
+                    <br />
+                    We’re also passionate about helping people soar. We’ve
+                    trained over 1000+ students and professionals worldwide,
+                    sharing the skills they need to stand out in today’s digital
+                    world — from AI tools to personal branding.
+                    <br />
+                    <br />
+                    If you want a marketing partner who sees beyond the obvious
+                    and helps you rise above the noise, The Eagle Eye is here to
+                    guide your flight. Let’s take your brand higher, together.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        .animate-fade-in-up {
-          animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .animate-expand-width {
-          animation: expandWidth 0.8s ease-out forwards;
-        }
-      `}</style>
-    </div>
+            {/* CTA Section */}
+            <div className="pt-6 lg:pt-8">
+              <button className="bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase">
+                Partner With Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
