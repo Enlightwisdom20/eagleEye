@@ -16,7 +16,7 @@ export default function ContactSection() {
           >
             Get in{" "}
             <span
-              className="text-blue-400"
+              className="text-gray-400"
               style={{
                 fontFamily: "var(--font-inter)",
                 fontWeight: "400",
