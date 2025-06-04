@@ -42,7 +42,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${playfairDisplay.variable} bg-[#f1f1f1] antialiased`}
       >
         <div className="w-full h-full flex flex-col items-center">
-          {/* <Navbar /> */}
           <main className="w-full">{children}</main>
         </div>
       </body>
