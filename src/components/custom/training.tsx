@@ -16,19 +16,71 @@ const TrainingComponent = () => {
     tools: false,
   });
 
-  // Mock data for carousel (replace with actual images)
+  // Training images from actual sessions
   const carouselImages = [
     {
-      src: "/placeholder.svg?height=400&width=600",
-      caption: "Workshop at Delhi University",
+      src: "/Training Images/IMG-20210219-WA0030.jpg",
+      caption: "Training Workshop Session",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
-      caption: "Hands-on SEO Training",
+      src: "/Training Images/IMG-20210219-WA0036.jpg",
+      caption: "Interactive Learning Environment",
     },
     {
-      src: "/placeholder.svg?height=400&width=600",
-      caption: "Group Marketing Strategy Session",
+      src: "/Training Images/IMG_20250421_140510172.jpg",
+      caption: "Group Learning Experience",
+    },
+    {
+      src: "/Training Images/IMG_20250421_141254404.jpg",
+      caption: "Hands-on Training Session",
+    },
+    {
+      src: "/Training Images/IMG_20250421_223033130.jpg",
+      caption: "Professional Development Workshop",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-04-23 at 3.17.57 PM.jpeg",
+      caption: "Digital Marketing Training",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM (1).jpeg",
+      caption: "Advanced Marketing Strategies",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM.jpeg",
+      caption: "Collaborative Learning Session",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.01 AM.jpeg",
+      caption: "Interactive Training Program",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM (1).jpeg",
+      caption: "Skill Development Workshop",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM.jpeg",
+      caption: "Professional Training Environment",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM (1).jpeg",
+      caption: "Marketing Education Session",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM.jpeg",
+      caption: "Hands-on Learning Experience",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM (1).jpeg",
+      caption: "Group Training Activity",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM.jpeg",
+      caption: "Practical Training Session",
+    },
+    {
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.46 AM.jpeg",
+      caption: "Educational Workshop",
     },
   ];
 
@@ -75,7 +127,7 @@ const TrainingComponent = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 text-gray-800">
+    <div className="max-w-4xl mx-auto px-4 py-8 text-gray-800">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -147,7 +199,7 @@ const TrainingComponent = () => {
           </span>
         </h2>
         <div className="relative overflow-hidden rounded-lg bg-gray-50">
-          <div className="relative h-[400px]">
+          <div className="relative h-[500px]">
             {carouselImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -160,11 +212,8 @@ const TrainingComponent = () => {
                 <img
                   src={image.src || "/placeholder.svg"}
                   alt={image.caption}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-gray-100"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-30 text-white p-4">
-                  <p className="text-center">{image.caption}</p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -185,16 +234,14 @@ const TrainingComponent = () => {
             <ChevronRight size={24} />
           </button>
 
-          <div className="absolute bottom-16 left-0 right-0 flex justify-center gap-2">
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
             {carouselImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveSlide(index)}
                 className={cn(
                   "w-2 h-2 rounded-full transition-all",
-                  activeSlide === index
-                    ? "bg-white scale-125"
-                    : "bg-white bg-opacity-50"
+                  activeSlide === index ? "bg-white scale-125" : "bg-gray-400"
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />

@@ -129,10 +129,9 @@ const ServicesCarousel = () => {
 
     return () => clearInterval(interval);
   }, [isPaused]);
-
   return (
     <div
-      className="relative w-full max-w-7xl mx-auto px-4 pb-12 bg-gradient-to-b from-gray-100 to-white"
+      className="relative w-full max-w-7xl mx-auto px-4 pb-20"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -155,10 +154,11 @@ const ServicesCarousel = () => {
           className="flex gap-6 scrollbar-hide scroll-smooth overflow-x-scroll"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
+          {" "}
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-72 flex flex-col items-center text-center px-4"
+              className="flex-shrink-0 w-72 flex flex-col items-center text-center px-4 py-6 bg-white border border-gray-200 rounded-lg shadow-sm"
             >
               {/* Consistent image container */}
               <div className="h-[200px] flex items-center justify-center">
@@ -174,9 +174,7 @@ const ServicesCarousel = () => {
               {service.description.map((line, i) => (
                 <p
                   key={i}
-                  className={`text-sm leading-relaxed ${
-                    i === 0 ? "mt-2" : ""
-                  }`}
+                  className={`text-sm leading-relaxed ${i === 0 ? "mt-2" : ""}`}
                 >
                   {line}
                 </p>
