@@ -32,9 +32,25 @@ export default function Home() {
             <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
             Services
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-            Crafting <em className="italic font-serif">Digital</em> Experiences
-            That Drive Growth!
+          <h1
+            className="text-2xl sm:text-3xl font-normal text-gray-900 mb-4 leading-none tracking-wider"
+            style={{
+              fontFamily: "var(--font-inter)",
+              letterSpacing: "0.05em",
+              fontWeight: "400",
+            }}
+          >
+            Crafting{" "}
+            <span
+              className="text-gray-700"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: "400",
+              }}
+            >
+              Digital
+            </span>{" "}
+            Experiences That Drive Growth!
           </h1>
         </div>
         <ServicesCarousel />
@@ -43,14 +59,14 @@ export default function Home() {
       <section id="about">
         <About />
       </section>
-      <section id="team">
-        <TeamSection />
-      </section>
       <LogoCarousel />
 
       {/* Training Section */}
       <section id="training">
         <TrainingComponent />
+      </section>
+      <section id="team">
+        <TeamSection />
       </section>
       <section id="contact">
         <ContactSection />

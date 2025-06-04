@@ -1,12 +1,9 @@
-
-
 "use client";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 // rest of your component code...
-
 
 type TeamMemberProps = {
   name: string;
@@ -66,8 +63,24 @@ export default function TeamMember({
 
       {/* Card Details */}
       <div className="p-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-1">{name}</h2>
-        <p className="text-sm text-gray-600 italic mb-4">{role}</p>
+        <h2
+          className="text-lg font-medium text-gray-800 mb-1"
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontWeight: "500",
+          }}
+        >
+          {name}
+        </h2>
+        <p
+          className="text-sm text-gray-600 mb-4"
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontWeight: "300",
+          }}
+        >
+          {role}
+        </p>
       </div>
     </article>
   );

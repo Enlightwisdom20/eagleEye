@@ -163,7 +163,7 @@ export default function Hero() {
           >
             <div className="flex flex-col w-full h-full">
               {/* Full width text container */}
-              <div className="w-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 relative z-30 mb-8 lg:mb-0 lg:h-screen text-left">
+              <div className="w-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 relative z-30 mb-8 lg:mb-0 lg:h-screen text-left pt-20">
                 <h1
                   className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 mt-8 drop-shadow-lg"
                   style={{
@@ -176,11 +176,10 @@ export default function Hero() {
                 </h1>
 
                 <h2
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium italic text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 drop-shadow-lg"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-gray-300 leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 drop-shadow-lg"
                   style={{
                     fontFamily: "var(--font-playfair)",
                     letterSpacing: "0.02em",
-                    fontStyle: "italic",
                     fontWeight: "500",
                   }}
                 >
@@ -209,15 +208,15 @@ export default function Hero() {
                     }}
                   >
                     Your Brand,{" "}
-                    <em
-                      className="italic font-medium"
+                    <span
+                      className="text-gray-300"
                       style={{
-                        fontStyle: "italic",
-                        fontWeight: "500",
+                        fontFamily: "var(--font-playfair)",
+                        fontWeight: "400",
                       }}
                     >
                       Seen from the Skies
-                    </em>
+                    </span>
                     .
                   </h4>
                 </div>
@@ -240,7 +239,7 @@ export default function Hero() {
 
           {/* Tagline text layout that appears as video settles */}
           <motion.div
-            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[url('/image.webp')] bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[url('/image.webp')] bg-cover bg-center bg-no-repeat pt-20"
             animate={{
               opacity: textOpacity,
             }}

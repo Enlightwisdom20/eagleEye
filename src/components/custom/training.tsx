@@ -87,11 +87,33 @@ const TrainingComponent = () => {
           <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
           Training
         </div>
-        <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-          Training That <em className="italic font-serif">Transforms</em>{" "}
+        <h1
+          className="text-2xl sm:text-3xl font-normal mb-4 text-gray-900 leading-none tracking-wider"
+          style={{
+            fontFamily: "var(--font-inter)",
+            letterSpacing: "0.05em",
+            fontWeight: "400",
+          }}
+        >
+          Training That{" "}
+          <span
+            className="text-gray-700"
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontWeight: "400",
+            }}
+          >
+            Transforms
+          </span>{" "}
           Careers
         </h1>
-        <p className="text-gray-600 font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+        <p
+          className="text-gray-600 font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed"
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontWeight: "400",
+          }}
+        >
           Empowering the next generation of digital marketers through
           expert-led, practice-based learning.
         </p>
@@ -105,8 +127,24 @@ const TrainingComponent = () => {
         animate={isVisible.inAction ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
-          In <em className="italic font-serif">Action</em>
+        <h2
+          className="text-2xl sm:text-3xl font-normal text-center mb-12 leading-none tracking-wider"
+          style={{
+            fontFamily: "var(--font-inter)",
+            letterSpacing: "0.05em",
+            fontWeight: "400",
+          }}
+        >
+          In{" "}
+          <span
+            className="text-gray-700"
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontWeight: "400",
+            }}
+          >
+            Action
+          </span>
         </h2>
         <div className="relative overflow-hidden rounded-lg bg-gray-50">
           <div className="relative h-[400px]">

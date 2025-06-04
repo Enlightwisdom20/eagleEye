@@ -61,9 +61,9 @@ const LogoCarousel = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="bg-white overflow-hidden">
       <motion.div
-        className="text-center py-16"
+        className="text-center py-16 pt-4"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -76,8 +76,24 @@ const LogoCarousel = () => {
               <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
               Clients
             </div>{" "}
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 leading-tight">
-              Brands That <em className="italic font-serif">Believe</em>
+            <h3
+              className="text-2xl sm:text-3xl font-normal text-gray-900 mb-6 leading-none tracking-wider"
+              style={{
+                fontFamily: "var(--font-inter)",
+                letterSpacing: "0.05em",
+                fontWeight: "400",
+              }}
+            >
+              Brands That{" "}
+              <span
+                className="text-gray-700"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontWeight: "400",
+                }}
+              >
+                Believe
+              </span>
             </h3>
           </div>
           <div className="relative overflow-hidden">
@@ -126,7 +142,13 @@ const LogoCarousel = () => {
             <p className="text-gray-600 mb-6 text-base sm:text-lg">
               Ready to join our success stories?
             </p>
-            <button className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <button
+              className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: "500",
+              }}
+            >
               Start Your Journey
             </button>
           </div>

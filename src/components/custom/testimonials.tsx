@@ -129,7 +129,14 @@ const TestimonialsSlideshow = () => {
     <div className="bg-gray-50 w-full py-16 px-4 overflow-hidden isolate">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2
+            className="text-3xl font-normal text-gray-900 mb-4 leading-none tracking-wider"
+            style={{
+              fontFamily: "var(--font-inter)",
+              letterSpacing: "0.05em",
+              fontWeight: "400",
+            }}
+          >
             What Our Clients Say
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -149,7 +156,7 @@ const TestimonialsSlideshow = () => {
                     key={`row1-set${setIndex}-${testimonial.id}`}
                     testimonial={testimonial}
                   />
-                )),
+                ))
               )}
             </div>
           </div>
@@ -164,7 +171,7 @@ const TestimonialsSlideshow = () => {
                     key={`row2-set${setIndex}-${testimonial.id}`}
                     testimonial={testimonial}
                   />
-                )),
+                ))
               )}
             </div>
           </div>

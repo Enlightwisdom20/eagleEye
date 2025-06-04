@@ -67,7 +67,7 @@ const team = [
 export default function TeamSection() {
   return (
     <section
-      className="py-16 px-6 bg-gray-200 relative bg-cover bg-center"
+      className="py-16 px-6 bg-gradient-to-b from-white to-gray-200 relative bg-cover bg-center"
       style={{ backgroundImage: "url('/images/your-bg.png')" }}
     >
       {/* Blur overlay */}
@@ -81,13 +81,42 @@ export default function TeamSection() {
             <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
             Team
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-            Meet our <em className="italic font-serif">team</em> members
+          <h1
+            className="text-2xl sm:text-3xl font-normal text-gray-900 mb-4 leading-none tracking-wider"
+            style={{
+              fontFamily: "var(--font-inter)",
+              letterSpacing: "0.05em",
+              fontWeight: "400",
+            }}
+          >
+            Meet our{" "}
+            <span
+              className="text-gray-700"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: "400",
+              }}
+            >
+              team
+            </span>{" "}
+            members
           </h1>
-          <p className="text-gray-600 font-medium mt-2 text-base sm:text-lg leading-relaxed">
+          <p
+            className="text-gray-600 font-medium mt-2 text-base sm:text-lg leading-relaxed"
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontWeight: "400",
+            }}
+          >
             Every Eye Counts
           </p>
-          <button className="mt-6 bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition">
+          <button
+            className="mt-6 bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition"
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontWeight: "500",
+            }}
+          >
             Join our team
           </button>
         </div>

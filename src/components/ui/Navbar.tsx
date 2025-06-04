@@ -16,8 +16,8 @@ const Navbar = () => {
     { name: "Works", href: "#works", id: "works" },
     { name: "Services", href: "#services", id: "services" },
     { name: "About", href: "#about", id: "about" },
-    { name: "Team", href: "#team", id: "team" },
     { name: "Training", href: "#training", id: "training" },
+    { name: "Team", href: "#team", id: "team" },
     { name: "Contact", href: "#contact", id: "contact" },
   ];
 
@@ -121,7 +121,7 @@ const Navbar = () => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <div className="ml-10 flex items-baseline space-x-1">
                 {navItems.map((item, index) => (
                   <motion.div
@@ -163,7 +163,7 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <motion.div
-              className="hidden md:block"
+              className="hidden lg:block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.6 }}
@@ -182,7 +182,7 @@ const Navbar = () => {
             </motion.div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -238,7 +238,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200/50"
+              className="lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200/50"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -297,7 +297,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

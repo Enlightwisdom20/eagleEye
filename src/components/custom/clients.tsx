@@ -53,13 +53,28 @@ const Clients = () => {
       >
         {" "}
         <motion.h2
-          className="text-2xl sm:text-3xl font-bold mb-12 text-center"
+          className="text-2xl sm:text-3xl font-normal mb-12 text-center leading-none tracking-wider"
+          style={{
+            fontFamily: "var(--font-inter)",
+            letterSpacing: "0.05em",
+            fontWeight: "400",
+          }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Our <em className="italic font-serif">Impact</em>, At a Glance
+          Our{" "}
+          <span
+            className="text-gray-700"
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontWeight: "400",
+            }}
+          >
+            Impact
+          </span>
+          , At a Glance
         </motion.h2>
         <motion.div
           className="flex flex-wrap justify-center gap-8 sm:gap-16 text-xl font-semibold mb-6"

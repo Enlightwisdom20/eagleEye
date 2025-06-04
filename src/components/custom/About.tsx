@@ -45,9 +45,9 @@ export default function About() {
       {/* Split Layout Container */}
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Half - Parallax Image */}
-        <div className="w-full lg:w-1/2 relative h-[50vh] lg:h-screen overflow-hidden bg-gray-200">
+        <div className="w-full lg:w-1/2 relative h-[45vh] lg:h-[85vh] overflow-hidden">
           <div
-            className="absolute inset-0 scale-125"
+            className="absolute inset-0 w-full h-full scale-105 lg:scale-105"
             style={{
               transform: `translateY(${-scrollY}px)`,
             }}
@@ -81,11 +81,24 @@ export default function About() {
         <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:px-12 xl:px-16 py-8">
           {/* Header Section */}
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-black group cursor-pointer">
-              About
-              <em className="italic font-serif ml-2 inline-block transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
-                Us
-              </em>
+            <h2
+              className="text-2xl sm:text-3xl font-normal mb-4 text-black leading-none tracking-wider"
+              style={{
+                fontFamily: "var(--font-inter)",
+                letterSpacing: "0.05em",
+                fontWeight: "400",
+              }}
+            >
+              Who We Are,{" "}
+              <span
+                className="text-gray-700"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontWeight: "400",
+                }}
+              >
+                Beyond the Lens
+              </span>
             </h2>
             <div className="w-12 h-px bg-black"></div>
           </div>
@@ -96,7 +109,13 @@ export default function About() {
             <div className="group">
               <div className="flex items-start gap-4 mb-1">
                 <div>
-                  <p className="text-gray-600 font-medium text-base leading-relaxed">
+                  <p
+                    className="text-gray-600 font-medium text-base leading-relaxed"
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      fontWeight: "400",
+                    }}
+                  >
                     At The Eagle Eye, we believe great marketing comes from
                     seeing what others don’t. With over 6 years of experience
                     working with 100+ clients across 40+ industries, we help
@@ -126,7 +145,13 @@ export default function About() {
 
             {/* CTA Section */}
             <div className="pt-6 lg:pt-8">
-              <button className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase">
+              <button
+                className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontWeight: "500",
+                }}
+              >
                 Partner With Us
               </button>
             </div>
