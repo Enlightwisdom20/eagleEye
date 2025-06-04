@@ -38,15 +38,21 @@ export default function Hero() {
       // Calculate how much we've scrolled through this section
       const scrollIntoSection = Math.max(0, -sectionTop);
       const maxScroll = sectionHeight - viewportHeight;
-      const scrollProgress = Math.min(1, scrollIntoSection / maxScroll);
+      let scrollProgress = Math.min(1, scrollIntoSection / maxScroll);
 
       // Check if we're on mobile (768px is md breakpoint in Tailwind)
       const isMobileCheck = window.innerWidth < 768;
 
+      // Accelerate scroll progress on mobile for faster animations
+      if (isMobileCheck) {
+        // Apply exponential curve to make mobile animations 2-3x faster
+        scrollProgress = Math.pow(scrollProgress, 0.4); // Makes progress accelerate faster
+      }
+
       // Different scaling behavior for mobile vs desktop
       let targetScale;
       if (isMobileCheck) {
-        // On mobile, scale down to 0 (disappear completely)
+        // On mobile, scale down to 0 (disappear completely) with faster progression
         targetScale = Math.max(0, 1 - scrollProgress);
       } else {
         // On desktop, scale from 1.0 to 0.5
@@ -54,30 +60,38 @@ export default function Hero() {
       }
       setVideoScale(targetScale);
 
-      // Hero text fades out in first 40% of scroll
-      if (scrollProgress <= 0.4) {
-        setHeroTextOpacity(Math.max(0, 1 - scrollProgress * 2.5));
+      // Hero text fades out in first 40% of scroll (faster on mobile)
+      const heroFadeThreshold = isMobileCheck ? 0.25 : 0.4; // Faster fade on mobile
+      const transitionStart = isMobileCheck ? 0.6 : 0.75; // Earlier transition on mobile
+      const taglineStart = isMobileCheck ? 0.75 : 0.9; // Earlier tagline appearance on mobile
+
+      if (scrollProgress <= heroFadeThreshold) {
+        const fadeMultiplier = isMobileCheck ? 4 : 2.5; // Faster fade on mobile
+        setHeroTextOpacity(Math.max(0, 1 - scrollProgress * fadeMultiplier));
         setTextOpacity(0);
         setShowFinalLayout(false);
       }
-      // Transition zone where hero text is gone but tagline hasn't appeared (40% to 75%)
-      else if (scrollProgress <= 0.75) {
+      // Transition zone where hero text is gone but tagline hasn't appeared
+      else if (scrollProgress <= transitionStart) {
         setHeroTextOpacity(0);
         setTextOpacity(0);
         setShowFinalLayout(false);
       }
-      // Tagline starts appearing (75% to 90% of scroll)
-      else if (scrollProgress <= 0.9) {
-        const taglineProgress = (scrollProgress - 0.75) / 0.15;
+      // Tagline starts appearing
+      else if (scrollProgress <= taglineStart) {
+        const transitionRange = isMobileCheck ? 0.15 : 0.15;
+        const taglineProgress =
+          (scrollProgress - transitionStart) / transitionRange;
         setHeroTextOpacity(0);
         setTextOpacity(taglineProgress * 0.5);
         setShowFinalLayout(taglineProgress > 0.3);
       }
-      // Final state with full tagline opacity (90% to 100%)
+      // Final state with full tagline opacity
       else {
-        const finalProgress = (scrollProgress - 0.9) / 0.1;
+        const finalRange = isMobileCheck ? 0.25 : 0.1;
+        const finalProgress = (scrollProgress - taglineStart) / finalRange;
         setHeroTextOpacity(0);
-        setTextOpacity(0.5 + 0.5 * finalProgress);
+        setTextOpacity(0.5 + 0.5 * Math.min(1, finalProgress));
         setShowFinalLayout(true);
       }
     };
@@ -106,7 +120,9 @@ export default function Hero() {
       <section
         ref={sectionRef}
         className="relative"
-        style={{ height: "280vh" }} // Balanced height for smooth transitions
+        style={{
+          height: isMobile ? "200vh" : "280vh", // Reduced height on mobile for faster scroll
+        }}
       >
         {/* Sticky container for hero text and video */}
         <div className="sticky top-0 h-screen overflow-hidden bg-stone-50">
@@ -144,7 +160,7 @@ export default function Hero() {
                 playsInline
                 preload="auto"
               >
-                <source src="/E1.mp4" type="video/mp4" />
+                <source src="/output.webm" type="video/webm" />
               </video>
             </motion.div>
           </motion.div>
@@ -255,7 +271,7 @@ export default function Hero() {
                 <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 flex-wrap">
                   {/* "See what others" */}
                   <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
-                    See what others
+                    We See what others
                   </h1>
 
                   {/* Inline video for desktop - only visible when showFinalLayout and not mobile */}
@@ -275,7 +291,7 @@ export default function Hero() {
                         playsInline
                         preload="auto"
                       >
-                        <source src="/E1.mp4" type="video/mp4" />
+                        <source src="/output.webm" type="video/webm" />
                       </video>
                     </div>
                   )}

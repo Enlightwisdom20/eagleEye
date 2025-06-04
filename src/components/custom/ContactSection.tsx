@@ -49,7 +49,61 @@ export default function ContactSection() {
             </li>
           </ul>
 
-          <br />
+          {/* Industries We Cater */}
+          <div className="mt-12 mb-8">
+            <h3
+              className="text-xl font-medium text-white mb-6 tracking-wide"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: "500",
+              }}
+            >
+              Industries We <span className="text-gray-400">Cater</span>
+            </h3>
+            <div className="grid grid-cols-2 gap-3 text-sm text-gray-300">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Healthcare</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Interior Design</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Food & Beverage</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Education</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Technology</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Wellness</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Beauty & Fashion</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Event Management</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Real Estate</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full flex-shrink-0"></div>
+                <span>Retail & E-commerce</span>
+              </div>
+            </div>
+          </div>
+
           <div className="flex space-x-6 text-2xl">
             <a href="#" className="text-white hover:text-blue-400 transition">
               <i className="fab fa-linkedin"></i>

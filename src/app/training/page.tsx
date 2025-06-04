@@ -228,15 +228,15 @@ const styles = `
 
 export default function TrainingPage() {
   const tools = [
-    { name: "Google Analytics", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "Meta Ads", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "Canva", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "ChatGPT", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "Google Workspace", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "Shopify", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "Google Trends", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "MS Office", icon: "/placeholder.svg?height=60&width=60" },
-    { name: "Zoho Books", icon: "/placeholder.svg?height=60&width=60" },
+    { name: "Google Analytics", icon: "/svgs/Ganalytics.png" },
+    { name: "Meta Ads", icon: "/svgs/meta.png" },
+    { name: "Canva", icon: "/svgs/canva.svg" },
+    { name: "ChatGPT", icon: "/svgs/ChatGPT-Logo.svg" },
+    { name: "Google Workspace", icon: "/svgs/g.webp" },
+    { name: "Shopify", icon: "/svgs/shopify_glyph.svg" },
+    { name: "Google Trends", icon: "/svgs/Gtrends.png" },
+    { name: "MS Office", icon: "/svgs/msOffics.svg" },
+    { name: "Zoho Books", icon: "/svgs/zohoBooks.png" },
   ];
 
   const features = [
@@ -319,12 +319,12 @@ export default function TrainingPage() {
             {features.map((feature, index) => (
               <div
                 key={`first-${index}`}
-                className="flex items-center gap-3 h-16 w-96 mx-4 bg-gradient-to-br from-white to-gray-50 rounded-xl px-4 py-3 border border-gray-100 shadow-sm flex-shrink-0"
+                className="flex items-center gap-1 h-16 w-96 mx-4 bg-gradient-to-br from-white to-gray-50 rounded-xl px-4 py-3 border border-gray-100 shadow-sm flex-shrink-0"
               >
-                <div className="bg-gray-50 rounded-full p-2 w-10 h-10 flex items-center justify-center flex-shrink-0">
+                <div className="bg-gray-50 rounded-full p-2 size-8 flex items-center justify-center flex-shrink-0">
                   {feature.icon}
                 </div>
-                <h3 className="text-sm font-medium text-gray-900 whitespace-nowrap">
+                <h3 className="text-base font-medium text-gray-900 whitespace-nowrap">
                   {feature.title}
                 </h3>
               </div>
@@ -338,7 +338,7 @@ export default function TrainingPage() {
                 <div className="bg-gray-50 rounded-full p-2 w-10 h-10 flex items-center justify-center flex-shrink-0">
                   {feature.icon}
                 </div>
-                <h3 className="text-sm font-medium text-gray-900 whitespace-nowrap">
+                <h3 className="text-base font-medium text-gray-900 whitespace-nowrap">
                   {feature.title}
                 </h3>
               </div>
@@ -369,18 +369,24 @@ export default function TrainingPage() {
             {tools.map((tool, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center justify-center h-28"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="bg-gray-50 p-4 rounded-full mb-3">
+                <div className="flex items-center justify-center h-16 w-16 mb-3">
                   <img
                     src={tool.icon || "/placeholder.svg"}
                     alt={tool.name}
-                    className="w-12 h-12"
+                    className={
+                      tool.name === "Google Analytics"
+                        ? "max-h-18 max-w-18 object-contain"
+                        : "max-h-14 max-w-14 object-contain"
+                    }
                   />
                 </div>
-                <p className="text-sm text-center text-gray-600">{tool.name}</p>
+                <p className="text-sm text-center text-gray-600 leading-tight">
+                  {tool.name}
+                </p>
               </motion.div>
             ))}
           </div>
