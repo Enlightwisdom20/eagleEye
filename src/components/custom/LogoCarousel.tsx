@@ -5,58 +5,58 @@ import { motion } from "framer-motion";
 const LogoCarousel = () => {
   // Logo paths - replace with actual paths
   const clients = [
-    { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1 },
+    { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1.2 },
     {
       name: "Ashbunk",
       logo: "/logos/ashbunk.png?height=60&width=120",
-      scale: 1,
+      scale: 1.2,
     },
     {
       name: "Beat Naturally",
       logo: "/logos/beatnaturally.webp?height=60&width=120",
-      scale: 1,
+      scale: 1.2,
     },
     {
       name: "Bricks and Spaces",
       logo: "/logos/bricks and spaces.avif?height=60&width=120",
-      scale: 1.5,
+      scale: 1.7,
     },
     {
       name: "Enlight Wisdom",
       logo: "/logos/enlight.png?height=60&width=120",
-      scale: 2.5,
+      scale: 2.7,
     },
-    { name: "Grove", logo: "/logos/grove.png?height=60&width=120", scale: 0.8 },
+    { name: "Grove", logo: "/logos/grove.png?height=60&width=120", scale: 1.0 },
     {
       name: "Professional",
       logo: "/logos/professional_logo.png?height=60&width=120",
-      scale: 1.0,
+      scale: 1.2,
     },
-    { name: "Rel", logo: "/logos/rel.png?height=60&width=120", scale: 1.2 },
+    { name: "Rel", logo: "/logos/rel.png?height=60&width=120", scale: 1.4 },
     {
       name: "Reylon",
       logo: "/logos/Relyon-Logo.png?height=60&width=120",
-      scale: 1,
+      scale: 1.2,
     },
     {
       name: "Schoolbunk",
       logo: "/logos/schoolbunk.webp?height=60&width=120",
-      scale: 1,
+      scale: 1.2,
     },
     {
       name: "SS Graphics",
       logo: "/logos/S.S. Graphics Logo-01.png?height=60&width=120",
-      scale: 1.8,
+      scale: 2.0,
     },
     {
       name: "TNUHUB",
       logo: "/logos/tnuhub.png?height=60&width=120",
-      scale: 1,
+      scale: 1.2,
     },
     {
       name: "Shahs electronics",
       logo: "/logos/shahs.png?height=60&width=120",
-      scale: 2.2,
+      scale: 2.4,
     },
   ];
 
