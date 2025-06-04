@@ -5,7 +5,6 @@ const ServicesCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Service data
   const services = [
     {
       image: "/images/branding.png",
@@ -98,11 +97,11 @@ const ServicesCarousel = () => {
       ],
     },
   ];
+
   const scrollCarousel = (direction: number) => {
     if (carouselRef.current) {
-      // Calculate the exact width of one card including its gap
-      const cardWidth = 288; // w-72 = 18rem = 288px
-      const gap = 24; // gap-6 = 1.5rem = 24px
+      const cardWidth = 288;
+      const gap = 24;
       const scrollAmount = cardWidth + gap;
 
       carouselRef.current.scrollBy({
@@ -112,7 +111,6 @@ const ServicesCarousel = () => {
     }
   };
 
-  // Auto-scroll functionality
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isPaused && carouselRef.current) {
@@ -122,13 +120,12 @@ const ServicesCarousel = () => {
           container.scrollWidth;
 
         if (isAtEnd) {
-          // Reset to start when reaching the end
           container.scrollTo({ left: 0, behavior: "smooth" });
         } else {
           scrollCarousel(1);
         }
       }
-    }, 3000); // Scroll every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -158,32 +155,28 @@ const ServicesCarousel = () => {
           className="flex gap-6 scrollbar-hide scroll-smooth overflow-x-scroll"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {" "}
           {services.map((service, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-72 flex flex-col items-center text-center px-4"
             >
-              <img
-                src={service.image}
-                alt={service.title}
-                className={`max-h-[200px] w-auto object-contain hover:grayscale-0 transition-all duration-300 ${
-                  service.title === "Social Media Marketing"
-                    ? "max-h-[180px]"
-                    : ""
-                }`}
-              />
+              {/* Consistent image container */}
+              <div className="h-[200px] flex items-center justify-center">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="max-h-full w-auto object-contain hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
               <p className="text-base sm:text-lg font-bold mt-4 uppercase leading-tight">
                 {service.title}
               </p>
               {service.description.map((line, i) => (
                 <p
                   key={i}
-                  className={
-                    i === 0
-                      ? "text-sm mt-2 leading-relaxed"
-                      : "text-sm leading-relaxed"
-                  }
+                  className={`text-sm leading-relaxed ${
+                    i === 0 ? "mt-2" : ""
+                  }`}
                 >
                   {line}
                 </p>
