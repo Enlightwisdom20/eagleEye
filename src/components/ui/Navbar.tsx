@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -108,21 +108,21 @@ const Navbar = () => {
                   {/* <div className="w-12 h-8 bg-gradient-to-r from-gray-800 to-gray-600 rounded-md flex items-center justify-center">
                     <span className="text-white font-bold text-sm">LOGO</span>
                   </div> */}
-                  {/* <span
+                  <span
                     className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
                       isScrolled ? "text-gray-900" : "text-white"
                     }`}
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     Eagle Eye
-                  </span> */}
-                  <Image
+                  </span>
+                  {/* <Image
                     src="/RLogo.svg"
                     alt="Eagle Eye Logo"
                     width={400}
                     height={120}
                     className="w-48 h-12 rounded-md"
-                  />
+                  /> */}
                 </div>
               </Link>
             </motion.div>
