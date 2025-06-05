@@ -1,4 +1,13 @@
 import ContactForm from "./ContactForm";
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Instagram,
+  Facebook,
+} from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -7,19 +16,20 @@ export default function ContactSection() {
         {/* Left: Text Content */}
         <div className="text-center md:text-left">
           <h2
-            className="text-2xl sm:text-3xl font-normal text-white mb-4 leading-none tracking-wider"
+            className="text-2xl sm:text-[2.5rem] font-normal text-white mb-4 leading-none tracking-wider"
             style={{
-              fontFamily: "var(--font-inter)",
-              letterSpacing: "0.05em",
-              fontWeight: "400",
+              fontFamily: "vinila, sans-serif",
+              fontStyle: "normal",
+              letterSpacing: "0.01em",
+              fontWeight: "700",
             }}
           >
             Get in{" "}
             <span
               className="text-gray-400"
               style={{
-                fontFamily: "var(--font-inter)",
-                fontWeight: "400",
+                fontFamily: "vinila, sans-serif",
+                fontWeight: "700",
               }}
             >
               Touch
@@ -38,14 +48,16 @@ export default function ContactSection() {
 
           <ul className="space-y-4 text-gray-400 font-medium">
             <li>
-              <i className="fas fa-envelope text-white mr-2"></i>{" "}
-              the_eagle_eye@gmail.com
+              <Mail className="inline-block text-white mr-2 w-5 h-5 align-middle" />
+              info@theeagleseye.in
             </li>
             <li>
-              <i className="fas fa-phone text-white mr-2"></i> +91555555555
+              <Phone className="inline-block text-white mr-2 w-5 h-5 align-middle" />{" "}
+              +91 9790957217
             </li>
             <li>
-              <i className="fas fa-map-marker-alt text-white mr-2"></i> Chennai
+              <MapPin className="inline-block text-white mr-2 w-5 h-5 align-middle" />
+              No 3, Zacharia Colony, Choolaimedu, Chennai - 600094
             </li>
           </ul>
 
@@ -103,21 +115,6 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-
-          <div className="flex space-x-6 text-2xl">
-            <a href="#" className="text-white hover:text-blue-400 transition">
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a href="#" className="text-white hover:text-pink-400 transition">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" className="text-white hover:text-red-500 transition">
-              <i className="fab fa-youtube"></i>
-            </a>
-            <a href="#" className="text-white hover:text-sky-400 transition">
-              <i className="fab fa-twitter"></i>
-            </a>
-          </div>
         </div>
 
         {/* Right: Form Card */}
@@ -125,6 +122,67 @@ export default function ContactSection() {
           <ContactForm />
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="max-w-6xl mx-auto mt-20 pt-12 border-t border-gray-800">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+          {/* Social Media Links */}
+          <div className="flex space-x-6 text-2xl">
+            <Link
+              href="https://www.facebook.com/theeagleeyein"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-400 transition-colors duration-300"
+              aria-label="LinkedIn"
+            >
+              <Facebook className="w-6 h-6" />
+            </Link>
+            <Link
+              href="
+https://www.linkedin.com/in/erlindascarlet02/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-pink-400 transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <Linkedin className="w-6 h-6" />
+            </Link>
+            <Link
+              href="
+https://www.instagram.com/theeagleeye.in
+"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-pink-400 transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6" />
+            </Link>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center md:text-right">
+            <p
+              className="text-gray-400 text-sm font-medium"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: "400",
+              }}
+            >
+              © {new Date().getFullYear()} The Eagles Eye. All rights reserved.
+            </p>
+            <p
+              className="text-gray-500 text-xs mt-1"
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontWeight: "300",
+              }}
+            >
+              Designed & Developed with ❤️ in Chennai
+            </p>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 }

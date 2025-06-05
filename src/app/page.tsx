@@ -33,24 +33,24 @@ export default function Home() {
             Services
           </div>
           <h1
-            className="text-2xl sm:text-3xl font-normal text-gray-900 mb-4 leading-none tracking-wider"
+            className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
             style={{
-              fontFamily: "var(--font-inter)",
-              letterSpacing: "0.05em",
-              fontWeight: "400",
+              fontFamily: "vinila, sans-serif",
+              fontStyle: "normal",
+              letterSpacing: "0.01em",
+              fontWeight: "700",
             }}
           >
-            Crafting{" "}
+            Services that{" "}
             <span
               className="text-gray-700"
               style={{
-                fontFamily: "var(--font-inter)",
-                fontWeight: "400",
+                fontFamily: "vinila, sans-serif",
+                fontWeight: "700",
               }}
             >
-              Digital
+              Soar
             </span>{" "}
-            Experiences That Drive Growth!
           </h1>
         </div>
         <ServicesCarousel />

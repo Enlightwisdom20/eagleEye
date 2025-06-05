@@ -43,7 +43,7 @@ const TrainingComponent = () => {
       caption: "Digital Marketing Training",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM (1).jpeg",
+      src: "/bg.jpeg",
       caption: "Advanced Marketing Strategies",
     },
     {
@@ -95,6 +95,8 @@ const TrainingComponent = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+        } else {
+          setIsVisible((prev) => ({ ...prev, [entry.target.id]: false }));
         }
       });
     };
@@ -140,19 +142,20 @@ const TrainingComponent = () => {
           Training
         </div>
         <h1
-          className="text-2xl sm:text-3xl font-normal mb-4 text-gray-900 leading-none tracking-wider"
+          className="text-2xl sm:text-[2.5rem] font-normal mb-4 text-gray-900 leading-none tracking-wider"
           style={{
-            fontFamily: "var(--font-inter)",
-            letterSpacing: "0.05em",
-            fontWeight: "400",
+            fontFamily: "vinila, sans-serif",
+            fontStyle: "normal",
+            letterSpacing: "0.01em",
+            fontWeight: "700",
           }}
         >
           Training That{" "}
           <span
             className="text-gray-700"
             style={{
-              fontFamily: "var(--font-inter)",
-              fontWeight: "400",
+              fontFamily: "vinila, sans-serif",
+              fontWeight: "700",
             }}
           >
             Transforms
@@ -182,17 +185,18 @@ const TrainingComponent = () => {
         <h2
           className="text-2xl sm:text-3xl font-normal text-center mb-12 leading-none tracking-wider"
           style={{
-            fontFamily: "var(--font-inter)",
-            letterSpacing: "0.05em",
-            fontWeight: "400",
+            fontFamily: "vinila, sans-serif",
+            fontStyle: "normal",
+            letterSpacing: "0.01em",
+            fontWeight: "700",
           }}
         >
           In{" "}
           <span
             className="text-gray-700"
             style={{
-              fontFamily: "var(--font-inter)",
-              fontWeight: "400",
+              fontFamily: "vinila, sans-serif",
+              fontWeight: "700",
             }}
           >
             Action
@@ -263,12 +267,29 @@ const TrainingComponent = () => {
           Ready to advance your digital marketing career?
         </p>
         <Link href="/training">
-          <button className="group inline-flex items-center px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-gray-900/25 hover:scale-105">
+          <motion.button
+            className="group inline-flex items-center px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-gray-900/25 hover:scale-105"
+            key={isVisible.inAction ? "animate" : "static"}
+            initial={{ scale: 1 }}
+            animate={
+              isVisible.inAction
+                ? {
+                    scale: [1, 1.15, 0.85, 1.1, 0.9, 1.08, 0.92, 1.05, 0.95, 1],
+                  }
+                : { scale: 1 }
+            }
+            transition={{
+              duration: 5,
+              delay: 1.2,
+              ease: "easeInOut",
+              times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1],
+            }}
+          >
             <span className="mr-2">Explore Our Training Program</span>
             <div className="w-4 h-4 rounded-full bg-white/20 group-hover:bg-white/30 transition-colors duration-300 flex items-center justify-center">
               <div className="w-1.5 h-1.5 bg-white rounded-full group-hover:scale-125 transition-transform duration-300"></div>
             </div>
-          </button>
+          </motion.button>
         </Link>
       </motion.section>
     </div>

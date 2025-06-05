@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 
 export default function About() {
   const [scrollY, setScrollY] = useState(0);
@@ -45,23 +44,23 @@ export default function About() {
       {/* Split Layout Container */}
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Half - Parallax Image */}
-        <div className="w-full lg:w-1/2 relative h-[45vh] lg:h-[85vh] overflow-hidden">
+        <div className="w-full lg:w-2/5 relative h-[48vh] lg:h-[88vh] overflow-hidden ml-0 lg:ml-8">
           <div
             className="absolute inset-0 w-full h-full scale-105 lg:scale-105"
             style={{
               transform: `translateY(${-scrollY}px)`,
             }}
           >
-            <Image
-              src="/Eagle - About us.png"
-              alt="About Eagle Eye Agency"
-              fill
-              className="object-cover"
+            <video
+              src="/about.webm"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
               style={{ objectPosition: "center top" }}
-              priority
-              unoptimized
               onError={(e) => {
-                console.error("Image failed to load:", e);
+                console.error("Video failed to load:", e);
               }}
             />
             {/* Subtle overlay for better text readability */}
@@ -78,23 +77,24 @@ export default function About() {
         </div>
 
         {/* Right Half - Content */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 sm:px-8 lg:px-12 xl:px-16 py-8">
+        <div className="w-full lg:w-3/5 flex flex-col justify-center px-6 sm:px-8 lg:px-12 xl:px-16 py-8">
           {/* Header Section */}
           <div className="mb-8">
             <h2
-              className="text-2xl sm:text-3xl font-normal mb-4 text-black leading-none tracking-wider"
+              className="text-2xl sm:text-[2.5rem] font-normal mb-4 text-black leading-none tracking-wider"
               style={{
-                fontFamily: "var(--font-inter)",
-                letterSpacing: "0.05em",
-                fontWeight: "400",
+                fontFamily: "vinila, sans-serif",
+                fontStyle: "normal",
+                letterSpacing: "0.01em",
+                fontWeight: "700",
               }}
             >
               Who We Are,{" "}
               <span
                 className="text-gray-700"
                 style={{
-                  fontFamily: "var(--font-inter)",
-                  fontWeight: "400",
+                  fontFamily: "vinila, sans-serif",
+                  fontWeight: "700",
                 }}
               >
                 Beyond the Lens

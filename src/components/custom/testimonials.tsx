@@ -130,11 +130,12 @@ const TestimonialsSlideshow = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2
-            className="text-3xl font-normal text-gray-900 mb-4 leading-none tracking-wider"
+            className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
             style={{
-              fontFamily: "var(--font-inter)",
-              letterSpacing: "0.05em",
-              fontWeight: "400",
+              fontFamily: "vinila, sans-serif",
+              fontStyle: "normal",
+              letterSpacing: "0.01em",
+              fontWeight: "700",
             }}
           >
             What Our Clients Say

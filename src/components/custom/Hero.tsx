@@ -181,11 +181,11 @@ export default function Hero() {
               {/* Full width text container */}
               <div className="w-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 relative z-30 mb-8 lg:mb-0 lg:h-screen text-left pt-20">
                 <h1
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 mt-8 drop-shadow-lg"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 mt-8 drop-shadow-lg"
                   style={{
                     fontFamily: "var(--font-inter)",
-                    letterSpacing: "0.05em",
-                    fontWeight: "400",
+                    letterSpacing: "0.01em",
+                    fontWeight: "600",
                   }}
                 >
                   Not Just
@@ -203,11 +203,11 @@ export default function Hero() {
                 </h2>
 
                 <h3
-                  className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-white leading-tight tracking-tight drop-shadow-lg mb-2 lg:mb-3"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight tracking-tight drop-shadow-lg mb-2 lg:mb-3"
                   style={{
                     fontFamily: "var(--font-inter)",
                     letterSpacing: "0.01em",
-                    fontWeight: "300",
+                    fontWeight: "600",
                   }}
                 >
                   Surveillance Level Strategy

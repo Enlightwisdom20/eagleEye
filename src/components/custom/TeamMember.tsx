@@ -55,7 +55,9 @@ export default function TeamMember({
           src={image}
           alt={name}
           fill
-          className={`object-contain transition duration-500 ${imageScale}`}
+          className={`object-contain transition duration-500 ${imageScale} ${
+            image === "/teams/erlinda.jpeg" ? "-translate-x-3" : ""
+          }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-black/20 mix-blend-multiply"></div>

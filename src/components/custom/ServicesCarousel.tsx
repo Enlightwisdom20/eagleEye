@@ -9,92 +9,60 @@ const ServicesCarousel = () => {
     {
       image: "/images/branding.png",
       title: "Branding Solutions",
-      description: [
-        "We help build strong brands",
-        "through innovative visuals",
-        "and clear messaging.",
-      ],
+      description: ["Build a vibe", "they'll never forget."],
     },
     {
       image: "/images/content.png",
       title: "Content Writing",
-      description: [
-        "Improve your visibility",
-        "with strategic SEO techniques",
-        "that rank you higher.",
-      ],
+      description: ["Words that click,", "convert, and charm."],
     },
     {
       image: "/images/event.png",
       title: "Event Marketing",
-      description: [
-        "Maximize ROI with",
-        "data-driven campaigns",
-        "and performance insights.",
-      ],
+      description: ["Create buzz,", "fill seats make noise."],
     },
     {
       image: "/images/influencer.png",
       title: "Influencer Marketing",
-      description: [
-        "Create impactful content",
-        "that informs and engages",
-        "your target audience.",
-      ],
+      description: ["Real faces,", "real reach, real results."],
     },
     {
       image: "/images/performance.png",
       title: "Performance Marketing",
       description: [
-        "Build your online presence",
-        "across platforms with",
-        "consistent branding.",
+        "Clicks that count,",
+        "metrics that move,",
+        "growth that shows.",
       ],
     },
     {
       image: "/images/seo.png",
       title: "SEO Services",
-      description: [
-        "Build your online presence",
-        "across platforms with",
-        "consistent branding.",
-      ],
+      description: ["Rank high,", "get found, stay seen."],
     },
     {
       image: "/images/socialmedia.png",
       title: "Social Media Marketing",
       description: [
-        "Build your online presence",
-        "across platforms with",
-        "consistent branding.",
+        "Scroll-stopping content",
+        "for likes, shares,",
+        "and loyal fans.",
       ],
     },
     {
       image: "/images/video.png",
       title: "Video Production",
-      description: [
-        "Build your online presence",
-        "across platforms with",
-        "consistent branding.",
-      ],
+      description: ["Lights, Camera.", "Stories that actually stick."],
     },
     {
       image: "/images/website.png",
       title: "Website Development",
-      description: [
-        "Build your online presence",
-        "across platforms with",
-        "consistent branding.",
-      ],
+      description: ["Designs that wow,", "load fast,", "and convert better."],
     },
     {
       image: "/images/whatsap.png",
       title: "Whatsapp Marketing",
-      description: [
-        "Build your online presence",
-        "across platforms with",
-        "consistent branding.",
-      ],
+      description: ["Slide into chats,", "start convos, close deals."],
     },
   ];
 

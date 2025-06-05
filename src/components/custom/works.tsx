@@ -51,19 +51,20 @@ export default function OurWorksSection() {
             Works
           </div>
           <h2
-            className="text-2xl sm:text-3xl font-normal text-gray-900 mb-6 leading-none tracking-wider"
+            className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-6 leading-none tracking-wider"
             style={{
-              fontFamily: "var(--font-inter)",
-              letterSpacing: "0.05em",
-              fontWeight: "400",
+              fontFamily: "vinila, sans-serif",
+              fontStyle: "normal",
+              letterSpacing: "0.01em",
+              fontWeight: "700",
             }}
           >
             What{" "}
             <span
               className="text-gray-700"
               style={{
-                fontFamily: "var(--font-inter)",
-                fontWeight: "400",
+                fontFamily: "vinila, sans-serif",
+                fontWeight: "700",
               }}
             >
               Vision
@@ -72,8 +73,8 @@ export default function OurWorksSection() {
             <span
               className="text-gray-700"
               style={{
-                fontFamily: "var(--font-inter)",
-                fontWeight: "400",
+                fontFamily: "vinila, sans-serif",
+                fontWeight: "700",
               }}
             >
               Action
