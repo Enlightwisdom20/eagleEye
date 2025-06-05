@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 // import Image from "next/image";
 import Link from "next/link";
+import Logo from "./logo";
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
@@ -24,8 +25,8 @@ const Navbar = () => {
   // Handle scroll effects
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      // const scrollPosition = window.scrollY;
+      // setIsScrolled(scrollPosition > 50);
 
       // Update active section based on scroll position
       const sections = navItems
@@ -81,7 +82,7 @@ const Navbar = () => {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50"
+            ? "bg-white backdrop-blur-md shadow-lg border-b border-gray-200/50"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
@@ -108,14 +109,14 @@ const Navbar = () => {
                   {/* <div className="w-12 h-8 bg-gradient-to-r from-gray-800 to-gray-600 rounded-md flex items-center justify-center">
                     <span className="text-white font-bold text-sm">LOGO</span>
                   </div> */}
-                  <span
+                  {/* <span
                     className={`font-bold text-xl tracking-tight transition-colors duration-300 ${
                       isScrolled ? "text-gray-900" : "text-white"
                     }`}
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     Eagle Eye
-                  </span>
+                  </span> */}
                   {/* <Image
                     src="/RLogo.svg"
                     alt="Eagle Eye Logo"
@@ -123,6 +124,7 @@ const Navbar = () => {
                     height={120}
                     className="w-48 h-12 rounded-md"
                   /> */}
+                  <Logo />
                 </div>
               </Link>
             </motion.div>

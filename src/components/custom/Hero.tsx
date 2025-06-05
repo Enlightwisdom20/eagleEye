@@ -11,6 +11,17 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
   // Track window size for responsive behavior
   useEffect(() => {
     const checkMobile = () => {
@@ -245,6 +256,7 @@ export default function Hero() {
                       fontFamily: "var(--font-inter)",
                       letterSpacing: "0.1em",
                     }}
+                    onClick={() => scrollToSection("#contact")}
                   >
                     Elevate Your Vision
                   </button>
@@ -255,7 +267,7 @@ export default function Hero() {
 
           {/* Tagline text layout that appears as video settles */}
           <motion.div
-            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[url('/image.webp')] bg-cover bg-center bg-no-repeat pt-20"
+            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[#E7C280] bg-[url('/FResized.png')] md:bg-[url('/agh.jpeg')] bg-contain md:bg-cover bg-right md:bg-top bg-no-repeat pt-20"
             animate={{
               opacity: textOpacity,
             }}
@@ -268,14 +280,14 @@ export default function Hero() {
             <div className="w-full max-w-7xl mx-auto">
               <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4">
                 {/* Desktop layout: Single line with text and video inline */}
-                <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 flex-wrap">
-                  {/* "See what others" */}
-                  <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
+                {/* <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 flex-wrap"> */}
+                {/* "See what others" */}
+                {/* <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-none whitespace-nowrap">
                     We See what others
-                  </h1>
+                  </h1> */}
 
-                  {/* Inline video for desktop - only visible when showFinalLayout and not mobile */}
-                  {showFinalLayout && !isMobile && (
+                {/* Inline video for desktop - only visible when showFinalLayout and not mobile */}
+                {/* {showFinalLayout && !isMobile && (
                     <div
                       className="relative flex-shrink-0 bg-black overflow-hidden shadow-2xl rounded-lg"
                       style={{
@@ -294,33 +306,33 @@ export default function Hero() {
                         <source src="/output.webm" type="video/webm" />
                       </video>
                     </div>
-                  )}
+                  )} */}
 
-                  {/* "miss." */}
-                  <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none whitespace-nowrap">
+                {/* "miss." */}
+                {/* <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-none whitespace-nowrap">
                     miss.
                   </h1>
-                </div>
+                </div> */}
 
                 {/* Mobile layout: Stacked text, no video */}
-                <div className="flex md:hidden flex-col items-center justify-center space-y-1">
-                  <h1 className="text-2xl sm:text-3xl font-black text-gray-900 leading-none text-center">
+                {/* <div className="flex md:hidden flex-col items-center justify-center space-y-1">
+                  <h1 className="text-2xl sm:text-3xl font-black text-white leading-none text-center">
                     See what others miss.
                   </h1>
-                </div>
+                </div> */}
 
                 {/* Second line - "Market smarter." for both layouts */}
-                <div className="flex justify-center">
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-black text-gray-900 leading-none text-center">
+                {/* <div className="flex justify-center">
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-none text-center">
                     Market smarter.
                   </h1>
-                </div>
+                </div> */}
               </div>
             </div>
           </motion.div>
 
           {/* Brand services footer */}
-          <motion.div
+          {/* <motion.div
             className="absolute bottom-8 left-0 right-0 text-center z-20 px-4"
             animate={{
               opacity: textOpacity,
@@ -334,7 +346,7 @@ export default function Hero() {
               The problem isn{"’"}t lack of content, it{"’"}s lack of
               connection. We are here to draw the connection
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
     </div>

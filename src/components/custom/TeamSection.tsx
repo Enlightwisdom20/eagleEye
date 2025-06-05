@@ -1,3 +1,4 @@
+"use client";
 import TeamMember from "./TeamMember";
 
 const team = [
@@ -24,7 +25,7 @@ const team = [
     role: "Creative Head",
     image: "/teams/Sherly.jpg",
     imageScale:
-      "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scale-[1.15] -translate-x-6 translate-y-6 custom-zoom",
+      "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scale-[1.15] custom-zoom",
   },
   {
     name: "Tiffany Tracina",
@@ -42,12 +43,13 @@ const team = [
     name: "Jervin",
     role: "Videographer",
     image: "/teams/Jervin.jpg",
-    imageScale: "scale-[2] -translate-x-[50px]",
+    imageScale:
+      "scale-[1.5] md:scale-[2] -translate-x-[5px] md:-translate-x-[50px]",
   },
   {
     name: "Saheli",
     role: "Creative Designer",
-    image: "/teams/Saheli.jpg",
+    image: "/teams/Saheli.jpeg",
     imageScale: "scale-150 custom-saheli",
   },
   // {
@@ -65,6 +67,17 @@ const team = [
 ];
 
 export default function TeamSection() {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <section
       className="py-16 px-6 bg-gradient-to-b from-white to-gray-200 relative bg-cover bg-center"
@@ -112,6 +125,7 @@ export default function TeamSection() {
             Meet our team members
           </p>
           <button
+            onClick={() => scrollToSection("#contact")}
             className="mt-6 bg-gray-900 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition"
             style={{
               fontFamily: "var(--font-inter)",

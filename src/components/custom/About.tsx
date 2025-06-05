@@ -5,6 +5,17 @@ import React, { useState, useEffect, useRef } from "react";
 export default function About() {
   const [scrollY, setScrollY] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -146,6 +157,7 @@ export default function About() {
             {/* CTA Section */}
             <div className="pt-6 lg:pt-8">
               <button
+                onClick={() => scrollToSection("#contact")}
                 className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase"
                 style={{
                   fontFamily: "var(--font-inter)",

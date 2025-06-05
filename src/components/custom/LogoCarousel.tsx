@@ -3,6 +3,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const LogoCarousel = () => {
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const offsetTop =
+        element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
   // Logo paths - replace with actual paths
   const clients = [
     { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1.2 },
@@ -144,6 +155,7 @@ const LogoCarousel = () => {
               Ready to join our success stories?
             </p>
             <button
+              onClick={() => scrollToSection("#contact")}
               className="bg-gray-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300"
               style={{
                 fontFamily: "var(--font-inter)",
