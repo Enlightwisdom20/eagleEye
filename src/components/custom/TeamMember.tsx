@@ -9,14 +9,14 @@ type TeamMemberProps = {
   name: string;
   role: string;
   image: string;
-  imageScale?: string; // Optional: scale, translate-x, etc.
+  objectPosition?: string; // Optional: object position for better image framing
 };
 
 export default function TeamMember({
   name,
   role,
   image,
-  imageScale = "",
+  objectPosition = "center",
 }: TeamMemberProps) {
   const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -46,27 +46,26 @@ export default function TeamMember({
   return (
     <article
       ref={ref}
-      className={`bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center transform hover:scale-105 relative
+      className={`bg-white w-full max-w-[16rem] h-[20rem] sm:h-[22rem] lg:h-[25rem] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center transform hover:scale-105 relative mx-auto
         ${isVisible ? "fade-in-smooth" : "opacity-0 translate-y-10"}`}
     >
       {/* Image Container */}
-      <div className="relative w-full h-[400px] overflow-hidden bg-gray-150">
+      <div className="relative w-full h-[78%] overflow-hidden bg-gray-150">
         <Image
           src={image}
           alt={name}
           fill
-          className={`object-contain transition duration-500 ${imageScale} ${
-            image === "/teams/erlinda.jpeg" ? "-translate-x-3" : ""
-          }`}
+          className="object-cover transition-all duration-500 hover:scale-110"
+          style={{ objectPosition }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute inset-0 bg-black/20 mix-blend-multiply"></div>
       </div>
 
       {/* Card Details */}
-      <div className="p-6">
+      <div className="p-3 sm:p-4 lg:p-6">
         <h2
-          className="text-lg font-medium text-gray-800 mb-1"
+          className="text-base sm:text-lg font-medium text-gray-800 mb-1"
           style={{
             fontFamily: "var(--font-inter)",
             fontWeight: "500",
@@ -75,7 +74,7 @@ export default function TeamMember({
           {name}
         </h2>
         <p
-          className="text-sm text-gray-600 mb-4"
+          className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-4"
           style={{
             fontFamily: "var(--font-inter)",
             fontWeight: "300",

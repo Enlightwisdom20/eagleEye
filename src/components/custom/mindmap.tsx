@@ -24,7 +24,7 @@ function TreeComponent({
   setHoveredNode: (id: string | null) => void;
 }) {
   return (
-    <div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 p-10 overflow-y-auto">
+    <div className="w-full h-fit bg-gradient-to-br from-slate-50 to-slate-100 p-10 overflow-y-auto">
       <div className="flex flex-col items-center space-y-6">
         {/* Root node */}
         <div className="text-center">

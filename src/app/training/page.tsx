@@ -116,43 +116,47 @@ export default function TrainingPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-white/90 to-gray-50/80" />
         </div> */}
 
-        <div className="w-full h-full flex flex-col gap-18 justify-end  bg-gray-900/45 py-18">
-          {/* Content */}
-          <div className="container mx-auto w-fit h-fit px-4 md:px-6 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div
-                className="inline-flex items-center justify-center px-4 py-2 mb-6 text-sm font-medium text-gray-700 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200"
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  letterSpacing: "0.05em",
-                }}
-              >
-                Expert Training
+        <div className="w-full h-full flex flex-col justify-between bg-gray-900/45 py-8 md:py-12">
+          {/* Content - Centered */}
+          <div className="flex-1 flex items-center justify-center px-4 md:px-6 relative z-10">
+            <div className="container mx-auto">
+              <div className="max-w-4xl mx-auto text-center">
+                <div
+                  className="inline-flex items-center justify-center px-4 py-2 mb-4 md:mb-6 text-xs md:text-sm font-medium text-gray-700 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    letterSpacing: "0.05em",
+                  }}
+                >
+                  Expert Training
+                </div>
+                <h1
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight md:leading-none tracking-wider mb-6 drop-shadow-lg px-4"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    letterSpacing: "0.05em",
+                    fontWeight: "900",
+                  }}
+                >
+                  Build Your Digital Empire with the Eyes of an Expert
+                </h1>
               </div>
-              <h1
-                className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-none tracking-wider mb-6 drop-shadow-lg"
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  letterSpacing: "0.05em",
-                  fontWeight: "900",
-                }}
-              >
-                Build Your Digital Empire with the Eyes of an Expert
-              </h1>
             </div>
           </div>
-          <div className="relative overflow-hidden pt-10">
+
+          {/* Sliding Component - Near bottom but not at the very bottom */}
+          <div className="relative overflow-hidden pb-8 md:pb-12">
             <div className="flex animate-scroll">
               {/* First set of features */}
               {features.map((feature, index) => (
                 <div
                   key={`first-${index}`}
-                  className="flex items-center gap-1 h-16 w-96 mx-4 bg-gradient-to-br from-white to-gray-50 rounded-xl px-4 py-3 border border-gray-100 shadow-sm flex-shrink-0"
+                  className="flex items-center gap-2 md:gap-3 h-12 md:h-16 w-72 md:w-96 mx-2 md:mx-4 bg-gradient-to-br from-white to-gray-50 rounded-xl px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm flex-shrink-0"
                 >
-                  <div className="bg-gray-50 rounded-full p-2 size-8 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-gray-50 rounded-full p-1.5 md:p-2 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center flex-shrink-0">
                     {feature.icon}
                   </div>
-                  <h3 className="text-base font-normal text-gray-900 whitespace-nowrap pr-3">
+                  <h3 className="text-sm md:text-base font-normal text-gray-900 whitespace-nowrap pr-2 md:pr-3">
                     {feature.title}
                   </h3>
                 </div>
@@ -161,12 +165,12 @@ export default function TrainingPage() {
               {features.map((feature, index) => (
                 <div
                   key={`second-${index}`}
-                  className="flex items-center gap-3 h-16 w-96 mx-4 bg-gradient-to-br from-white to-gray-50 rounded-xl px-4 py-3 border border-gray-100 shadow-sm flex-shrink-0"
+                  className="flex items-center gap-2 md:gap-3 h-12 md:h-16 w-72 md:w-96 mx-2 md:mx-4 bg-gradient-to-br from-white to-gray-50 rounded-xl px-3 md:px-4 py-2 md:py-3 border border-gray-100 shadow-sm flex-shrink-0"
                 >
-                  <div className="bg-gray-50 rounded-full p-2 w-10 h-10 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-gray-50 rounded-full p-1.5 md:p-2 w-7 h-7 md:w-10 md:h-10 flex items-center justify-center flex-shrink-0">
                     {feature.icon}
                   </div>
-                  <h3 className="text-base font-normal text-gray-900 whitespace-nowrap pr-3">
+                  <h3 className="text-sm md:text-base font-normal text-gray-900 whitespace-nowrap pr-2 md:pr-3">
                     {feature.title}
                   </h3>
                 </div>

@@ -6,63 +6,61 @@ const team = [
     name: "Erlinda Scarlet Selvan",
     role: "Founder & CEO",
     image: "/teams/erlinda.jpeg",
-    imageScale: "scale-[1.3]",
+    objectPosition: "center top",
   },
   {
     name: "Besly",
     role: "Chief Technical Officer",
     image: "/teams/Beslee.png",
-    imageScale: "scale-[1.1] custom-beslee",
+    objectPosition: "center 20%",
   },
   {
     name: "Surya",
     role: "AI & Development Manager",
     image: "/teams/surya.jpeg",
-    imageScale: "scale-[1.2] custom-surya",
+    objectPosition: "center 15%",
   },
   {
     name: "Shallon Sherly",
     role: "Creative Head",
     image: "/teams/Sherly.jpg",
-    imageScale:
-      "scale-[1.2] sm:scale-[1.65] md:scale-[1.45] lg:scale-[1.35] xl:scale-[1.15] custom-zoom",
+    objectPosition: "40% 20%",
   },
   {
     name: "Tiffany Tracina",
     role: "Content Strategist & Trainer",
     image: "/teams/Tiffany.jpg",
-    imageScale: "scale-[1.2] custom-tiffany",
+    objectPosition: "center 10%",
   },
   {
     name: "Elisha Olive",
     role: "Influencer Marketing Coordinator",
     image: "/teams/Elisha.jpg",
-    imageScale: "scale-[2] -translate-x-24 custom-elisha",
+    objectPosition: "center center",
   },
   {
     name: "Jervin",
     role: "Videographer",
     image: "/teams/Jervin.jpg",
-    imageScale:
-      "scale-[1.5] md:scale-[2] -translate-x-[5px] md:-translate-x-[50px]",
+    objectPosition: "70% center",
   },
   {
     name: "Saheli",
     role: "Creative Designer",
     image: "/teams/Saheli.jpeg",
-    imageScale: "scale-150 custom-saheli",
+    objectPosition: "center 25%",
   },
   // {
   //   name: "Anita Cassandra",
   //   role: "Social Media Executive",
   //   image: "/teams/Anita.png",
-  //   imageScale: "scale-[1.2] custom-anita",
+  //   objectPosition: "center 20%",
   // },
   {
     name: "Rashmi",
     role: "Social Media Executive",
     image: "/teams/rashmi.jpeg",
-    imageScale: "scale-[1.2] custom-rashmi",
+    objectPosition: "center 20%",
   },
 ];
 
@@ -137,7 +135,7 @@ export default function TeamSection() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[100px] gap-y-[100px] max-w-6xl mx-auto custom-grid-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 max-w-6xl mx-auto justify-items-center">
           {team.map((member, idx) => (
             <TeamMember key={idx} {...member} />
           ))}

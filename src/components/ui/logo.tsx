@@ -21,14 +21,16 @@ export default function Logo() {
         alt="Eagle Eye Logo"
         width={500}
         height={500}
-        className="size-16"
+        className="size-10 xs:size-12 sm:size-14 lg:size-16 flex-shrink-0"
       />
-      <div className="flex flex-col gap-1 justify-end">
-        <p className={`${ptSerif.className} font-normal text-3xl`}>
+      <div className="flex flex-col gap-1 justify-end min-w-0">
+        <p
+          className={`${ptSerif.className} font-normal text-lg xs:text-xl sm:text-2xl lg:text-3xl truncate`}
+        >
           The Eagle Eye
         </p>
         <p
-          className={`${montserrat.className} font-light tracking-[0.17rem] text-[0.5rem]`}
+          className={`${montserrat.className} font-light tracking-[0.17rem] text-[0.35rem] xs:text-[0.4rem] sm:text-[0.45rem] lg:text-[0.5rem] truncate`}
         >
           A CLEAR VISION FOR YOUR BRAND
         </p>
