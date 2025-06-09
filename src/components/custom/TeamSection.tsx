@@ -9,7 +9,7 @@ const team = [
     objectPosition: "center top",
   },
   {
-    name: "Besly",
+    name: "Bezaleel (Beslee)",
     role: "Chief Technical Officer",
     image: "/teams/Beslee.png",
     objectPosition: "center 20%",
