@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import AnimatedTitle from "@/components/ui/AnimatedTitle";
 
 export default function Hero() {
   const [videoScale, setVideoScale] = useState(1);
@@ -188,51 +189,53 @@ export default function Hero() {
               visibility: heroTextOpacity > 0 ? "visible" : "hidden",
             }}
           >
+            {" "}
             <div className="flex flex-col w-full h-full">
               {/* Full width text container */}
               <div className="w-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 relative z-30 mb-8 lg:mb-0 lg:h-screen text-left pt-20">
-                <h1
+                <AnimatedTitle
                   className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-2 sm:mb-3 md:mb-4 lg:mb-6 mt-8 drop-shadow-lg"
                   style={{
                     fontFamily: "var(--font-inter)",
                     letterSpacing: "0.01em",
                     fontWeight: "600",
                   }}
+                  delay={0}
                 >
                   Not Just
-                </h1>
-
-                <h2
+                </AnimatedTitle>
+                <AnimatedTitle
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-gray-300 leading-none tracking-wider hover:text-gray-200 transition-colors duration-500 cursor-pointer mb-3 sm:mb-4 md:mb-6 lg:mb-8 drop-shadow-lg"
                   style={{
                     fontFamily: "var(--font-playfair)",
                     letterSpacing: "0.02em",
                     fontWeight: "500",
                   }}
+                  delay={0.3}
                 >
                   Branding
-                </h2>
-
-                <h3
+                </AnimatedTitle>
+                <AnimatedTitle
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight tracking-tight drop-shadow-lg mb-2 lg:mb-3"
                   style={{
                     fontFamily: "var(--font-inter)",
                     letterSpacing: "0.01em",
                     fontWeight: "600",
                   }}
+                  delay={0.6}
                 >
                   Surveillance Level Strategy
-                </h3>
-
+                </AnimatedTitle>
                 {/* Subtitle text */}
                 <div className="mb-6 lg:mb-8">
-                  <h4
+                  <AnimatedTitle
                     className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal text-white leading-relaxed tracking-normal drop-shadow-lg"
                     style={{
                       fontFamily: "var(--font-playfair)",
                       letterSpacing: "0.01em",
                       fontWeight: "400",
                     }}
+                    delay={0.9}
                   >
                     Your Brand,{" "}
                     <span
@@ -245,11 +248,15 @@ export default function Hero() {
                       Seen from the Skies
                     </span>
                     .
-                  </h4>
-                </div>
-
+                  </AnimatedTitle>
+                </div>{" "}
                 {/* CTA Section */}
-                <div className="mt-4 lg:mt-2 flex justify-start mb-8">
+                <motion.div
+                  className="mt-4 lg:mt-2 flex justify-start mb-8"
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+                >
                   <button
                     className="bg-white text-black px-8 py-4 font-medium text-base hover:bg-gray-100 transition-all duration-300 tracking-wider uppercase transform hover:scale-105 hover:shadow-lg rounded-sm"
                     style={{
@@ -260,7 +267,7 @@ export default function Hero() {
                   >
                     Elevate Your Vision
                   </button>
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>

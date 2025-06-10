@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 export default function About() {
   const [scrollY, setScrollY] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const offsetTop =
-        element.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
-  };
+  // const scrollToSection = (href: string) => {
+  //   const element = document.querySelector(href);
+  //   if (element) {
+  //     const offsetTop =
+  //       element.getBoundingClientRect().top + window.pageYOffset - 80;
+  //     window.scrollTo({
+  //       top: offsetTop,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,7 +87,7 @@ export default function About() {
         <div className="w-full lg:w-3/5 flex flex-col justify-center px-6 sm:px-8 lg:px-12 xl:px-16 py-8">
           {/* Header Section */}
           <div className="mb-8">
-            <h2
+            <AnimatedTitle2
               className="text-2xl sm:text-[2.5rem] font-normal mb-4 text-black leading-none tracking-wider"
               style={{
                 fontFamily: "vinila, sans-serif",
@@ -104,7 +106,7 @@ export default function About() {
               >
                 Beyond the Lens
               </span>
-            </h2>
+            </AnimatedTitle2>
             <div className="w-12 h-px bg-black"></div>
           </div>
 
@@ -150,16 +152,20 @@ export default function About() {
 
             {/* CTA Section */}
             <div className="pt-6 lg:pt-8">
-              <button
-                onClick={() => scrollToSection("#contact")}
-                className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase"
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  fontWeight: "500",
-                }}
+              <Link
+                target="_blank"
+                href="https://drive.google.com/drive/folders/102xE9azHd-uZosXbvQE4tfK63hHO73D-?usp=drive_link"
               >
-                Partner With Us
-              </button>
+                <button
+                  className="bg-gray-800 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm tracking-wide uppercase"
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    fontWeight: "500",
+                  }}
+                >
+                  Partner With Us
+                </button>
+              </Link>
             </div>
           </div>
         </div>

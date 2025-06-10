@@ -8,6 +8,7 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 export default function ContactSection() {
   return (
@@ -15,7 +16,7 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
         {/* Left: Text Content */}
         <div className="text-left md:text-left">
-          <h2
+          <AnimatedTitle2
             className="text-2xl sm:text-[2.5rem] font-normal text-white mb-4 leading-none tracking-wider"
             style={{
               fontFamily: "vinila, sans-serif",
@@ -34,7 +35,7 @@ export default function ContactSection() {
             >
               Touch
             </span>
-          </h2>
+          </AnimatedTitle2>
           <p
             className="text-gray-300 font-medium mb-8 text-base sm:text-lg leading-relaxed"
             style={{

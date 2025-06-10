@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 const LogoCarousel = () => {
   const scrollToSection = (href: string) => {
@@ -82,8 +83,9 @@ const LogoCarousel = () => {
       >
         {/* Client Logos Section */}
         <div className="container mx-auto px-4 max-w-7xl mt-16">
+          {" "}
           <div className="text-center mb-16">
-            <h3
+            <AnimatedTitle2
               className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-6 leading-none tracking-wider"
               style={{
                 fontFamily: "vinila, sans-serif",
@@ -102,7 +104,7 @@ const LogoCarousel = () => {
               >
                 Believe
               </span>
-            </h3>
+            </AnimatedTitle2>
           </div>
           <div className="relative overflow-hidden">
             <div className="flex w-max gap-x-16 scrolling-wrapper">

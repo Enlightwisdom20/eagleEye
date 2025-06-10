@@ -2,6 +2,7 @@
 
 import MindMap from "@/components/custom/mindmap";
 import TestimonialsSlideshow from "@/components/custom/testimonials";
+import AnimatedTitle from "@/components/ui/AnimatedTitle";
 import { motion } from "framer-motion";
 import {
   Calendar,
@@ -121,16 +122,7 @@ export default function TrainingPage() {
           <div className="flex-1 flex items-center justify-center px-4 md:px-6 relative z-10">
             <div className="container mx-auto">
               <div className="max-w-4xl mx-auto text-center">
-                <div
-                  className="inline-flex items-center justify-center px-4 py-2 mb-4 md:mb-6 text-xs md:text-sm font-medium text-gray-700 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200"
-                  style={{
-                    fontFamily: "var(--font-inter)",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  Expert Training
-                </div>
-                <h1
+                <AnimatedTitle
                   className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight md:leading-none tracking-wider mb-6 drop-shadow-lg px-4"
                   style={{
                     fontFamily: "var(--font-inter)",
@@ -139,7 +131,7 @@ export default function TrainingPage() {
                   }}
                 >
                   Build Your Digital Empire with the Eyes of an Expert
-                </h1>
+                </AnimatedTitle>
               </div>
             </div>
           </div>
@@ -188,17 +180,7 @@ export default function TrainingPage() {
       <section className="w-full py-16 bg-gradient-to-b from-gray-50 to-white mb-6">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <div
-              className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
-              style={{
-                fontFamily: "var(--font-inter)",
-                letterSpacing: "0.05em",
-              }}
-            >
-              <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-              Industry Standard
-            </div>
-            <h2
+            <AnimatedTitle
               className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
               style={{
                 fontFamily: "var(--font-inter)",
@@ -217,7 +199,7 @@ export default function TrainingPage() {
               >
                 Cover
               </span>
-            </h2>
+            </AnimatedTitle>
             <p
               className="text-lg text-gray-600 max-w-2xl mx-auto"
               style={{
@@ -264,17 +246,7 @@ export default function TrainingPage() {
       <section className="w-full py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <div
-              className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
-              style={{
-                fontFamily: "var(--font-inter)",
-                letterSpacing: "0.05em",
-              }}
-            >
-              <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-              Training Sessions
-            </div>
-            <h2
+            <AnimatedTitle
               className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
               style={{
                 fontFamily: "var(--font-inter)",
@@ -293,7 +265,7 @@ export default function TrainingPage() {
               >
                 Gallery
               </span>
-            </h2>
+            </AnimatedTitle>
             <p
               className="text-lg text-gray-600 max-w-2xl mx-auto"
               style={{
@@ -391,7 +363,7 @@ export default function TrainingPage() {
       <section className="w-full py-16 md:py-24 bg-black text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2
+            <AnimatedTitle
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-white leading-none tracking-wider mb-6"
               style={{
                 fontFamily: "var(--font-inter)",
@@ -400,7 +372,7 @@ export default function TrainingPage() {
               }}
             >
               Build your Empire Now!
-            </h2>
+            </AnimatedTitle>
             <p
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-gray-200 leading-relaxed tracking-normal mb-8 max-w-2xl mx-auto"
               style={{

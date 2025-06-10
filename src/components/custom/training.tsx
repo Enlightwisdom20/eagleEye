@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AnimatedTitle from "@/components/ui/AnimatedTitle";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 const TrainingComponent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -82,6 +83,10 @@ const TrainingComponent = () => {
       src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.46 AM.jpeg",
       caption: "Educational Workshop",
     },
+    {
+      src: "/Training Images/WhatsApp Image 2025-06-09 at 8.01.21 PM.jpeg",
+      caption: "Skill Development Workshop",
+    },
   ];
 
   // Intersection observer for scroll animations
@@ -137,7 +142,7 @@ const TrainingComponent = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12 px-4"
       >
-        <h1
+        <AnimatedTitle
           className="text-2xl sm:text-[2.5rem] font-normal mb-4 text-gray-900 leading-none tracking-wider"
           style={{
             fontFamily: "vinila, sans-serif",
@@ -157,7 +162,7 @@ const TrainingComponent = () => {
             Transforms
           </span>{" "}
           Careers
-        </h1>
+        </AnimatedTitle>
         <p
           className="text-gray-600 font-medium text-base sm:text-lg max-w-3xl mx-auto leading-relaxed"
           style={{
@@ -178,7 +183,7 @@ const TrainingComponent = () => {
         animate={isVisible.inAction ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2
+        <AnimatedTitle2
           className="text-2xl sm:text-3xl font-normal text-center mb-12 leading-none tracking-wider"
           style={{
             fontFamily: "vinila, sans-serif",
@@ -197,7 +202,7 @@ const TrainingComponent = () => {
           >
             Action
           </span>
-        </h2>
+        </AnimatedTitle2>
         <div className="relative overflow-hidden rounded-lg bg-gray-50">
           <div className="relative h-[500px]">
             {carouselImages.map((image, index) => (
