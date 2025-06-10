@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 export default function OurWorksSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -42,15 +43,11 @@ export default function OurWorksSection() {
   };
 
   return (
-    <section className="w-full py-8 md:py-12 bg-gradient-to-b from-gray-50 to-gray-100">
+    <section className="w-full py-8 md:py-12 bg-gray-100">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-            Works
-          </div>
-          <h2
+          <AnimatedTitle2
             className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-6 leading-none tracking-wider"
             style={{
               fontFamily: "vinila, sans-serif",
@@ -79,7 +76,7 @@ export default function OurWorksSection() {
             >
               Action
             </span>
-          </h2>
+          </AnimatedTitle2>
         </div>
 
         {/* Image Slideshow */}

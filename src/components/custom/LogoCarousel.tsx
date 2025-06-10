@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 const LogoCarousel = () => {
   const scrollToSection = (href: string) => {
@@ -72,9 +73,9 @@ const LogoCarousel = () => {
   ];
 
   return (
-    <section className="bg-white overflow-hidden">
+    <section className="bg-gradient-to-b from-gray-100 via-white to-white overflow-hidden">
       <motion.div
-        className="text-center py-16 pt-4"
+        className="text-center py-16 pt-1"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -82,12 +83,9 @@ const LogoCarousel = () => {
       >
         {/* Client Logos Section */}
         <div className="container mx-auto px-4 max-w-7xl mt-16">
+          {" "}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-              Clients
-            </div>{" "}
-            <h3
+            <AnimatedTitle2
               className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-6 leading-none tracking-wider"
               style={{
                 fontFamily: "vinila, sans-serif",
@@ -106,7 +104,7 @@ const LogoCarousel = () => {
               >
                 Believe
               </span>
-            </h3>
+            </AnimatedTitle2>
           </div>
           <div className="relative overflow-hidden">
             <div className="flex w-max gap-x-16 scrolling-wrapper">

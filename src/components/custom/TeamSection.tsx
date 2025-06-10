@@ -1,5 +1,6 @@
 "use client";
 import TeamMember from "./TeamMember";
+import AnimatedTitle from "@/components/ui/AnimatedTitle";
 
 const team = [
   {
@@ -78,21 +79,16 @@ export default function TeamSection() {
   };
   return (
     <section
-      className="py-16 px-6 bg-gradient-to-b from-white to-gray-200 relative bg-cover bg-center"
+      className="py-16 px-6 bg-gray-100 relative bg-cover bg-center"
       style={{ backgroundImage: "url('/images/your-bg.png')" }}
     >
       {/* Blur overlay */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-0"></div>
 
       {/* Content container */}
       <div className="relative z-10 px-4 md:px-20">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-            Team
-          </div>
-          <h1
+          <AnimatedTitle
             className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
             style={{
               fontFamily: "vinila, sans-serif",
@@ -112,7 +108,7 @@ export default function TeamSection() {
               Eye
             </span>{" "}
             Counts
-          </h1>
+          </AnimatedTitle>
           <p
             className="text-gray-600 font-medium mt-2 text-base sm:text-lg leading-relaxed"
             style={{

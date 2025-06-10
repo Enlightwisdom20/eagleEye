@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 const TestimonialsSlideshow = () => {
   const testimonials = [
@@ -96,18 +97,8 @@ const TestimonialsSlideshow = () => {
   return (
     <div className="bg-white w-full py-16 px-4 overflow-hidden isolate">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <div
-          className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6"
-          style={{
-            fontFamily: "var(--font-inter)",
-            letterSpacing: "0.05em",
-          }}
-        >
-          <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-          Training Sessions
-        </div>
-        <div className="text-center mb-12">
-          <h2
+        <div className="text-left mb-12">
+          <AnimatedTitle2
             className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
             style={{
               fontFamily: "vinila, sans-serif",
@@ -126,7 +117,7 @@ const TestimonialsSlideshow = () => {
             >
               Learners
             </span>
-          </h2>
+          </AnimatedTitle2>
         </div>
 
         <div className="space-y-6">

@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
+import AnimatedTitle2 from "@/components/ui/AnimatedTitle2";
 
 interface CounterProps {
   target: number;
@@ -43,7 +44,7 @@ const AnimatedCounter = ({ target }: CounterProps) => {
 
 const Clients = () => {
   return (
-    <section className="bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section className="bg-gray-100 overflow-hidden">
       <motion.div
         className="text-center pt-16"
         initial={{ opacity: 0, y: 50 }}
@@ -52,7 +53,7 @@ const Clients = () => {
         viewport={{ once: true }}
       >
         {" "}
-        <motion.h2
+        <AnimatedTitle2
           className="text-2xl sm:text-[2.5rem] font-normal mb-12 text-center leading-none tracking-wider"
           style={{
             fontFamily: "vinila, sans-serif",
@@ -60,10 +61,6 @@ const Clients = () => {
             letterSpacing: "0.01em",
             fontWeight: "700",
           }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
         >
           Our{" "}
           <span
@@ -76,7 +73,7 @@ const Clients = () => {
             Impact
           </span>
           , at a Glance
-        </motion.h2>
+        </AnimatedTitle2>
         <motion.div
           className="flex flex-wrap justify-center gap-8 sm:gap-16 text-xl font-semibold mb-6"
           initial={{ opacity: 0 }}
