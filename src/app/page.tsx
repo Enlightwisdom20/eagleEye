@@ -16,22 +16,17 @@ export default function Home() {
       <section id="hero">
         <Hero />
       </section>
-
       {/* Clients Section */}
       <Clients />
       <section id="works">
         <OurWorksSection />
-      </section>
+      </section>{" "}
       {/* Services Carousel Section */}
       <section
         id="services"
-        className="py-4 w-full overflow-x-hidden bg-gradient-to-b from-gray-100 to-white"
+        className="py-4 w-full overflow-x-hidden bg-gray-100"
       >
         <div className="text-center p-8 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-            Services
-          </div>
           <h1
             className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
             style={{
@@ -55,14 +50,15 @@ export default function Home() {
         </div>
         <ServicesCarousel />
       </section>
-
       <section id="about">
         <About />
       </section>
       <LogoCarousel />
-
       {/* Training Section */}
-      <section id="training">
+      <section
+        className=" bg-gradient-to-b from-white via-gray-100 to-gray-100"
+        id="training"
+      >
         <TrainingComponent />
       </section>
       <section id="team">

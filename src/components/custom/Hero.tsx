@@ -276,77 +276,7 @@ export default function Hero() {
               pointerEvents: showFinalLayout ? "auto" : "none",
               visibility: textOpacity > 0 ? "visible" : "hidden",
             }}
-          >
-            <div className="w-full max-w-7xl mx-auto">
-              <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4">
-                {/* Desktop layout: Single line with text and video inline */}
-                {/* <div className="hidden md:flex items-center justify-center gap-6 lg:gap-8 flex-wrap"> */}
-                {/* "See what others" */}
-                {/* <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-none whitespace-nowrap">
-                    We See what others
-                  </h1> */}
-
-                {/* Inline video for desktop - only visible when showFinalLayout and not mobile */}
-                {/* {showFinalLayout && !isMobile && (
-                    <div
-                      className="relative flex-shrink-0 bg-black overflow-hidden shadow-2xl rounded-lg"
-                      style={{
-                        width: "160px",
-                        height: "90px",
-                      }}
-                    >
-                      <video
-                        className="w-full h-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                      >
-                        <source src="/output.webm" type="video/webm" />
-                      </video>
-                    </div>
-                  )} */}
-
-                {/* "miss." */}
-                {/* <h1 className="text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-none whitespace-nowrap">
-                    miss.
-                  </h1>
-                </div> */}
-
-                {/* Mobile layout: Stacked text, no video */}
-                {/* <div className="flex md:hidden flex-col items-center justify-center space-y-1">
-                  <h1 className="text-2xl sm:text-3xl font-black text-white leading-none text-center">
-                    See what others miss.
-                  </h1>
-                </div> */}
-
-                {/* Second line - "Market smarter." for both layouts */}
-                {/* <div className="flex justify-center">
-                  <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-none text-center">
-                    Market smarter.
-                  </h1>
-                </div> */}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Brand services footer */}
-          {/* <motion.div
-            className="absolute bottom-8 left-0 right-0 text-center z-20 px-4"
-            animate={{
-              opacity: textOpacity,
-            }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            style={{
-              visibility: textOpacity > 0 ? "visible" : "hidden",
-            }}
-          >
-            <p className="text-xs sm:text-sm font-medium text-gray-50 tracking-wider uppercase leading-relaxed">
-              The problem isn{"’"}t lack of content, it{"’"}s lack of
-              connection. We are here to draw the connection
-            </p>
-          </motion.div> */}
+          ></motion.div>
         </div>
       </section>
     </div>

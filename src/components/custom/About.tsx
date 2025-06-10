@@ -50,7 +50,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="min-h-screen bg-white relative overflow-hidden"
+      className="min-h-screen bg-gray-100 relative overflow-hidden"
     >
       {/* Split Layout Container */}
       <div className="flex flex-col lg:flex-row min-h-screen">
@@ -79,12 +79,6 @@ export default function About() {
           </div>
 
           {/* Floating brand badge on image */}
-          <div className="absolute top-8 left-8 z-10">
-            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-              <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
-              About Us
-            </div>
-          </div>
         </div>
 
         {/* Right Half - Content */}

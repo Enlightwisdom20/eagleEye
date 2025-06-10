@@ -34,23 +34,28 @@ export default function TeamMember({
       { threshold: 0.1 } // trigger when 10% visible
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, []);
 
   return (
     <article
       ref={ref}
-      className={`bg-white w-full max-w-[16rem] h-[20rem] sm:h-[22rem] lg:h-[25rem] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center transform hover:scale-105 relative mx-auto
+      className={`bg-white w-full max-w-[16rem] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 text-center transform hover:scale-105 relative mx-auto flex flex-col
         ${isVisible ? "fade-in-smooth" : "opacity-0 translate-y-10"}`}
+      style={{ height: "clamp(20rem, 25vw, 26rem)" }}
     >
       {/* Image Container */}
-      <div className="relative w-full h-[78%] overflow-hidden bg-gray-150">
+      <div
+        className="relative w-full flex-1 overflow-hidden bg-gray-150"
+        style={{ minHeight: "70%" }}
+      >
         <Image
           src={image}
           alt={name}
@@ -63,21 +68,26 @@ export default function TeamMember({
       </div>
 
       {/* Card Details */}
-      <div className="p-3 sm:p-4 lg:p-6">
+      <div
+        className="px-3 py-3 sm:px-4 sm:py-4 lg:px-5 lg:py-5 flex flex-col justify-center"
+        style={{ minHeight: "30%" }}
+      >
         <h2
-          className="text-base sm:text-lg font-medium text-gray-800 mb-1"
+          className="text-sm sm:text-base lg:text-lg font-medium text-gray-800 mb-1 leading-tight"
           style={{
             fontFamily: "var(--font-inter)",
             fontWeight: "500",
+            lineHeight: "1.2",
           }}
         >
           {name}
         </h2>
         <p
-          className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-4"
+          className="text-xs sm:text-sm text-gray-600 leading-tight"
           style={{
             fontFamily: "var(--font-inter)",
             fontWeight: "300",
+            lineHeight: "1.3",
           }}
         >
           {role}

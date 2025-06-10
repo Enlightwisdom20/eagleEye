@@ -137,10 +137,6 @@ const TrainingComponent = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12 px-4"
       >
-        <div className="inline-flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-          <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
-          Training
-        </div>
         <h1
           className="text-2xl sm:text-[2.5rem] font-normal mb-4 text-gray-900 leading-none tracking-wider"
           style={{

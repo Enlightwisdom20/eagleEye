@@ -106,7 +106,7 @@ const TestimonialsSlideshow = () => {
           <div className="w-2 h-2 bg-gray-500 rounded-full animate-pulse"></div>
           Training Sessions
         </div>
-        <div className="text-center mb-12">
+        <div className="text-left mb-12">
           <h2
             className="text-2xl sm:text-[2.5rem] font-normal text-gray-900 mb-4 leading-none tracking-wider"
             style={{

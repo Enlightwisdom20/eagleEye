@@ -14,7 +14,7 @@ export default function ContactSection() {
     <section className="bg-black py-20 px-6 text-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
         {/* Left: Text Content */}
-        <div className="text-center md:text-left">
+        <div className="text-left md:text-left">
           <h2
             className="text-2xl sm:text-[2.5rem] font-normal text-white mb-4 leading-none tracking-wider"
             style={{

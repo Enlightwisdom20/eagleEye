@@ -96,7 +96,7 @@ export default function Industries() {
     >
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-left mb-16">
           <div
             className={`transition-all duration-1000 ease-out px-4 ${
               isVisible
@@ -110,7 +110,7 @@ export default function Industries() {
                 Cater
               </span>
             </h2>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mx-auto mb-6"></div>
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent mb-6"></div>
           </div>
         </div>
 

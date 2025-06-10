@@ -43,7 +43,7 @@ const AnimatedCounter = ({ target }: CounterProps) => {
 
 const Clients = () => {
   return (
-    <section className="bg-gradient-to-b from-gray-50 via-white to-gray-50 overflow-hidden">
+    <section className="bg-gray-100 overflow-hidden">
       <motion.div
         className="text-center pt-16"
         initial={{ opacity: 0, y: 50 }}
