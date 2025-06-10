@@ -14,62 +14,29 @@ const LogoCarousel = () => {
         behavior: "smooth",
       });
     }
-  };
-  // Logo paths - replace with actual paths
+  }; // Logo paths with reduced scale information (decreased by 0.3)
   const clients = [
-    { name: "A2Z", logo: "/logos/a2z.png?height=60&width=120", scale: 1.2 },
-    {
-      name: "Ashbunk",
-      logo: "/logos/ashbunk.png?height=60&width=120",
-      scale: 1.2,
-    },
-    {
-      name: "Beat Naturally",
-      logo: "/logos/beatnaturally.webp?height=60&width=120",
-      scale: 1.2,
-    },
+    { name: "A2Z", logo: "/logos/a2z.png", scale: 0.9 },
+    { name: "Ashbunk", logo: "/logos/ashbunk.png", scale: 0.9 },
+    { name: "Beat Naturally", logo: "/logos/beatnaturally.webp", scale: 0.9 },
     {
       name: "Bricks and Spaces",
-      logo: "/logos/bricks and spaces.avif?height=60&width=120",
-      scale: 1.7,
+      logo: "/logos/bricks and spaces.avif",
+      scale: 1.4,
     },
-    {
-      name: "Enlight Wisdom",
-      logo: "/logos/enlight.png?height=60&width=120",
-      scale: 2.7,
-    },
-    { name: "Grove", logo: "/logos/grove.png?height=60&width=120", scale: 1.0 },
-    {
-      name: "Professional",
-      logo: "/logos/professional_logo.png?height=60&width=120",
-      scale: 1.2,
-    },
-    { name: "Rel", logo: "/logos/rel.png?height=60&width=120", scale: 1.4 },
-    {
-      name: "Reylon",
-      logo: "/logos/Relyon-Logo.png?height=60&width=120",
-      scale: 1.2,
-    },
-    {
-      name: "Schoolbunk",
-      logo: "/logos/schoolbunk.webp?height=60&width=120",
-      scale: 1.2,
-    },
+    { name: "Enlight Wisdom", logo: "/logos/enlight.png", scale: 2.4 },
+    { name: "Grove", logo: "/logos/grove.png", scale: 0.7 },
+    { name: "Professional", logo: "/logos/professional_logo.png", scale: 0.9 },
+    { name: "Rel", logo: "/logos/rel.png", scale: 1.1 },
+    { name: "Reylon", logo: "/logos/Relyon-Logo.png", scale: 0.9 },
+    { name: "Schoolbunk", logo: "/logos/schoolbunk.webp", scale: 0.9 },
     {
       name: "SS Graphics",
-      logo: "/logos/S.S. Graphics Logo-01.png?height=60&width=120",
-      scale: 2.0,
+      logo: "/logos/S.S. Graphics Logo-01.png",
+      scale: 1.7,
     },
-    {
-      name: "TNUHUB",
-      logo: "/logos/tnuhub.png?height=60&width=120",
-      scale: 1.2,
-    },
-    {
-      name: "Shahs electronics",
-      logo: "/logos/shahs.png?height=60&width=120",
-      scale: 2.4,
-    },
+    { name: "TNUHUB", logo: "/logos/tnuhub.png", scale: 0.9 },
+    { name: "Shahs electronics", logo: "/logos/shahs.png", scale: 2.1 },
   ];
 
   return (
@@ -105,42 +72,54 @@ const LogoCarousel = () => {
                 Believe
               </span>
             </AnimatedTitle2>
-          </div>
-          <div className="relative overflow-hidden">
-            <div className="flex w-max gap-x-16 scrolling-wrapper">
+          </div>{" "}
+          <div className="relative overflow-hidden py-8">
+            <div className="flex w-max gap-x-12 scrolling-wrapper">
+              {" "}
               {/* Group 1: Original Logos */}
-              <div className="flex gap-x-16">
+              <div className="flex gap-x-12">
                 {clients.map((client, index) => (
                   <div
                     key={`logo1-${index}`}
-                    className="flex items-center justify-center w-32 h-16 flex-shrink-0"
+                    className="flex items-center justify-center w-40 h-24 flex-shrink-0 p-2"
                     style={{ transform: `scale(${client.scale})` }}
                   >
                     <Image
                       src={client.logo}
                       alt={client.name}
-                      width={120}
-                      height={60}
-                      className="h-12 object-contain hover:grayscale-0 transition-all duration-300"
+                      width={160}
+                      height={80}
+                      className="max-w-full max-h-full w-auto h-auto object-contain transition-all duration-300"
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        width: "auto",
+                        height: "auto",
+                      }}
                     />
                   </div>
                 ))}
               </div>
-
               {/* Group 2: Duplicated Logos for Seamless Loop */}
-              <div className="flex gap-x-16">
+              <div className="flex gap-x-12">
                 {clients.map((client, index) => (
                   <div
                     key={`logo2-${index}`}
-                    className="flex items-center justify-center w-32 h-16 flex-shrink-0"
+                    className="flex items-center justify-center w-40 h-24 flex-shrink-0 p-2"
                     style={{ transform: `scale(${client.scale})` }}
                   >
                     <Image
                       src={client.logo}
                       alt={client.name}
-                      width={120}
-                      height={60}
-                      className="h-12 object-contain hover:grayscale-0 transition-all duration-300"
+                      width={160}
+                      height={80}
+                      className="max-w-full max-h-full w-auto h-auto object-contain transition-all duration-300"
+                      style={{
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        width: "auto",
+                        height: "auto",
+                      }}
                     />
                   </div>
                 ))}
