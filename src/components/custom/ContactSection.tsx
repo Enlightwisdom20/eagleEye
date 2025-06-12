@@ -179,7 +179,8 @@ https://www.instagram.com/theeagleeye.in
                 fontWeight: "300",
               }}
             >
-              Designed & Developed with ❤️ in Chennai
+              Designed & Developed by{" "}
+              <Link href={"https://enlightwisdom.com/"}>Enlight Wisdom</Link>
             </p>
           </div>
         </div>
