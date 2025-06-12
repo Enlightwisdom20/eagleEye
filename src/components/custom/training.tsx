@@ -20,71 +20,71 @@ const TrainingComponent = () => {
   // Training images from actual sessions
   const carouselImages = [
     {
-      src: "/Training Images/IMG-20210219-WA0030.jpg",
+      src: "/Training Images/IMG-20210219-WA0030.webp",
       caption: "Training Workshop Session",
     },
     {
-      src: "/Training Images/IMG-20210219-WA0036.jpg",
+      src: "/Training Images/IMG-20210219-WA0036.webp",
       caption: "Interactive Learning Environment",
     },
     {
-      src: "/Training Images/IMG_20250421_140510172.jpg",
+      src: "/Training Images/IMG_20250421_140510172.webp",
       caption: "Group Learning Experience",
     },
     {
-      src: "/Training Images/IMG_20250421_141254404.jpg",
+      src: "/Training Images/IMG_20250421_141254404.webp",
       caption: "Hands-on Training Session",
     },
     {
-      src: "/Training Images/IMG_20250421_223033130.jpg",
+      src: "/Training Images/IMG_20250421_223033130.webp",
       caption: "Professional Development Workshop",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-04-23 at 3.17.57 PM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-04-23 at 3.17.57 PM.webp",
       caption: "Digital Marketing Training",
     },
     {
-      src: "/bg.jpeg",
+      src: "/bg.webp",
       caption: "Advanced Marketing Strategies",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM.webp",
       caption: "Collaborative Learning Session",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.01 AM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.01 AM.webp",
       caption: "Interactive Training Program",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM (1).jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM (1).webp",
       caption: "Skill Development Workshop",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM.webp",
       caption: "Professional Training Environment",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM (1).jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM (1).webp",
       caption: "Marketing Education Session",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM.webp",
       caption: "Hands-on Learning Experience",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM (1).jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM (1).webp",
       caption: "Group Training Activity",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM.webp",
       caption: "Practical Training Session",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.46 AM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-05-29 at 10.08.46 AM.webp",
       caption: "Educational Workshop",
     },
     {
-      src: "/Training Images/WhatsApp Image 2025-06-09 at 8.01.21 PM.jpeg",
+      src: "/Training Images/WhatsApp Image 2025-06-09 at 8.01.21 PM.webp",
       caption: "Skill Development Workshop",
     },
   ];
@@ -108,7 +108,7 @@ const TrainingComponent = () => {
 
     const observer = new IntersectionObserver(
       observerCallback,
-      observerOptions
+      observerOptions,
     );
 
     const sections = ["benefits", "inAction", "curriculum", "tools"];
@@ -123,13 +123,13 @@ const TrainingComponent = () => {
   // Carousel controls
   const nextSlide = () => {
     setActiveSlide((prev) =>
-      prev === carouselImages.length - 1 ? 0 : prev + 1
+      prev === carouselImages.length - 1 ? 0 : prev + 1,
     );
   };
 
   const prevSlide = () => {
     setActiveSlide((prev) =>
-      prev === 0 ? carouselImages.length - 1 : prev - 1
+      prev === 0 ? carouselImages.length - 1 : prev - 1,
     );
   };
 
@@ -210,7 +210,7 @@ const TrainingComponent = () => {
                 key={index}
                 className={cn(
                   "absolute inset-0 transition-opacity duration-500",
-                  activeSlide === index ? "opacity-100" : "opacity-0"
+                  activeSlide === index ? "opacity-100" : "opacity-0",
                 )}
                 initial={false}
               >
@@ -246,7 +246,7 @@ const TrainingComponent = () => {
                 onClick={() => setActiveSlide(index)}
                 className={cn(
                   "w-2 h-2 rounded-full transition-all",
-                  activeSlide === index ? "bg-white scale-125" : "bg-gray-400"
+                  activeSlide === index ? "bg-white scale-125" : "bg-gray-400",
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -275,8 +275,8 @@ const TrainingComponent = () => {
             animate={
               isVisible.inAction
                 ? {
-                    scale: [1, 1.15, 0.85, 1.1, 0.9, 1.08, 0.92, 1.05, 0.95, 1],
-                  }
+                  scale: [1, 1.15, 0.85, 1.1, 0.9, 1.08, 0.92, 1.05, 0.95, 1],
+                }
                 : { scale: 1 }
             }
             transition={{

@@ -6,61 +6,61 @@ const team = [
   {
     name: "Erlinda Scarlet Selvan",
     role: "Founder & CEO",
-    image: "/teams/erlinda.jpeg",
+    image: "/teams/erlinda.webp",
     objectPosition: "center top",
   },
   {
     name: "Bezaleel (Beslee)",
     role: "Chief Technical Officer",
-    image: "/teams/Beslee.png",
+    image: "/teams/Beslee.webp",
     objectPosition: "center 20%",
   },
   {
     name: "Surya",
     role: "AI & Development Manager",
-    image: "/teams/surya.jpeg",
+    image: "/teams/surya.webp",
     objectPosition: "center 15%",
   },
   {
     name: "Shallon Sherly",
     role: "Creative Head",
-    image: "/teams/Sherly.jpg",
+    image: "/teams/Sherly.webp",
     objectPosition: "40% 20%",
   },
   {
     name: "Tiffany Tracina",
     role: "Content Strategist & Trainer",
-    image: "/teams/Tiffany.jpg",
+    image: "/teams/Tiffany.webp",
     objectPosition: "center 10%",
   },
   {
     name: "Elisha Olive",
     role: "Influencer Marketing Coordinator",
-    image: "/teams/Elisha.jpg",
+    image: "/teams/Elisha.webp",
     objectPosition: "center center",
   },
   {
     name: "Jervin",
     role: "Videographer",
-    image: "/teams/Jervin.jpg",
+    image: "/teams/Jervin.webp",
     objectPosition: "70% center",
   },
   {
     name: "Saheli",
     role: "Creative Designer",
-    image: "/teams/Saheli.jpeg",
+    image: "/teams/Saheli.webp",
     objectPosition: "center 25%",
   },
   // {
   //   name: "Anita Cassandra",
   //   role: "Social Media Executive",
-  //   image: "/teams/Anita.png",
+  //   image: "/teams/Anita.webp",
   //   objectPosition: "center 20%",
   // },
   {
     name: "Rashmi",
     role: "Social Media Executive",
-    image: "/teams/rashmi.jpeg",
+    image: "/teams/rashmi.webp",
     objectPosition: "center 20%",
   },
 ];
@@ -80,7 +80,7 @@ export default function TeamSection() {
   return (
     <section
       className="py-16 px-6 bg-gray-100 relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/your-bg.png')" }}
+      style={{ backgroundImage: "url('/images/your-bg.webp')" }}
     >
       {/* Blur overlay */}
 

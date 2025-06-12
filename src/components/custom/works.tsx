@@ -10,18 +10,18 @@ export default function OurWorksSection() {
 
   // Work images from the ourworks folder
   const workImages = [
-    "/ourworks/Our Work/w1.jpg",
-    "/ourworks/Our Work/w2.jpg",
-    "/ourworks/Our Work/w3.jpg",
-    "/ourworks/Our Work/w3(1).jpg",
-    "/ourworks/Our Work/w4.jpg",
-    "/ourworks/Our Work/w5.jpg",
-    "/ourworks/Our Work/w6.jpg",
-    "/ourworks/Our Work/w7.jpg",
-    "/ourworks/Our Work/w8.jpg",
-    "/ourworks/Our Work/w10.jpg",
-    "/ourworks/Our Work/w11.jpg",
-    "/ourworks/Our Work/w12.jpg",
+    "/ourworks/Our Work/w1.webp",
+    "/ourworks/Our Work/w2.webp",
+    "/ourworks/Our Work/w3.webp",
+    "/ourworks/Our Work/w3(1).webp",
+    "/ourworks/Our Work/w4.webp",
+    "/ourworks/Our Work/w5.webp",
+    "/ourworks/Our Work/w6.webp",
+    "/ourworks/Our Work/w7.webp",
+    "/ourworks/Our Work/w8.webp",
+    "/ourworks/Our Work/w10.webp",
+    "/ourworks/Our Work/w11.webp",
+    "/ourworks/Our Work/w12.webp",
   ];
 
   // Auto-advance slideshow
@@ -87,7 +87,7 @@ export default function OurWorksSection() {
                 key={index}
                 className={cn(
                   "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-                  activeSlide === index ? "opacity-100" : "opacity-0"
+                  activeSlide === index ? "opacity-100" : "opacity-0",
                 )}
               >
                 <img
@@ -126,7 +126,7 @@ export default function OurWorksSection() {
                   "w-2 h-2 rounded-full transition-all duration-300",
                   activeSlide === index
                     ? "bg-white scale-125 shadow-lg"
-                    : "bg-white/50 hover:bg-white/70"
+                    : "bg-white/50 hover:bg-white/70",
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />

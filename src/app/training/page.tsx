@@ -50,22 +50,22 @@ export default function TrainingPage() {
   ];
 
   const trainingImages = [
-    "/Training Images/IMG-20210219-WA0030.jpg",
-    "/Training Images/IMG-20210219-WA0036.jpg",
-    "/Training Images/IMG_20250421_140510172.jpg",
-    "/Training Images/IMG_20250421_141254404.jpg",
-    "/Training Images/IMG_20250421_223033130.jpg",
-    "/Training Images/WhatsApp Image 2025-04-23 at 3.17.57 PM.jpeg",
-    "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM.jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.01 AM.jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM (1).jpeg",
-    "/Training Images/WhatsApp Image 2025-06-05 at 10.59.30 PM.jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM (1).jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM.jpeg",
-    "/Training Images/WhatsApp Image 2025-06-05 at 10.59.30 PM (1).jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM (1).jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM.jpeg",
-    "/Training Images/WhatsApp Image 2025-05-29 at 10.08.46 AM.jpeg",
+    "/Training Images/IMG-20210219-WA0030.webp",
+    "/Training Images/IMG-20210219-WA0036.webp",
+    "/Training Images/IMG_20250421_140510172.webp",
+    "/Training Images/IMG_20250421_141254404.webp",
+    "/Training Images/IMG_20250421_223033130.webp",
+    "/Training Images/WhatsApp Image 2025-04-23 at 3.17.57 PM.webp",
+    "/Training Images/WhatsApp Image 2025-04-24 at 12.17.08 AM.webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.01 AM.webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.02 AM (1).webp",
+    "/Training Images/WhatsApp Image 2025-06-05 at 10.59.30 PM.webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM (1).webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.02.03 AM.webp",
+    "/Training Images/WhatsApp Image 2025-06-05 at 10.59.30 PM (1).webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM (1).webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.08.45 AM.webp",
+    "/Training Images/WhatsApp Image 2025-05-29 at 10.08.46 AM.webp",
   ];
 
   const features = [
@@ -103,7 +103,7 @@ export default function TrainingPage() {
     <div className="w-full h-screen bg-white">
       <style dangerouslySetInnerHTML={{ __html: styles }} />
       {/* Banner Section */}
-      <section className="w-full h-screen relative overflow-hidden bg-[url('/bg.jpeg')] bg-cover bg-center bg-no-repeat contrast-125">
+      <section className="w-full h-screen relative overflow-hidden bg-[url('/bg.webp')] bg-cover bg-center bg-no-repeat contrast-125">
         {/* Background Image */}
         {/* <div className="absolute inset-0 z-0">
           <Image

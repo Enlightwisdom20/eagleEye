@@ -274,7 +274,7 @@ export default function Hero() {
 
           {/* Tagline text layout that appears as video settles */}
           <motion.div
-            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[#E7C280] bg-[url('/FResized.png')] md:bg-[url('/agh.jpeg')] bg-cover md:bg-cover bg-right md:bg-top bg-no-repeat pt-20"
+            className="absolute inset-0 flex items-center justify-center px-4 md:px-8 z-20 bg-[#E7C280] bg-[url('/FResized.webp')] md:bg-[url('/agh.webp')] bg-cover md:bg-cover bg-right md:bg-top bg-no-repeat pt-20"
             animate={{
               opacity: textOpacity,
             }}

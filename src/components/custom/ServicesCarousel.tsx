@@ -7,27 +7,27 @@ const ServicesCarousel = () => {
 
   const services = [
     {
-      image: "/images/branding.png",
+      image: "/images/branding.webp",
       title: "Branding Solutions",
       description: ["Build a vibe", "they'll never forget."],
     },
     {
-      image: "/images/content.png",
+      image: "/images/content.webp",
       title: "Content Writing",
       description: ["Words that click,", "convert, and charm."],
     },
     {
-      image: "/images/event.png",
+      image: "/images/event.webp",
       title: "Event Marketing",
       description: ["Create buzz,", "fill seats make noise."],
     },
     {
-      image: "/images/influencer.png",
+      image: "/images/influencer.webp",
       title: "Influencer Marketing",
       description: ["Real faces,", "real reach, real results."],
     },
     {
-      image: "/images/performance.png",
+      image: "/images/performance.webp",
       title: "Performance Marketing",
       description: [
         "Clicks that count,",
@@ -36,12 +36,12 @@ const ServicesCarousel = () => {
       ],
     },
     {
-      image: "/images/seo.png",
+      image: "/images/seo.webp",
       title: "SEO Services",
       description: ["Rank high,", "get found, stay seen."],
     },
     {
-      image: "/images/socialmedia.png",
+      image: "/images/socialmedia.webp",
       title: "Social Media Marketing",
       description: [
         "Scroll-stopping content",
@@ -50,17 +50,17 @@ const ServicesCarousel = () => {
       ],
     },
     {
-      image: "/images/video.png",
+      image: "/images/video.webp",
       title: "Video Production",
       description: ["Lights, Camera.", "Stories that actually stick."],
     },
     {
-      image: "/images/website.png",
+      image: "/images/website.webp",
       title: "Website Development",
       description: ["Designs that wow,", "load fast,", "and convert better."],
     },
     {
-      image: "/images/whatsap.png",
+      image: "/images/whatsap.webp",
       title: "Whatsapp Marketing",
       description: ["Slide into chats,", "start convos, close deals."],
     },

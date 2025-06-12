@@ -16,27 +16,27 @@ const LogoCarousel = () => {
     }
   }; // Logo paths with reduced scale information (decreased by 0.3)
   const clients = [
-    { name: "A2Z", logo: "/logos/a2z.png", scale: 0.9 },
-    { name: "Ashbunk", logo: "/logos/ashbunk.png", scale: 0.9 },
+    { name: "A2Z", logo: "/logos/a2z.webp", scale: 0.9 },
+    { name: "Ashbunk", logo: "/logos/ashbunk.webp", scale: 0.9 },
     { name: "Beat Naturally", logo: "/logos/beatnaturally.webp", scale: 0.9 },
     {
       name: "Bricks and Spaces",
       logo: "/logos/bricks and spaces.avif",
       scale: 1.4,
     },
-    { name: "Enlight Wisdom", logo: "/logos/enlight.png", scale: 2.4 },
-    { name: "Grove", logo: "/logos/grove.png", scale: 0.7 },
-    { name: "Professional", logo: "/logos/professional_logo.png", scale: 0.9 },
-    { name: "Rel", logo: "/logos/rel.png", scale: 1.1 },
-    { name: "Reylon", logo: "/logos/Relyon-Logo.png", scale: 0.9 },
+    { name: "Enlight Wisdom", logo: "/logos/enlight.webp", scale: 2.4 },
+    { name: "Grove", logo: "/logos/grove.webp", scale: 0.7 },
+    { name: "Professional", logo: "/logos/professional_logo.webp", scale: 0.9 },
+    { name: "Rel", logo: "/logos/rel.webp", scale: 1.1 },
+    { name: "Reylon", logo: "/logos/Relyon-Logo.webp", scale: 0.9 },
     { name: "Schoolbunk", logo: "/logos/schoolbunk.webp", scale: 0.9 },
     {
       name: "SS Graphics",
-      logo: "/logos/S.S. Graphics Logo-01.png",
+      logo: "/logos/S.S. Graphics Logo-01.webp",
       scale: 1.7,
     },
-    { name: "TNUHUB", logo: "/logos/tnuhub.png", scale: 0.9 },
-    { name: "Shahs electronics", logo: "/logos/shahs.png", scale: 2.1 },
+    { name: "TNUHUB", logo: "/logos/tnuhub.webp", scale: 0.9 },
+    { name: "Shahs electronics", logo: "/logos/shahs.webp", scale: 2.1 },
   ];
 
   return (
