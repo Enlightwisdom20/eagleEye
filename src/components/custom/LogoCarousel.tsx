@@ -16,8 +16,8 @@ const LogoCarousel = () => {
     }
   }; // Logo paths with reduced scale information (decreased by 0.3)
   const clients = [
-    { name: "A2Z", logo: "/logos/a2z.webp", scale: 0.9 },
-    { name: "Ashbunk", logo: "/logos/ashbunk.webp", scale: 0.9 },
+    { name: "A2Z", logo: "/logos/a2z.webp", scale: 1.1 },
+    { name: "Ashbunk", logo: "/logos/ashbunk.webp", scale: 1.2 },
     { name: "Beat Naturally", logo: "/logos/beatnaturally.webp", scale: 0.9 },
     {
       name: "Bricks and Spaces",
@@ -25,11 +25,11 @@ const LogoCarousel = () => {
       scale: 1.4,
     },
     { name: "Enlight Wisdom", logo: "/logos/enlight.webp", scale: 2.4 },
-    { name: "Grove", logo: "/logos/grove.webp", scale: 0.7 },
-    { name: "Professional", logo: "/logos/professional_logo.webp", scale: 0.9 },
-    { name: "Rel", logo: "/logos/rel.webp", scale: 1.1 },
-    { name: "Reylon", logo: "/logos/Relyon-Logo.webp", scale: 0.9 },
-    { name: "Schoolbunk", logo: "/logos/schoolbunk.webp", scale: 0.9 },
+    { name: "Grove", logo: "/logos/grove.webp", scale: 0.9 },
+    { name: "Professional", logo: "/logos/professional_logo.webp", scale: 1.1 },
+    { name: "Rel", logo: "/logos/rel.webp", scale: 1.3 },
+    { name: "Reylon", logo: "/logos/Relyon-Logo.webp", scale: 1.1 },
+    { name: "Schoolbunk", logo: "/logos/schoolbunk.webp", scale: 1.3 },
     {
       name: "SS Graphics",
       logo: "/logos/S.S. Graphics Logo-01.webp",
@@ -76,13 +76,18 @@ const LogoCarousel = () => {
           <div className="relative overflow-hidden py-8">
             <div className="flex w-max gap-x-12 scrolling-wrapper">
               {" "}
-              {/* Group 1: Original Logos */}
+              {/* Group 1: Original Logos */}{" "}
               <div className="flex gap-x-12">
                 {clients.map((client, index) => (
                   <div
                     key={`logo1-${index}`}
                     className="flex items-center justify-center w-40 h-24 flex-shrink-0 p-2"
-                    style={{ transform: `scale(${client.scale})` }}
+                    style={{
+                      transform:
+                        client.name === "SS Graphics"
+                          ? `scale(${client.scale}) translateY(-8px)`
+                          : `scale(${client.scale})`,
+                    }}
                   >
                     <Image
                       src={client.logo}
@@ -100,13 +105,18 @@ const LogoCarousel = () => {
                   </div>
                 ))}
               </div>
-              {/* Group 2: Duplicated Logos for Seamless Loop */}
+              {/* Group 2: Duplicated Logos for Seamless Loop */}{" "}
               <div className="flex gap-x-12">
                 {clients.map((client, index) => (
                   <div
                     key={`logo2-${index}`}
                     className="flex items-center justify-center w-40 h-24 flex-shrink-0 p-2"
-                    style={{ transform: `scale(${client.scale})` }}
+                    style={{
+                      transform:
+                        client.name === "SS Graphics"
+                          ? `scale(${client.scale}) translateY(-8px)`
+                          : `scale(${client.scale})`,
+                    }}
                   >
                     <Image
                       src={client.logo}

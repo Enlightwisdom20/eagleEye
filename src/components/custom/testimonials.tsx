@@ -8,72 +8,42 @@ const TestimonialsSlideshow = () => {
     {
       id: 1,
       name: "Aishwarya J., Final Year BBA",
-      handle: "@sarahc_dev",
-      avatar:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=40&h=40&fit=crop&crop=face",
       content:
         "Before this, I only knew how to scroll on Instagram. Now I know how brands actually sell there. The session on digital ads was super useful!",
     },
     {
       id: 2,
       name: "Sneha P., BCA Final Year",
-      handle: "@mjohnson",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
       content:
         "AI in marketing sounded complicated at first, but after this training, it feels doable. We even tried out real tools like ChatGPT and Canva!",
     },
     {
       id: 3,
       name: "Fatima Z., Final Year B.Com",
-      handle: "@emily_codes",
-      avatar:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face",
       content:
         "I used to think LinkedIn is only for top-level people. After the training, I built my profile, added my work, and started getting views!",
     },
     {
-      id: 4,
-      name: "David Kim",
-      handle: "@davidk_tech",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
-      content:
-        "Best investment we've made this year. The ROI was apparent within the first month of usage.",
-    },
-    {
       id: 5,
       name: "Arjun V., BMS Student",
-      handle: "@lisa_designs",
-      avatar:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=40&h=40&fit=crop&crop=face",
       content:
         "Full paisa vasool session! Very practical and chill. Loved how every topic was explained with live examples.",
     },
     {
       id: 6,
       name: "Rajveer S., BCA",
-      handle: "@alex_builds",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face",
       content:
         "Ma’am was super friendly and kept it interactive. We asked so many doubts and not once were we made to feel silly. 10/10 experience!",
     },
     {
       id: 7,
       name: "Saurabh Mehta, Marketing, FreshBite Foods",
-      handle: "@jessicawu_dev",
-      avatar:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=40&h=40&fit=crop&crop=face",
       content:
         "What stood out was how everything was simplified—no jargon, just straight-up value. It’s rare to find someone who connects equally well with students and entrepreneurs.",
     },
     {
       id: 8,
       name: "Assistant Professor, Commerce",
-      handle: "@jessicawu_dev",
-      avatar:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=40&h=40&fit=crop&crop=face",
       content:
         "The AI marketing module especially stood out. Students were thrilled to see tools like ChatGPT and Canva being used live. Very relevant and timely.",
     },
