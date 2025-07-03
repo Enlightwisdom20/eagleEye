@@ -13,6 +13,7 @@ import {
   Settings,
   ExternalLink,
 } from "lucide-react";
+import { redirect } from "next/navigation";
 import { useState } from "react";
 
 const styles = `
@@ -390,6 +391,7 @@ export default function TrainingPage() {
                 fontFamily: "var(--font-inter)",
                 letterSpacing: "0.1em",
               }}
+              onClick={() => redirect("/#contact")}
             >
               Book a call
               <ExternalLink className="ml-2 w-5 h-5 inline" />
