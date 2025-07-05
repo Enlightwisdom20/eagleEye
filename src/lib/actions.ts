@@ -29,11 +29,12 @@ export async function sendContactEmail(formData: FormData) {
   const { name, email, phone, message } = result.data;
   try {
     const { data } = await resend.emails.send({
-      from: email,
+      from: process.env.RESEND_EMAIL!,
       to: process.env.RESEND_EMAIL!,
       subject: `Contact form Submission by ${name}`,
       html: `${name} just submitted the contact form.<br>
 Phone number: ${phone}<br>
+Email: ${email}<br>
 Message: ${message}<br>
 `,
     });
